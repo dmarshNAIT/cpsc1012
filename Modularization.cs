@@ -14,10 +14,10 @@ namespace A01_Sandbox
                 DisplayMenu();
                 userResponse = GetUserResponse("Your selection:");
                 ProcessMenuItem(userResponse);
-                userResponse = GetUserResponse("\nWant to play again?");
+                userResponse = GetUserResponse("\nWant to play again? (y/n)");
             } while (userResponse == 'Y');
 
-            Console.WriteLine("Thanks for playing. Byeeee.");
+            Console.WriteLine("\nThanks for playing. Byeeee.");
             Console.ReadLine();
         }
 
@@ -48,9 +48,14 @@ namespace A01_Sandbox
                     PrintALine();
                     break;
                 default:
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("That was not a valid input.");
-                    Console.ResetColor();
+                    while(menuItem != '1' && menuItem != '2')
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("That was not a valid input.");
+                        Console.ResetColor();
+                        menuItem = GetUserResponse("Your selection:");
+                    }
+                    ProcessMenuItem(menuItem);
                     break;
             }
         }
@@ -63,7 +68,8 @@ namespace A01_Sandbox
             Console.ResetColor();
         }
 
-        static void PrintALine() {
+        static void PrintALine()
+        {
             Console.BackgroundColor = ConsoleColor.Cyan;
             Console.WriteLine("".PadRight(Console.WindowWidth));
             Console.ResetColor();
