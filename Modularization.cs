@@ -13,6 +13,11 @@ namespace A01_Sandbox
                 Console.WriteLine();
                 DisplayMenu();
                 userResponse = GetUserResponse("Your selection:");
+                while (userResponse != '1' && userResponse != '2')
+                {
+                    PrintMessageInColour("That was not a valid input.", ConsoleColor.Red);
+                    userResponse = GetUserResponse("Your selection:");
+                }
                 ProcessMenuItem(userResponse);
                 userResponse = GetUserResponse("\nWant to play again? (y/n)");
             } while (userResponse == 'Y');
@@ -47,31 +52,26 @@ namespace A01_Sandbox
                 case '2':
                     PrintALine();
                     break;
-                default:
-                    while(menuItem != '1' && menuItem != '2')
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("That was not a valid input.");
-                        Console.ResetColor();
-                        menuItem = GetUserResponse("Your selection:");
-                    }
-                    ProcessMenuItem(menuItem);
-                    break;
             }
         }
 
         static void GenerateRandomNumber()
         {
             Random rand = new Random();
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(rand.Next());
-            Console.ResetColor();
+            PrintMessageInColour(rand.Next().ToString(), ConsoleColor.Green);
         }
 
         static void PrintALine()
         {
             Console.BackgroundColor = ConsoleColor.Cyan;
             Console.WriteLine("".PadRight(Console.WindowWidth));
+            Console.ResetColor();
+        }
+
+        static void PrintMessageInColour(string inputMessage, ConsoleColor messageColour)
+        {
+            Console.ForegroundColor = messageColour;
+            Console.WriteLine(inputMessage);
             Console.ResetColor();
         }
     }
