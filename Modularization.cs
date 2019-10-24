@@ -64,7 +64,7 @@ namespace A01_Sandbox
         static void PrintALine()
         {
             Console.BackgroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("".PadRight(Console.WindowWidth));
+            Console.WriteLine("".PadRight(Console.WindowWidth - 1));
             Console.ResetColor();
         }
 
