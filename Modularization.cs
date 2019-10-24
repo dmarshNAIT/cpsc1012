@@ -1,78 +1,83 @@
-using System;
+﻿/*  Purpose:        A menu-driven program.
+ *  Process:        User is shown a menu, and can select:
+ *                      1: Generate a random number
+ *                      2: Generate a coloured line
+ *                      3: Play a math quiz
+ *                      4: Quit
+ *  Input:          Main program: user enters choice.
+ *                      Rand num:
+ *                      Line:
+ *                      Math quiz: user enters their answer.
+ *  Output:         Rand num:
+ *                  Line:
+ *                  Math quiz: A confirmation or error message.
+ *  Author:         D Marsh & A01
+ *  Last mod date:  Oct 24, 2019
+ */
+ using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace A01_Sandbox
+namespace MethodsA01
 {
-    class Program
+    class Modularization
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome.");
-            char userResponse;
-            do
-            {
-                Console.WriteLine();
-                DisplayMenu();
-                userResponse = GetUserResponse("Your selection:");
-                while (userResponse != '1' && userResponse != '2')
-                {
-                    PrintMessageInColour("That was not a valid input.", ConsoleColor.Red);
-                    userResponse = GetUserResponse("Your selection:");
-                }
-                ProcessMenuItem(userResponse);
-                userResponse = GetUserResponse("\nWant to play again? (y/n)");
-            } while (userResponse == 'Y');
+            int menuChoice;
+            Console.WriteLine("Welcome to our awesome program.\n");
+            DisplayMenu();
+            menuChoice = GetUserInput("Please enter your choice: ");
 
-            Console.WriteLine("\nThanks for playing. Byeeee.");
+            while (menuChoice < 1 || menuChoice > 4)
+            {
+                Console.WriteLine("Sorry, that is not a valid input.");
+                DisplayMenu();
+                menuChoice = GetUserInput("Please enter your choice: ");
+            } // end of while loop
+
+            ProcessMenuItem(menuChoice);
+
+            // display results
+            // display the menu again
+
+            // Math quiz: we'll need 2 random numbers
             Console.ReadLine();
-        }
+        } // end of Main method
 
         static void DisplayMenu()
         {
-            Console.WriteLine("Press 1 for random number generation.");
-            Console.WriteLine("Press 2 to print a line.");
-        }
+            Console.WriteLine("Press 1 to generate a random number.");
+            Console.WriteLine("Press 2 to display a line.");
+            Console.WriteLine("Press 3 to do a math quiz.");
+            Console.WriteLine("Press 4 to Quit.");
+        } // end of DisplayMenu() method
 
-        static char GetUserResponse(string userMessage)
+        static int GetUserInput(string userMessage)
         {
-            char userResponse;
-            Console.Write(userMessage + " ");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            userResponse = Char.ToUpper(char.Parse(Console.ReadLine()));
-            Console.ResetColor();
-            return userResponse;
-        }
+            Console.WriteLine(userMessage);
+            return int.Parse(Console.ReadLine());
+        } // end of GetUserInput method
 
-        static void ProcessMenuItem(char menuItem)
+        static void ProcessMenuItem(int i)
         {
-            switch (menuItem)
+            switch (i)
             {
-                case '1':
-                    GenerateRandomNumber();
+                case 1:
+                    // GetRandomNumber();
                     break;
-                case '2':
-                    PrintALine();
+                case 2:
+                    // go to coloured line method
                     break;
-            }
-        }
+                case 3:
+                    // go to math quiz method
+                    break;
+            } // end of switch
+        } // end of ProcessMenuItem method
 
-        static void GenerateRandomNumber()
-        {
-            Random rand = new Random();
-            PrintMessageInColour(rand.Next().ToString(), ConsoleColor.Green);
-        }
 
-        static void PrintALine()
-        {
-            Console.BackgroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("".PadRight(Console.WindowWidth));
-            Console.ResetColor();
-        }
 
-        static void PrintMessageInColour(string inputMessage, ConsoleColor messageColour)
-        {
-            Console.ForegroundColor = messageColour;
-            Console.WriteLine(inputMessage);
-            Console.ResetColor();
-        }
-    }
-}
+    } // end of class
+} // end of namespace
