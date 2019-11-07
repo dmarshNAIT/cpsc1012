@@ -1,3 +1,11 @@
+/* Purpose: Search an array for a user-specified number in an array full of random numbers.
+ * Input: Number between 1 and 10
+ * Output: Message whether the number exists in the array.
+ * Process: Sequential search.
+ * Author: DMarsh & A01
+ * Date: Last modified Nov 6
+ */
+
 using System;
 
 namespace Arrays
@@ -42,7 +50,6 @@ namespace Arrays
 
         static string SearchArray(int[] arrayName, int arraySize)
         {
-            // ask the user for a #
             Console.Write("Please enter a number between 1 and 10: ");
             int searchNumber = int.Parse(Console.ReadLine());
             string message = "Your number was not found.";
@@ -52,15 +59,17 @@ namespace Arrays
                 if (arrayName[i] == searchNumber)
                 {
                     message = "Your number WAS found.";
-                    // how many times?
                 } // end if
             } // end for
-
             return message;
-
         } // end method
 
     } // end of class
 } // end of namespace
 
+
+
+
 // next steps: add input validation.
+// add how many times the number was found.
+
