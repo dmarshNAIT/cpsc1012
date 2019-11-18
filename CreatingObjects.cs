@@ -26,34 +26,34 @@ namespace Sandbox {
 
     class CustomCharacter {
         // member fields:
-        private string name;
-        private int level = 1;
-        private static int hp = 100;
+        private string Name;
+        private int Level = 1;
+        private static int Hp = 100;
 
         // constructors:
         public CustomCharacter(string characterName) {
-            name = characterName;
+            Name = characterName;
         } // end method
 
         // other methods:
         public int LevelUp() {
-            return ++level; 
+            return ++Level; 
         } // end method
 
         public void SetName(string characterName) {
-            name = characterName;
+            Name = characterName;
         } // end method
 
         public string GetName() {
-            return name;
+            return Name;
         } // end method
 
         public int GetLevel() {
-            return level;
+            return Level;
         } // end method
 
         public static int GetHP() {
-            return hp;
+            return Hp;
         } // end method
 
     } // end class
