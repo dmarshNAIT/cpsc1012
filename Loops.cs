@@ -17,21 +17,21 @@ namespace A05_Sandbox
         static void Main(string[] args)
         {
             // declare
-            int countOfEntries;     // user input
-            double averageMark;     // output
-            double sum;             // running totals
-            int counter;            // running totals
             char response;          // to capture user's response
 
             do
             {
+                // declare:
+                int countOfEntries;     // user input
+                double averageMark;     // output
+                double sum = 0;         // running total
+                
                 // prompt
                 Console.WriteLine("how many marks are you entering?");
                 countOfEntries = int.Parse(Console.ReadLine());
 
                 // process
-                for (sum = 0, counter = 1; counter <= countOfEntries; counter++)
-                {
+                for (int counter = 1; counter <= countOfEntries; counter++) {
                     Console.WriteLine("Please enter mark #" + counter + ":");
                     double mark = double.Parse(Console.ReadLine());
                     sum += mark;
