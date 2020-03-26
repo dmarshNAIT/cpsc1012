@@ -16,7 +16,6 @@ namespace A04_ClassExample
             myWriter.WriteLine("hello, friends.");
             myWriter.Close();
 
-
             // this is how we read from a file:
             StreamReader myReader = new StreamReader("./../../../customers.txt");
             string customer1 = myReader.ReadLine();
@@ -30,7 +29,6 @@ namespace A04_ClassExample
             {
                 customers[counter] = myReader.ReadLine();
             } // end for
-
 
             // but that required us to know the length of the file in advance, which we don't always know. so, let's use a list instead:
             List<string> customerList = new List<string>();
@@ -49,42 +47,12 @@ namespace A04_ClassExample
             // or a 2d array, or parallel lists or arrays.
             Console.WriteLine($"Your customer's first name is {customerArrray[0]}.");
 
-
             // and we always end with:
             myReader.Close();
 
             Console.ReadLine();
 
-
-
-
-
-
         } // end method
 
-        static int GetUserInt()
-        {
-            // declare
-            string userInput;
-            int userInt = 0; // initialization value
-            bool validInput = false;
-
-            do
-            {
-                userInput = Console.ReadLine();
-                try
-                {
-                    userInt = int.Parse(userInput);
-                    validInput = true;
-                } // end try
-                catch
-                {
-                    Console.WriteLine("Sorry, invalid input." +
-                        "\nPlease re-enter.");
-                } // end catch
-            } while (!validInput);
-
-            return userInt;
-        } // end method
     } // end class
 } // end namespace
