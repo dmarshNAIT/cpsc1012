@@ -1,32 +1,42 @@
-﻿using System;
+using System;
 
-namespace A04_Sandbox
+namespace Sandbox
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int age;
-            bool validInput = false;
+            int userResponse = 0; // initial value to be overwritten later
 
             do
             {
-                try
+                bool validInput = false;
+                do
                 {
-                    Console.Write("Enter your age: ");
-                    age = int.Parse(Console.ReadLine());
-                    validInput = true;
-                    Console.WriteLine($"Your age is {age}.");
-                } // end try
-                catch
-                {
-                    Console.WriteLine("Sorry, invalid.");
-                } // end catch
+                    // ask the user what is the meaning of life?
+                    Console.WriteLine("What is the meaning of life?");
 
-            } while (!validInput);
+                    // get their response & try to parse
+                    try
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        userResponse = int.Parse(Console.ReadLine());
+                        Console.ResetColor();
+                        validInput = true;
+                    }
+                    catch
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Sorry, invalid input.");
+                        Console.ResetColor();
+                    }
 
-            Console.WriteLine("We got to the end!");
+                } while (!validInput);
 
-        } // end method
-    } // end class
-} // end namespace
+            } while (userResponse != 42);
+
+            Console.WriteLine("We escaped the loop!");
+
+        } // end of method
+    } // end of class
+} // end of namespace
