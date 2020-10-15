@@ -25,13 +25,13 @@ namespace Sandbox
             // generate a random # (1-10)
             randomNum = numGenerator.Next(1, 11); // 1 to 10
 
+            // loop for each guess:
             do
             {
-                // crashes with a decimal - NEED TO TEST
-                // accepts negative numbers - NEED TO TEST
-
                 int userGuess = 0; // initial value to be overwritten
                 bool validInput = false;
+                
+                // loop until valid input:
                 do
                 {
                     // ask user to guess
@@ -54,7 +54,7 @@ namespace Sandbox
                     {
                         Console.WriteLine("Sorry, invalid input.");
                     }
-                } while (!validInput);
+                } while (!validInput); // end loop for valid input
 
                 // display results:
                 if (userGuess == randomNum)
@@ -72,7 +72,7 @@ namespace Sandbox
                 } // end else
                 attempts++;
 
-            } while (!winner);
+            } while (!winner); // end loop per guess
 
             Console.WriteLine($"You guessed it in {attempts} guesses.");
 
