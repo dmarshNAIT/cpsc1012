@@ -20,3 +20,16 @@ C:\Users\DMARSH\OneDrive - NAIT\CPSC 1012\Connect4\Connect4\obj\Debug\netcoreapp
 C:\Users\DMARSH\OneDrive - NAIT\CPSC 1012\Connect4\Connect4\obj\Debug\netcoreapp2.1\Connect4.AssemblyInfo.cs
 C:\Users\DMARSH\OneDrive - NAIT\CPSC 1012\Connect4\Connect4\obj\Debug\netcoreapp2.1\Connect4.dll
 C:\Users\DMARSH\OneDrive - NAIT\CPSC 1012\Connect4\Connect4\obj\Debug\netcoreapp2.1\Connect4.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\bin\Debug\netcoreapp2.1\Connect4.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\bin\Debug\netcoreapp2.1\Connect4.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\bin\Debug\netcoreapp2.1\Connect4.runtimeconfig.dev.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\bin\Debug\netcoreapp2.1\Connect4.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\bin\Debug\netcoreapp2.1\Connect4.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\obj\Debug\netcoreapp2.1\Connect4.csproj.AssemblyReference.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\obj\Debug\netcoreapp2.1\Connect4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\obj\Debug\netcoreapp2.1\Connect4.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\obj\Debug\netcoreapp2.1\Connect4.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\obj\Debug\netcoreapp2.1\Connect4.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\obj\Debug\netcoreapp2.1\Connect4.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\obj\Debug\netcoreapp2.1\Connect4.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Winter 2020\Connect4\Connect4\obj\Debug\netcoreapp2.1\Connect4.genruntimeconfig.cache
