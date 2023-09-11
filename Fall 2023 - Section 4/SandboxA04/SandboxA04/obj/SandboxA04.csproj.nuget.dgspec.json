@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\danam\\OneDrive - NAIT\\CPSC 1012\\SandboxA04\\SandboxA04\\SandboxA04.csproj": {}
+    "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\SandboxA04\\SandboxA04.csproj": {}
   },
   "projects": {
-    "C:\\Users\\danam\\OneDrive - NAIT\\CPSC 1012\\SandboxA04\\SandboxA04\\SandboxA04.csproj": {
+    "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\SandboxA04\\SandboxA04.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danam\\OneDrive - NAIT\\CPSC 1012\\SandboxA04\\SandboxA04\\SandboxA04.csproj",
+        "projectUniqueName": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\SandboxA04\\SandboxA04.csproj",
         "projectName": "SandboxA04",
-        "projectPath": "C:\\Users\\danam\\OneDrive - NAIT\\CPSC 1012\\SandboxA04\\SandboxA04\\SandboxA04.csproj",
+        "projectPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\SandboxA04\\SandboxA04.csproj",
         "packagesPath": "C:\\Users\\danam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danam\\OneDrive - NAIT\\CPSC 1012\\SandboxA04\\SandboxA04\\obj\\",
+        "outputPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\SandboxA04\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\danam\\AppData\\Roaming\\NuGet\\NuGet.Config",

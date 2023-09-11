@@ -23,12 +23,26 @@
             Console.WriteLine(value2);
 
             // Calculate sum
+            int sum;
+            sum = value1 + value2;
+
             // Display sum
+            Console.WriteLine("The sum of " + value1 + " and " + value2 + " is " + sum);
+
+
             // Calculate difference
+            int diff = value1 - value2;
+
             // Display difference
+            Console.WriteLine("The difference between {0} and {1} is {2}.", value1, value2, diff);
+
+
             // Calculate product
             // Display product
             // Calculate quotient
+            double quotient = (double) value1 / value2;
+            Console.WriteLine("Quotient is " + quotient);
+
             // Display quotient
 
         }
