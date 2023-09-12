@@ -31,19 +31,17 @@
             // Calculate value1 - value 2
             int diff = value1 - value2;
 
-
             // Display value1 / value 2
             Console.WriteLine("The difference between {0} and {1} is {2}.", value1, value2, diff);
 
-            // Calculate value1 * value 2
-            // Display value1 * value 2
-
+            // Calculate & display the product:
+            Console.WriteLine("The product of {0} and {1} is {2}.", value1, value2, value1 * value2);
 
             // Calculate value1 / value 2
             double quotient = (double) value1 / value2;
+            // Display value1 / value 2
             Console.WriteLine("The answer is " + quotient);
 
-            // Display value1 / value 2
 
         }
     }

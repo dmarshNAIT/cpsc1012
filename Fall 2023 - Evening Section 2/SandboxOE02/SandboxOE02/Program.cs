@@ -9,13 +9,13 @@
             Console.WriteLine("hi I'm Dana. Welcome to my awesome calculator.");
 
             //	Read num1
-            // we don't know how to read input from the user, so let's hardcode some values
-            int num1;
-            num1 = 2;
+            // we don't know how to read input from the user, so let's hardcode some values for now
+            int num1; // this line declares (or creates) the variable
+            num1 = 2; // this line assigns that variable a value
             Console.WriteLine("The first number is: " + num1);
 
             //	Read num2
-            int num2 = 3;
+            int num2 = 3; // this statement does the declaration & initialization in one step!
             Console.WriteLine("The 2nd number is: " + num2);
 
             //	Calculate sum = num1 + num2
