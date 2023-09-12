@@ -6,6 +6,12 @@
         {
             Console.WriteLine("Hello, World! \nHi I'm still Dana");
 
+            // display a prompt to the user
+            Console.Write("Please enter your name: ");
+            // read in their name
+            string userInput = Console.ReadLine();
+            Console.WriteLine("It's nice to meet you, {0}.\n\n", userInput);
+
             // Display welcome to user
             Console.WriteLine("Welcome to our calculator! Math is awesome.\n");
 
@@ -14,9 +20,9 @@
             int value2;
 
             // Prompt user for value 1
-            value1 = 2;
-            // we haven't learned how to read input from the user yet :(
-            // so this will be our temporary workaround.
+            Console.Write("Please enter a number: ");
+            userInput = Console.ReadLine();
+            value1 = int.Parse(userInput);
             Console.WriteLine("The 1st number is: " + value1);
 
             // Prompt user for value 2
@@ -46,6 +52,31 @@
             // Display quotient
             Console.WriteLine("Quotient is " + quotient);
 
+
+
+
+
+            /* Let's play around with data types */
+            int myInt = 17;
+            double myDouble = myInt;
+            Console.WriteLine("myInt: " + myInt);
+            Console.WriteLine("myDouble: " + myDouble);
+            // this worked! 
+
+            myDouble = 910;
+            myInt = (int) myDouble;
+            Console.WriteLine("myInt: " + myInt);
+            Console.WriteLine("myDouble: " + myDouble);
+
+            myDouble = 5000000000;
+            myInt = (int)myDouble;
+            Console.WriteLine("myInt: " + myInt);
+            Console.WriteLine("myDouble: " + myDouble);
+
+            myDouble = 3.999999;
+            myInt = (int)myDouble;
+            Console.WriteLine("myInt: " + myInt);
+            Console.WriteLine("myDouble: " + myDouble);
         }
     }
 }
