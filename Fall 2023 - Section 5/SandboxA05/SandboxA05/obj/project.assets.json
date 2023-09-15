@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 5\\SandboxA05\\SandboxA05\\SandboxA05.csproj",
-      "projectName": "SandboxA05",
-      "projectPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 5\\SandboxA05\\SandboxA05\\SandboxA05.csproj",
+      "projectUniqueName": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 5\\SandboxA05\\SandboxA05\\Calculator.csproj",
+      "projectName": "Calculator",
+      "projectPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 5\\SandboxA05\\SandboxA05\\Calculator.csproj",
       "packagesPath": "C:\\Users\\danam\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 5\\SandboxA05\\SandboxA05\\obj\\",
       "projectStyle": "PackageReference",

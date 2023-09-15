@@ -1,0 +1,14 @@
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\bin\Debug\net6.0\Sep15ClassExamples.exe
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\bin\Debug\net6.0\Sep15ClassExamples.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\bin\Debug\net6.0\Sep15ClassExamples.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\bin\Debug\net6.0\Sep15ClassExamples.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\bin\Debug\net6.0\Sep15ClassExamples.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\obj\Debug\net6.0\Sep15ClassExamples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\obj\Debug\net6.0\Sep15ClassExamples.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\obj\Debug\net6.0\Sep15ClassExamples.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\obj\Debug\net6.0\Sep15ClassExamples.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\obj\Debug\net6.0\Sep15ClassExamples.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\obj\Debug\net6.0\refint\Sep15ClassExamples.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\obj\Debug\net6.0\Sep15ClassExamples.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\obj\Debug\net6.0\Sep15ClassExamples.genruntimeconfig.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep15ClassExamples\obj\Debug\net6.0\ref\Sep15ClassExamples.dll
