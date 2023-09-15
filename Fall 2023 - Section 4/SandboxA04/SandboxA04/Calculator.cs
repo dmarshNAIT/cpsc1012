@@ -1,6 +1,6 @@
 ﻿namespace SandboxA04
 {
-    internal class Program
+    internal class Calculator
     {
         static void Main(string[] args)
         {

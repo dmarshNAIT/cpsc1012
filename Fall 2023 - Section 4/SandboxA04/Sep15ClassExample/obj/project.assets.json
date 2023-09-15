@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\SandboxA04\\Calculator.csproj",
-      "projectName": "Calculator",
-      "projectPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\SandboxA04\\Calculator.csproj",
+      "projectUniqueName": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\Sep15ClassExample\\Sep15ClassExample.csproj",
+      "projectName": "Sep15ClassExample",
+      "projectPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\Sep15ClassExample\\Sep15ClassExample.csproj",
       "packagesPath": "C:\\Users\\danam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\SandboxA04\\obj\\",
+      "outputPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\Sep15ClassExample\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\danam\\AppData\\Roaming\\NuGet\\NuGet.Config",

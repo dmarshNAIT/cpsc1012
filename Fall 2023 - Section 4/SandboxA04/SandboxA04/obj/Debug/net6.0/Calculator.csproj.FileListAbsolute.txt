@@ -1,0 +1,14 @@
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\bin\Debug\net6.0\Calculator.exe
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\bin\Debug\net6.0\Calculator.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\bin\Debug\net6.0\Calculator.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\bin\Debug\net6.0\Calculator.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\bin\Debug\net6.0\Calculator.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\obj\Debug\net6.0\Calculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\obj\Debug\net6.0\Calculator.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\obj\Debug\net6.0\Calculator.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\obj\Debug\net6.0\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\obj\Debug\net6.0\Calculator.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\obj\Debug\net6.0\refint\Calculator.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\obj\Debug\net6.0\Calculator.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\obj\Debug\net6.0\Calculator.genruntimeconfig.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\SandboxA04\obj\Debug\net6.0\ref\Calculator.dll
