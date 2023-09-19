@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandboxOE02", "SandboxOE02\SandboxOE02.csproj", "{188F50A8-9489-4720-AEA3-755465D4A146}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandboxOE02", "SandboxOE02\SandboxOE02.csproj", "{188F50A8-9489-4720-AEA3-755465D4A146}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sep18ClassExamples", "Sep18ClassExamples\Sep18ClassExamples.csproj", "{35591CD2-0A1C-4A3F-8B8A-FFBB5ED435A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{188F50A8-9489-4720-AEA3-755465D4A146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{188F50A8-9489-4720-AEA3-755465D4A146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{188F50A8-9489-4720-AEA3-755465D4A146}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35591CD2-0A1C-4A3F-8B8A-FFBB5ED435A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35591CD2-0A1C-4A3F-8B8A-FFBB5ED435A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35591CD2-0A1C-4A3F-8B8A-FFBB5ED435A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35591CD2-0A1C-4A3F-8B8A-FFBB5ED435A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

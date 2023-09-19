@@ -57,7 +57,7 @@
             // this worked: doubles are able to hold the values of ints
 
             myDouble = 789;
-            myInt = (int) myDouble; //explicit conversion
+            myInt = (int)myDouble; //explicit conversion
             Console.WriteLine("myDouble: " + myDouble);
             Console.WriteLine("myInt: " + myInt);
             // this also works.
@@ -73,6 +73,7 @@
             Console.WriteLine("myDouble: " + myDouble);
             Console.WriteLine("myInt: " + myInt);
             // this also doesn't really work: we've lost all the decimals and have a misleading number left over.
+
 
 
 
