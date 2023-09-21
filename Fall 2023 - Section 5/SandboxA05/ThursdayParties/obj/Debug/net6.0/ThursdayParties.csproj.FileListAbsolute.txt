@@ -1,0 +1,14 @@
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\bin\Debug\net6.0\ThursdayParties.exe
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\bin\Debug\net6.0\ThursdayParties.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\bin\Debug\net6.0\ThursdayParties.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\bin\Debug\net6.0\ThursdayParties.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\bin\Debug\net6.0\ThursdayParties.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\obj\Debug\net6.0\ThursdayParties.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\obj\Debug\net6.0\ThursdayParties.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\obj\Debug\net6.0\ThursdayParties.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\obj\Debug\net6.0\ThursdayParties.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\obj\Debug\net6.0\ThursdayParties.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\obj\Debug\net6.0\refint\ThursdayParties.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\obj\Debug\net6.0\ThursdayParties.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\obj\Debug\net6.0\ThursdayParties.genruntimeconfig.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\ThursdayParties\obj\Debug\net6.0\ref\ThursdayParties.dll
