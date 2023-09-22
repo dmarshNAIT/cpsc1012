@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\Sep15ClassExample\\Sep15ClassExample.csproj",
-      "projectName": "Sep15ClassExample",
-      "projectPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\Sep15ClassExample\\Sep15ClassExample.csproj",
+      "projectUniqueName": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\Sep15ClassExample\\Sep15MathExample.csproj",
+      "projectName": "Sep15MathExample",
+      "projectPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\Sep15ClassExample\\Sep15MathExample.csproj",
       "packagesPath": "C:\\Users\\danam\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall 2023 - Section 4\\SandboxA04\\Sep15ClassExample\\obj\\",
       "projectStyle": "PackageReference",

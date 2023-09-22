@@ -48,6 +48,8 @@ namespace Sep22StringAndCalculationPractice
             sum = aSquared + bSquared;
             hypotenuse = Math.Sqrt(sum);
             Console.WriteLine($"The long side of the triangle is {hypotenuse}");
+
+
         }
     }
 }

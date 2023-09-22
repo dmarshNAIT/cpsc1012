@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "SandboxA04\Calculator.csproj", "{A2603A3F-901B-46C2-B9CC-B39F7C336F6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCalculator", "SandboxA04\SimpleCalculator.csproj", "{A2603A3F-901B-46C2-B9CC-B39F7C336F6B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sep15ClassExample", "Sep15ClassExample\Sep15ClassExample.csproj", "{1EBC59EF-FFB7-4D05-AC5C-871B151D901B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sep15MathExample", "Sep15ClassExample\Sep15MathExample.csproj", "{1EBC59EF-FFB7-4D05-AC5C-871B151D901B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sep22StringAndCalculationPractice", "Sep22StringAndCalculationPractice\Sep22StringAndCalculationPractice.csproj", "{7C50F5EA-CA25-4844-BCAD-5ED015B55CBC}"
 EndProject
