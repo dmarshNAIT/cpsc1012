@@ -27,14 +27,20 @@ namespace Sep22StringAndCalculationPractice
                 bSquared,   // square of Side B
                 sum,        // aSquared + bSquared
                 hypotenuse;
+            string input;   // capture input from the Console
 
             // welcome the user
+            Console.WriteLine("Welcome to our awesome triangle calculator.");
 
             // prompt the user for value a
-            sideA = 3; //temporary hardcode
+            Console.Write("Enter the 1st side: ");
+            input = Console.ReadLine();
+            sideA = double.Parse(input);
 
             // prompt the user for value b
-            sideB = 4;
+            Console.Write("Enter the 2nd side: ");
+            input = Console.ReadLine();
+            sideB = Convert.ToDouble(input);
 
             // calculate and give back the result
             aSquared = sideA * sideA;
