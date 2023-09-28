@@ -1,0 +1,14 @@
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\bin\Debug\net6.0\Sep27IfStatements.exe
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\bin\Debug\net6.0\Sep27IfStatements.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\bin\Debug\net6.0\Sep27IfStatements.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\bin\Debug\net6.0\Sep27IfStatements.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\bin\Debug\net6.0\Sep27IfStatements.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\obj\Debug\net6.0\Sep27IfStatements.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\obj\Debug\net6.0\Sep27IfStatements.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\obj\Debug\net6.0\Sep27IfStatements.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\obj\Debug\net6.0\Sep27IfStatements.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\obj\Debug\net6.0\Sep27IfStatements.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\obj\Debug\net6.0\refint\Sep27IfStatements.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\obj\Debug\net6.0\Sep27IfStatements.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\obj\Debug\net6.0\Sep27IfStatements.genruntimeconfig.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Sep27IfStatements\obj\Debug\net6.0\ref\Sep27IfStatements.dll

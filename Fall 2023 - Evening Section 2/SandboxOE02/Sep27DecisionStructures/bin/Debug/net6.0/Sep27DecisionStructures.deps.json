@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Sep27DecisionStructures/1.0.0": {
+        "runtime": {
+          "Sep27DecisionStructures.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Sep27DecisionStructures/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
