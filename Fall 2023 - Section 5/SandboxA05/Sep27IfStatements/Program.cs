@@ -7,7 +7,14 @@
             // declare variables
             string userResponse;
             int userFave, 
-                weather;
+                weather,
+                firstNum,
+                secondNum,
+                userAnswer,
+                correctAnswer;
+            float myFloat = 4.0f; // using a suffix to save a literal value as a float
+            const float myImportantConstant = 4.0f;
+            Random numberGenerator = new Random(); // create a Random object
 
             // welcome the user
             Console.WriteLine("Welcome to my program. " +
@@ -55,7 +62,26 @@
                 Console.WriteLine("That's not a weather type, you FOOL!");
             }
 
+            /**************** MATH QUIZ! ****************/
+            // generate 2 random whole numbers between 1 and 19
+            firstNum = numberGenerator.Next(1, 20); // generate a random int at least 1 and less than 20
+            secondNum = numberGenerator.Next(1, 20); // in other words: a number between 1 & 19
 
+            correctAnswer = firstNum + secondNum;
+
+            // show the user a question e.g. What is 3 + 7?
+            Console.Write($"What is {firstNum} + {secondNum}? ");
+            userAnswer = int.Parse(Console.ReadLine());
+
+            // then, we grade them.
+            if(userAnswer == correctAnswer)
+            {
+                Console.WriteLine("Congrats! That is correct!");
+            }
+            else
+            {
+                Console.WriteLine($"The correct answer is {correctAnswer}.");
+            }
 
 
 
