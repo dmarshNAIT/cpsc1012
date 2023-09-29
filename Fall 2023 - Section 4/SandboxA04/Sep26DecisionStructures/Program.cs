@@ -8,6 +8,7 @@
             string userInput;
             int rating, 
                 sum;
+            Random numberGenerator = new Random();
 
             // prompt
             Console.WriteLine("On a scale of 1-10, how excited are you?");
@@ -50,8 +51,8 @@
 
 
             // create 2 random numbers
-            int randNum1 = 7;
-            int randNum2 = 3;
+            int randNum1 = numberGenerator.Next(1, 10); // generate a random int that's at least 1 & less than 10
+            int randNum2 = numberGenerator.Next(1, 10); // i.e. any digit from 1 to 9 (inclusive)
 
             // calculate the sum of those random #s
             int correctAnswer = randNum1 + randNum2;

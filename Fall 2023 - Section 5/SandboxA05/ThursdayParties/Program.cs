@@ -69,15 +69,50 @@
             int age;
             age = int.Parse(input);
 
+            string ageCategory;
+
             if (age >= 18)
             {
-                Console.WriteLine("You are a grown up!");
-            } // end of my if-block
+                // now we check if they are a youth (18-25)
+                if (age <= 25)
+                {
+                    Console.WriteLine("You are a youth.");
+                    ageCategory = "youth";
+                } // inner if block
+
+            } // end of my outer if-block
             else
             {
                 Console.WriteLine("You are a child.");
             } // end of my else-block
-            
+
+            // example of !=
+            // first let's ask the question:
+            Console.WriteLine("Do you want to continue? (Y)es or (N)o.");
+            input = Console.ReadLine();
+            char userResponse = char.Parse(input);
+            // then, we can make a decision
+            if (userResponse != 'N')
+            {
+                Console.WriteLine("Continue.....");
+            }
+            else
+            {
+                Console.WriteLine("Goodbye.");
+            }
+
+            // or, we could do this instead:
+            if (userResponse == 'Y') {
+                Console.WriteLine("Continue...");
+
+            }
+            else
+            {
+                Console.WriteLine("Goodbye.");
+
+            }
+
+
 
         } // end of my Main method
 
