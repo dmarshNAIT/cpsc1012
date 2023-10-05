@@ -17,6 +17,8 @@
             // loop until we get to zero:
             while (numSeconds > 0) 
             {
+                Console.WriteLine("WE ARE IN THE LOOP.");
+
                 // print out the # of seconds
                 Console.WriteLine(numSeconds);
 
