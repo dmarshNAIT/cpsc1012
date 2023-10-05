@@ -1,0 +1,14 @@
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\bin\Debug\net6.0\Oct4Loops.exe
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\bin\Debug\net6.0\Oct4Loops.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\bin\Debug\net6.0\Oct4Loops.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\bin\Debug\net6.0\Oct4Loops.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\bin\Debug\net6.0\Oct4Loops.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4Loops.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4Loops.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4Loops.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4Loops.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4Loops.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\refint\Oct4Loops.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4Loops.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4Loops.genruntimeconfig.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\ref\Oct4Loops.dll

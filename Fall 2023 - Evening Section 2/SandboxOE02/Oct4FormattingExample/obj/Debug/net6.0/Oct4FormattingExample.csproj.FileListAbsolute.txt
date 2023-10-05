@@ -1,0 +1,14 @@
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\bin\Debug\net6.0\Oct4FormattingExample.exe
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\bin\Debug\net6.0\Oct4FormattingExample.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\bin\Debug\net6.0\Oct4FormattingExample.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\bin\Debug\net6.0\Oct4FormattingExample.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\bin\Debug\net6.0\Oct4FormattingExample.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\obj\Debug\net6.0\Oct4FormattingExample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\obj\Debug\net6.0\Oct4FormattingExample.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\obj\Debug\net6.0\Oct4FormattingExample.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\obj\Debug\net6.0\Oct4FormattingExample.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\obj\Debug\net6.0\Oct4FormattingExample.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\obj\Debug\net6.0\refint\Oct4FormattingExample.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\obj\Debug\net6.0\Oct4FormattingExample.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\obj\Debug\net6.0\Oct4FormattingExample.genruntimeconfig.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Evening Section 2\SandboxOE02\Oct4FormattingExample\obj\Debug\net6.0\ref\Oct4FormattingExample.dll
