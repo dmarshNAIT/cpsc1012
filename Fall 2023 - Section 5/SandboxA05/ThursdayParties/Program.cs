@@ -2,7 +2,107 @@
 {
     internal class Program
     {
+
         static void Main(string[] args)
+        {
+            // declare variables:
+            double userSavings;
+
+            // prompt the user for their savings
+            Console.Write("How much do you have saved up? ");
+            userSavings = Convert.ToDouble(Console.ReadLine());
+
+            // branch according to whether they have >= $25k
+            if (userSavings >= 25000)
+            {
+                // check vacation days
+                Console.Write("How many vacation days do you have? ");
+                int vacationDays = Convert.ToInt32(Console.ReadLine());
+
+                // if vacation days is at least 14: buy a ticket!
+                if (vacationDays >= 14) { Console.WriteLine("Let's buy our ticket now!!"); }
+                // otherwise: go work more
+                else { Console.WriteLine("Go work some more."); }
+            }
+            else
+            {
+                // how much can you save per month?
+                Console.Write("How much can you save per month? ");
+                double monthlySavings = Convert.ToDouble(Console.ReadLine());
+                double howMuchMoreWeNeed = 25000 - userSavings;
+                double numMonths = howMuchMoreWeNeed / monthlySavings;
+
+                // calculate how many months until they can afford the trip of their dreams
+                Console.WriteLine($"You will have enough money in {numMonths} months.");
+            }
+
+        }
+
+        static void MainV2(string[] args)
+        {
+            // declare variables
+            char animalChoice;
+            string animalSound;
+
+            // prompt the user for an animal
+            Console.WriteLine("Hello! Please choose an animal.\n" +
+                "Press C for Cat\n" +
+                "Press D for Dog\n" +
+                "Press H for Horse\n" +
+                "Press W for Cow");
+            animalChoice = char.Parse(Console.ReadLine());
+
+            // branch according to the response
+            switch (animalChoice)
+            {
+                case 'C':
+                case 'c':
+                    animalSound = "Meow";
+                    break; // this gets us out of the switch statement
+                case 'D':
+                case 'd':
+                    animalSound = "Woof";
+                    break;
+                case 'H':
+                case 'h':
+                    animalSound = "Neighhhhh";
+                    break;
+                case 'W':
+                case 'w':
+                    animalSound = "Moooooo";
+                    break;
+                default: // if all of the previous values don't match
+                    animalSound = "INVALID CHOICE. Read more carefully.";
+                    break;
+            }
+
+            // this is pretty much the same as:
+            if (animalChoice == 'C') { animalSound = "Meow"; }
+            else if (animalChoice == 'D') { animalSound = "Woof"; }
+            else if (animalChoice == 'H') { animalSound = "Neighhh"; }
+            else if (animalChoice == 'W') { animalSound = "Moooo"; }
+            else animalSound = "INVALID CHOICE.";
+
+
+            Console.WriteLine(animalSound);
+
+            int faveNum = 4;
+
+            switch (faveNum)
+            {
+                case 4:
+                    Console.WriteLine("Me too!");
+                    break;
+                default:
+                    break;
+            }
+
+
+
+
+        }
+
+        static void MainV1(string[] args)
         {
 
             double cake = 3467.6876;
@@ -102,7 +202,8 @@
             }
 
             // or, we could do this instead:
-            if (userResponse == 'Y') {
+            if (userResponse == 'Y')
+            {
                 Console.WriteLine("Continue...");
 
             }
