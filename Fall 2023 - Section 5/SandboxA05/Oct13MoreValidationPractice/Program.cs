@@ -19,9 +19,17 @@ namespace Oct13MoreValidationPractice
             do
             {
                 // declare variables:
-                char userPackage = '\0'; // initialize it to an arbitrary value; will be overwritten later
+                char userPackage = '\0';    // initialize it to an arbitrary value; will be overwritten later
                 bool isValidInput = false;
-                int actualHours = 0; // initialize to zero; will be overwritten later
+                int actualHours = 0;        // initialize to zero; will be overwritten later
+                double monthlyCost;         // the monthly cost in $
+                const int PACKAGE_A_HOURS = 10,
+                    PACKAGE_B_HOURS = 20;
+                const double PACKAGE_A_COST = 9.95,
+                    PACKAGE_B_COST = 13.95,
+                    PACKAGE_C_COST = 19.95,
+                    PACKAGE_A_HOURLY_RATE = 2,
+                    PACKAGE_B_HOURLY_RATE = 1;
 
                 do
                 {
@@ -33,7 +41,11 @@ namespace Oct13MoreValidationPractice
                         userPackage = Char.ToUpper(char.Parse(Console.ReadLine()));
                         if (userPackage != 'A' && userPackage != 'B' && userPackage != 'C')
                         {
-                            Console.WriteLine("Sorry, that's not a valid letter. Please try again.\n");
+                            Console.WriteLine("Sorry, that's not a valid option. Please try again.\n");
+
+                            // TO DO as bonus challenge:
+                            // use Char.IsLetter to determine whether it's a char that's a letter, or not,
+                            // then we can further customize our error messages.
                         }
                         else
                         {
@@ -47,7 +59,7 @@ namespace Oct13MoreValidationPractice
                 } while (!isValidInput);
                 Console.WriteLine("You have chosen package " + userPackage);
 
-                isValidInput = false;
+                isValidInput = false; // re-set
                 do
                 {
                     // prompt the user for the # of hours
@@ -69,7 +81,6 @@ namespace Oct13MoreValidationPractice
                         Console.WriteLine("Sorry, that's not a valid entry. Please enter a number without decimals.\n");
                     }
                 } while (!isValidInput);
-
                 Console.WriteLine($"You have entered {actualHours} hours.");
 
                 // calculate:
@@ -77,18 +88,46 @@ namespace Oct13MoreValidationPractice
                 // package B: $13.95 per month for 20 hours, additional hours are $1/hr
                 // package C: $19.95 per month for unlimited hours
 
+                // check the package to get the monthly cost
+                double hourlyRate = 0,
+                    hoursPerPlan = 0;
+                if (userPackage == 'A')
+                {
+                    monthlyCost = PACKAGE_A_COST;
+                    hourlyRate = PACKAGE_A_HOURLY_RATE;
+                    hoursPerPlan = PACKAGE_A_HOURS;
+                }
+                else if (userPackage == 'B')
+                {
+                    monthlyCost = PACKAGE_B_COST;
+                    hourlyRate = PACKAGE_B_HOURLY_RATE;
+                    hoursPerPlan = PACKAGE_B_HOURS;
+                }
+                else // we know the package must be C because those are the only 3 valid values
+                {
+                    monthlyCost = PACKAGE_C_COST;
+                }
+
+                // if they are package A or B, add on the extra hours
+                if((userPackage == 'A' || userPackage == 'B') && (actualHours > hoursPerPlan))
+                {
+                    double extraHours = actualHours - hoursPerPlan;
+                    monthlyCost += extraHours * hourlyRate;
+                }
+
                 // print out a bill showing total amount billed.
                 // output formatting including columns
+                Console.WriteLine($"Your total monthly cost is {monthlyCost:c}.");
 
                 // if they are paying more than $19.95, let them know about the unlimited plan
 
                 // ask if they'd like to process another bill.
-                Console.Write("Do you have another bill to generate?\n" +
+                Console.Write("\nDo you have another bill to generate?\n" +
                     "Enter Y to continue and any other key to exit.: ");
                 userContinue = Console.ReadLine().ToUpper();
-            } while ( userContinue.Equals("Y") );
+            } while (userContinue.Equals("Y"));
 
-            Console.WriteLine("Thanks, good night.");
+            Console.WriteLine("Thanks, good day or good night.");
         }
     }
 }
