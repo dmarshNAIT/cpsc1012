@@ -30,6 +30,7 @@ namespace Oct13MoreValidationPractice
                     PACKAGE_C_COST = 19.95,
                     PACKAGE_A_HOURLY_RATE = 2,
                     PACKAGE_B_HOURLY_RATE = 1;
+                string bill = "\nHere is your monthly bill:\n";
 
                 do
                 {
@@ -44,7 +45,7 @@ namespace Oct13MoreValidationPractice
                             Console.WriteLine("Sorry, that's not a valid option. Please try again.\n");
 
                             // TO DO as bonus challenge:
-                            // use Char.IsLetter to determine whether it's a char that's a letter, or not,
+                            // use Char.IsLetter() to determine whether it's a char that's a letter, or not,
                             // then we can further customize our error messages.
                         }
                         else
@@ -57,7 +58,7 @@ namespace Oct13MoreValidationPractice
                         Console.WriteLine("Sorry, that's not a valid entry. Please enter a single letter.\n");
                     }
                 } while (!isValidInput);
-                Console.WriteLine("You have chosen package " + userPackage);
+                bill += $"Package:      {userPackage,8}\n";
 
                 isValidInput = false; // re-set
                 do
@@ -81,7 +82,7 @@ namespace Oct13MoreValidationPractice
                         Console.WriteLine("Sorry, that's not a valid entry. Please enter a number without decimals.\n");
                     }
                 } while (!isValidInput);
-                Console.WriteLine($"You have entered {actualHours} hours.");
+                bill += $"Hours:        {actualHours,8}";
 
                 // calculate:
                 // package A: $9.95 per month for 10 hours, additional hours are $2/hr
@@ -109,17 +110,23 @@ namespace Oct13MoreValidationPractice
                 }
 
                 // if they are package A or B, add on the extra hours
-                if((userPackage == 'A' || userPackage == 'B') && (actualHours > hoursPerPlan))
+                if ((userPackage == 'A' || userPackage == 'B') && (actualHours > hoursPerPlan))
                 {
                     double extraHours = actualHours - hoursPerPlan;
                     monthlyCost += extraHours * hourlyRate;
                 }
 
+                // if they are paying more than $19.95, let them know about the unlimited plan
+                if (monthlyCost > PACKAGE_C_COST)
+                {
+                    bill += $"\tSave {monthlyCost - PACKAGE_C_COST:c} by switching to Unlimited";
+                }
+
+                bill += $"\nMonthly cost: {monthlyCost,8:c}\n";
+
                 // print out a bill showing total amount billed.
                 // output formatting including columns
-                Console.WriteLine($"Your total monthly cost is {monthlyCost:c}.");
-
-                // if they are paying more than $19.95, let them know about the unlimited plan
+                Console.WriteLine(bill);
 
                 // ask if they'd like to process another bill.
                 Console.Write("\nDo you have another bill to generate?\n" +
