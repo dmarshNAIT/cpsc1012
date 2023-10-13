@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sep26DecisionStructures", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct2LoanQualifier", "Oct2LoanQualifier\Oct2LoanQualifier.csproj", "{FA4A7304-2CCC-409D-9EA7-7B4C95595CFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct3WhileLoop", "Oct3Loops\Oct3WhileLoop.csproj", "{A118AAF7-E3F8-46DD-81C8-C13B0F55F5C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct3WhileLoop", "Oct3Loops\Oct3WhileLoop.csproj", "{A118AAF7-E3F8-46DD-81C8-C13B0F55F5C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct3DoWhile", "Oct3DoWhile\Oct3DoWhile.csproj", "{7F7B8FBB-EA8F-436E-9DFE-19E45BC0A1FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct3DoWhile", "Oct3DoWhile\Oct3DoWhile.csproj", "{7F7B8FBB-EA8F-436E-9DFE-19E45BC0A1FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct13TryCatch", "Oct13TryCatch\Oct13TryCatch.csproj", "{57921B33-7B1E-493D-884E-6F88E6BF83BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{7F7B8FBB-EA8F-436E-9DFE-19E45BC0A1FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F7B8FBB-EA8F-436E-9DFE-19E45BC0A1FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F7B8FBB-EA8F-436E-9DFE-19E45BC0A1FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57921B33-7B1E-493D-884E-6F88E6BF83BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57921B33-7B1E-493D-884E-6F88E6BF83BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57921B33-7B1E-493D-884E-6F88E6BF83BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57921B33-7B1E-493D-884E-6F88E6BF83BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

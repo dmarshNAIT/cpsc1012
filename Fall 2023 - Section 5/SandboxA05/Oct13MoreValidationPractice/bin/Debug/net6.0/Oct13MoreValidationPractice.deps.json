@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Oct13MoreValidationPractice/1.0.0": {
+        "runtime": {
+          "Oct13MoreValidationPractice.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Oct13MoreValidationPractice/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
