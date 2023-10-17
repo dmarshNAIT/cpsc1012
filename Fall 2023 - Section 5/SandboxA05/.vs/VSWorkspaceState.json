@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Oct11TryCatch",
+    "\\Oct13MoreValidationPractice",
     "\\Oct4Loops",
     "\\Sep27IfStatements"
   ],
-  "SelectedNode": "\\Oct4Loops\\Program.cs",
+  "SelectedNode": "\\Oct13MoreValidationPractice\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

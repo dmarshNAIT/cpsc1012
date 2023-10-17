@@ -30,7 +30,7 @@ namespace Oct13MoreValidationPractice
                     PACKAGE_C_COST = 19.95,
                     PACKAGE_A_HOURLY_RATE = 2,
                     PACKAGE_B_HOURLY_RATE = 1;
-                string bill = "\nHere is your monthly bill:\n";
+                string bill = "\nHere is your monthly bill.\n";
 
                 do
                 {

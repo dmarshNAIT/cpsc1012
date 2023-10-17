@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct3WhileLoop", "Oct3Loops\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct3DoWhile", "Oct3DoWhile\Oct3DoWhile.csproj", "{7F7B8FBB-EA8F-436E-9DFE-19E45BC0A1FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct13TryCatch", "Oct13TryCatch\Oct13TryCatch.csproj", "{57921B33-7B1E-493D-884E-6F88E6BF83BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct13TryCatch", "Oct13TryCatch\Oct13TryCatch.csproj", "{57921B33-7B1E-493D-884E-6F88E6BF83BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct17ArrayExample", "Oct17ArrayExample\Oct17ArrayExample.csproj", "{B82C7B8A-BC0C-44A6-BEE6-748B1B57DA85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{57921B33-7B1E-493D-884E-6F88E6BF83BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57921B33-7B1E-493D-884E-6F88E6BF83BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57921B33-7B1E-493D-884E-6F88E6BF83BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B82C7B8A-BC0C-44A6-BEE6-748B1B57DA85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B82C7B8A-BC0C-44A6-BEE6-748B1B57DA85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B82C7B8A-BC0C-44A6-BEE6-748B1B57DA85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B82C7B8A-BC0C-44A6-BEE6-748B1B57DA85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
