@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            const int ARRAY_SIZE = 7;
+            const int ARRAY_SIZE = 7,
+                MIN_NUM = 1,
+                MAX_NUM = 100;
             string userResponse;
 
             do
@@ -30,9 +32,9 @@
                             lottoTicket[index] = int.Parse(Console.ReadLine());
 
                             // make sure the number is between 1 and 100
-                            if (lottoTicket[index] < 1)
+                            if (lottoTicket[index] < MIN_NUM)
                                 Console.WriteLine("Must be a positive number. Try again.");
-                            else if (lottoTicket[index] > 100)
+                            else if (lottoTicket[index] > MAX_NUM)
                                 Console.WriteLine("Too high, please try again.");
                             else
                                 isInvalid = false;    // or isValid = true;
@@ -48,7 +50,7 @@
 
                 // generate a random number
                 Random numGenerator = new Random();
-                int winningNumber = numGenerator.Next(1, 10); // at least 1 & less than 101
+                int winningNumber = numGenerator.Next(MIN_NUM, MAX_NUM + 1); // at least 1 & less than 101
                 Console.WriteLine("The winning number is " + winningNumber);
 
                 // loop through the user's picks, display them,
@@ -77,13 +79,11 @@
 
                 Console.Write("Would you like to buy another ticket?\n" +
                     "Enter Y for Yes and anything else to Exit: ");
-                 userResponse = Console.ReadLine();
+                userResponse = Console.ReadLine();
 
             } while (userResponse.ToUpper().Equals("Y"));
 
             Console.WriteLine("Thanks for playing, goodbye.");
-
-            // TO DO: turn min & max numbers into constants
         }
     }
 }
