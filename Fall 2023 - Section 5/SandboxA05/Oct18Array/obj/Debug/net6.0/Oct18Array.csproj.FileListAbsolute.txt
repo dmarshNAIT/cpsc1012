@@ -1,0 +1,14 @@
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\bin\Debug\net6.0\Oct18Array.exe
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\bin\Debug\net6.0\Oct18Array.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\bin\Debug\net6.0\Oct18Array.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\bin\Debug\net6.0\Oct18Array.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\bin\Debug\net6.0\Oct18Array.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\obj\Debug\net6.0\Oct18Array.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\obj\Debug\net6.0\Oct18Array.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\obj\Debug\net6.0\Oct18Array.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\obj\Debug\net6.0\Oct18Array.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\obj\Debug\net6.0\Oct18Array.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\obj\Debug\net6.0\refint\Oct18Array.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\obj\Debug\net6.0\Oct18Array.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\obj\Debug\net6.0\Oct18Array.genruntimeconfig.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct18Array\obj\Debug\net6.0\ref\Oct18Array.dll

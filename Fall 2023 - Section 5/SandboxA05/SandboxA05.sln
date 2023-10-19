@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct4DoWhile", "Oct4DoWhile\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct11TryCatch", "Oct11TryCatch\Oct11TryCatch.csproj", "{91309197-071A-4876-942C-6EC91CD76190}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct13MoreValidationPractice", "Oct13MoreValidationPractice\Oct13MoreValidationPractice.csproj", "{604CCCD5-0678-4331-918C-EBD2E43605A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct13MoreValidationPractice", "Oct13MoreValidationPractice\Oct13MoreValidationPractice.csproj", "{604CCCD5-0678-4331-918C-EBD2E43605A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct18Array", "Oct18Array\Oct18Array.csproj", "{273874CA-46BA-43CE-81D6-ADE1A5BE474C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{604CCCD5-0678-4331-918C-EBD2E43605A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{604CCCD5-0678-4331-918C-EBD2E43605A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{604CCCD5-0678-4331-918C-EBD2E43605A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273874CA-46BA-43CE-81D6-ADE1A5BE474C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273874CA-46BA-43CE-81D6-ADE1A5BE474C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273874CA-46BA-43CE-81D6-ADE1A5BE474C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273874CA-46BA-43CE-81D6-ADE1A5BE474C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

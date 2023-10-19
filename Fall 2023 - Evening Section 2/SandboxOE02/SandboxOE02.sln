@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct4WhileLoop", "Oct4WhileL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct4DoWhile", "Oct4DoWhile\Oct4DoWhile.csproj", "{32AFD66F-F330-4C25-9952-488A142DA7C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct11TryCatch", "Oct11TryCatch\Oct11TryCatch.csproj", "{3886756C-7480-4A23-A5EE-D9C6148F73F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct11TryCatch", "Oct11TryCatch\Oct11TryCatch.csproj", "{3886756C-7480-4A23-A5EE-D9C6148F73F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct18Array", "Oct18Array\Oct18Array.csproj", "{3FA29FA3-2C93-4DE7-9304-E40F4FFBD583}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{3886756C-7480-4A23-A5EE-D9C6148F73F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3886756C-7480-4A23-A5EE-D9C6148F73F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3886756C-7480-4A23-A5EE-D9C6148F73F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FA29FA3-2C93-4DE7-9304-E40F4FFBD583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA29FA3-2C93-4DE7-9304-E40F4FFBD583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA29FA3-2C93-4DE7-9304-E40F4FFBD583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA29FA3-2C93-4DE7-9304-E40F4FFBD583}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
