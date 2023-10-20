@@ -1,0 +1,14 @@
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\bin\Debug\net6.0\Oct4WhileLoop.exe
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\bin\Debug\net6.0\Oct4WhileLoop.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\bin\Debug\net6.0\Oct4WhileLoop.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\bin\Debug\net6.0\Oct4WhileLoop.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\bin\Debug\net6.0\Oct4WhileLoop.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4WhileLoop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4WhileLoop.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4WhileLoop.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4WhileLoop.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4WhileLoop.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\refint\Oct4WhileLoop.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4WhileLoop.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\Oct4WhileLoop.genruntimeconfig.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct4Loops\obj\Debug\net6.0\ref\Oct4WhileLoop.dll

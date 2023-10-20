@@ -1,9 +1,76 @@
-﻿namespace ThursdayParties
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace ThursdayParties
 {
     internal class Program
     {
 
         static void Main(string[] args)
+        {
+            // create an array
+            double[] priceList = new double[5];
+
+            // put values in it
+            for (int index = 0; index < priceList.Length; index++)
+            {
+                bool isValid = false;
+                double price = 0;
+
+                do
+                {
+                    Console.Write("Enter the price of the item: ");
+                    string userInput = Console.ReadLine();
+                    try
+                    {
+                        price = double.Parse(userInput);
+                        isValid = true;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("That is not a valid price.");
+                    }
+                } while (isValid == false);
+
+                priceList[index] = price;
+            }
+
+            // totalling the order
+            double sum = 0;
+
+            for (int index = 0; index < priceList.Length; index++)
+            {
+                sum += priceList[index];
+            }
+
+            Console.WriteLine($"Total order cost is {sum:c}");
+
+            Console.WriteLine("Goodbye.");
+        }
+
+        static void Array(string[] args)
+        {
+            bool isValid = false;
+
+            do
+            {
+                int myInt;
+                Console.Write("Please enter a number: ");
+
+                try
+                {
+                    myInt = int.Parse(Console.ReadLine());
+                    isValid = true;
+                }
+                catch // if anything in the try fails, this will run
+                {
+                    Console.WriteLine("Hey, that isn't a number. Try again.");
+                }
+            } while (!isValid);
+
+            Console.WriteLine("Yay, you know what a number is.");
+        }
+
+        static void Main3(string[] args)
         {
             // declare variables:
             double userSavings;
