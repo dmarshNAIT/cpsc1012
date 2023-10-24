@@ -12,6 +12,7 @@
 
             do
             {
+                char userChoice;
                 const double KG_TO_LB = 2.205;
                 const int MIN_NUMBER = 1,
                     MAX_NUMBER = 10;
@@ -21,7 +22,7 @@
                 Console.WriteLine("What would you like to do?\n" +
                     "[C]onvert from kg to lb\n" +
                     "Do a Math [Q]uiz");
-                char userChoice = char.Parse(Console.ReadLine());
+                userChoice = char.Parse(Console.ReadLine());
 
                 // branch according to their response
                 switch (char.ToUpper(userChoice)) // giving the uppercase version of userChoice
@@ -32,7 +33,7 @@
                         double kg = double.Parse(Console.ReadLine());
 
                         // return the converted result
-                        Console.WriteLine($"That is { kg * KG_TO_LB } lb.");
+                        Console.WriteLine($"That is {kg * KG_TO_LB} lb.");
 
                         break;
                     case 'Q':
