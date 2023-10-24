@@ -1,0 +1,14 @@
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\bin\Debug\net6.0\Oct23Method.exe
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\bin\Debug\net6.0\Oct23Method.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\bin\Debug\net6.0\Oct23Method.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\bin\Debug\net6.0\Oct23Method.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\bin\Debug\net6.0\Oct23Method.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\obj\Debug\net6.0\Oct23Method.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\obj\Debug\net6.0\Oct23Method.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\obj\Debug\net6.0\Oct23Method.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\obj\Debug\net6.0\Oct23Method.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\obj\Debug\net6.0\Oct23Method.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\obj\Debug\net6.0\refint\Oct23Method.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\obj\Debug\net6.0\Oct23Method.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\obj\Debug\net6.0\Oct23Method.genruntimeconfig.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct23Method\obj\Debug\net6.0\ref\Oct23Method.dll
