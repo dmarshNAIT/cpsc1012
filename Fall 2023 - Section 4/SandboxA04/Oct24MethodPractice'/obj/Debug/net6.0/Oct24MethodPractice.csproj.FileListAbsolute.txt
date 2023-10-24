@@ -1,0 +1,14 @@
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\bin\Debug\net6.0\Oct24MethodPractice.exe
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\bin\Debug\net6.0\Oct24MethodPractice.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\bin\Debug\net6.0\Oct24MethodPractice.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\bin\Debug\net6.0\Oct24MethodPractice.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\bin\Debug\net6.0\Oct24MethodPractice.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\obj\Debug\net6.0\Oct24MethodPractice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\obj\Debug\net6.0\Oct24MethodPractice.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\obj\Debug\net6.0\Oct24MethodPractice.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\obj\Debug\net6.0\Oct24MethodPractice.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\obj\Debug\net6.0\Oct24MethodPractice.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\obj\Debug\net6.0\refint\Oct24MethodPractice.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\obj\Debug\net6.0\Oct24MethodPractice.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\obj\Debug\net6.0\Oct24MethodPractice.genruntimeconfig.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 4\SandboxA04\Oct24MethodPractice'\obj\Debug\net6.0\ref\Oct24MethodPractice.dll

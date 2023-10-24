@@ -38,10 +38,3 @@
     }
 }
 
-/* Wish list
- * 
- * switch statement
- * something similar to assignment 3
- * while
- * exceptions
- */ 

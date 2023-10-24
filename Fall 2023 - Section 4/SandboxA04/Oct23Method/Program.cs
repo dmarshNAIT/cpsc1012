@@ -4,16 +4,20 @@
     {
         static void Main(string[] args)
         {
+            int daysTillHalloween;
+            double value;
+
             Console.WriteLine("Hello.");
 
             DoNothing();
 
-            int daysTillHalloween = GetHalloweenCountdown();
+            daysTillHalloween = GetHalloweenCountdown();
             Console.WriteLine($"There are {daysTillHalloween} days till Hallowe'en.");
+            // this is the same as:
+            Console.WriteLine($"There are {GetHalloweenCountdown()} days till Hallowe'en.");
 
-            Console.WriteLine($"There are {GetHalloweenCountdown} days till Hallowe'en.");
-
-            Console.WriteLine();
+            value = 8;
+            Console.WriteLine($"The cube of {value} is {GetThatCube(value)}.");
 
             Console.WriteLine("Goodbye.");
         }
@@ -25,15 +29,13 @@
 
         static int GetHalloweenCountdown()
         {
-            return 8; // TO DO: Dana to un-hardcode this
+            return 7; // TO DO: Dana to un-hardcode this
+        }
+
+        static double GetThatCube(double num)
+        {
+            return num * num * num;
         }
 
     }
 }
-
-/* what we'd like to practice:
- * loops
- * exceptions
- * Math class
- * arrays!!!
- */
