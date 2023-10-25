@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Oct25MethodPractice/1.0.0": {
+        "runtime": {
+          "Oct25MethodPractice.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Oct25MethodPractice/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -49,7 +49,7 @@
                     randomNum = numGenerator.Next(-40, 6);
                     break;
                 default:
-                    randomNum = 0;
+                    randomNum = 0; // lazy way out: if they pass in any other string, we still need to return a value
                     break;
             }
 
@@ -60,8 +60,3 @@
     }
 }
 
-/* practice:
- * xor
- * formatting output
- * Math
- */

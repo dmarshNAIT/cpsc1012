@@ -1,0 +1,14 @@
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\bin\Debug\net6.0\Oct25MethodPractice.exe
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\bin\Debug\net6.0\Oct25MethodPractice.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\bin\Debug\net6.0\Oct25MethodPractice.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\bin\Debug\net6.0\Oct25MethodPractice.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\bin\Debug\net6.0\Oct25MethodPractice.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\obj\Debug\net6.0\Oct25MethodPractice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\obj\Debug\net6.0\Oct25MethodPractice.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\obj\Debug\net6.0\Oct25MethodPractice.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\obj\Debug\net6.0\Oct25MethodPractice.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\obj\Debug\net6.0\Oct25MethodPractice.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\obj\Debug\net6.0\refint\Oct25MethodPractice.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\obj\Debug\net6.0\Oct25MethodPractice.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\obj\Debug\net6.0\Oct25MethodPractice.genruntimeconfig.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Oct25MethodPractice\obj\Debug\net6.0\ref\Oct25MethodPractice.dll
