@@ -21,9 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct11TryCatch", "Oct11TryCa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct18Array", "Oct18Array\Oct18Array.csproj", "{3FA29FA3-2C93-4DE7-9304-E40F4FFBD583}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct23Methods", "Oct23Methods\Oct23Methods.csproj", "{141BDCE5-EC53-460D-836D-F1BD62EC18B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct23Methods", "Oct23Methods\Oct23Methods.csproj", "{141BDCE5-EC53-460D-836D-F1BD62EC18B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct23MethodPractice", "Oct23MethodPractice\Oct23MethodPractice.csproj", "{CDE892A4-3F68-46F8-95AF-B2BF2AAC85C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct23MethodPractice", "Oct23MethodPractice\Oct23MethodPractice.csproj", "{CDE892A4-3F68-46F8-95AF-B2BF2AAC85C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct25MoreArrayPractice", "Oct25ArrayMethods\Oct25MoreArrayPractice.csproj", "{005450B3-FE26-4478-AD41-0FB2A3F51FF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{CDE892A4-3F68-46F8-95AF-B2BF2AAC85C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDE892A4-3F68-46F8-95AF-B2BF2AAC85C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDE892A4-3F68-46F8-95AF-B2BF2AAC85C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{005450B3-FE26-4478-AD41-0FB2A3F51FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{005450B3-FE26-4478-AD41-0FB2A3F51FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{005450B3-FE26-4478-AD41-0FB2A3F51FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{005450B3-FE26-4478-AD41-0FB2A3F51FF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

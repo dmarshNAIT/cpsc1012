@@ -15,7 +15,8 @@
             // user will provide values
             LoadArray(temperatures);
 
-            // display values?
+            // display values
+            DisplayArray(temperatures);
 
         }
 
@@ -68,6 +69,14 @@
             for (int index = 0; index < array.Length; index++)
             {
                 array[index] = GetValidDouble("Please enter temp: ");
+            }
+        }
+
+        static void DisplayArray(double[] array)
+        {
+            for (int index = 0; index < array.Length; index++)
+            {
+                Console.WriteLine($"Temp #{index + 1, 2} is {array[index], 5} degrees");
             }
         }
 

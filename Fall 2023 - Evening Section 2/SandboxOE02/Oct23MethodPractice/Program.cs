@@ -41,7 +41,6 @@
                         Console.ResetColor();
                         break;
                 }
-                Environment.Exit(0);
 
                 // ask them if they'd like to play again
                 Console.WriteLine("Would you like to play again? Enter Y for Yes and anything else to Exit.");
