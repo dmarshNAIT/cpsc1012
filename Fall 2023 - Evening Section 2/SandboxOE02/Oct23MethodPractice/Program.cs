@@ -24,15 +24,15 @@
                 {
                     case 'G':
                         // generate random #
-                        // homework: write the method header for this method
+                        int myNum = CreateRandomNumber();
                         break;
                     case 'H':
                         // play hangman
-                        // homework: write the method header for this method
+                        PlayHangman();
                         break;
                     case 'R':
                         // play rock paper scissors
-                        // homework: write the method header for this method
+                        PlayRockPaperScissors();
                         break;
                     case 'T':
                         // play tic tac toe
@@ -46,10 +46,11 @@
                 // ask them if they'd like to play again
                 Console.WriteLine("Would you like to play again? Enter Y for Yes and anything else to Exit.");
                 userAnswer = Console.ReadLine();
-            } while ( userAnswer.ToUpper().Equals("Y") );
+            } while (userAnswer.ToUpper().Equals("Y"));
 
             Console.WriteLine("Thanks for playing, goodbye.");
         }
+
 
         static void DisplayMenu()
         {
@@ -72,6 +73,22 @@
             // homework: attempt a first draft of this method
         }
 
+        static int CreateRandomNumber()
+        {
+            return 0; // placeholder to make VS happy
+        }
+
+        static void PlayHangman()
+        {
+
+        }
+
+        static void PlayRockPaperScissors()
+        {
+
+        }
+
+
     }
 }
 
@@ -81,4 +98,5 @@
  * something similar to assignment 3
  * while
  * exceptions
+ * array containing decimal/double values
  */ 
