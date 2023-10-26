@@ -3,7 +3,7 @@
     internal class Program
     {
         static void Main(string[] args)
-        {
+      {
             // declare variables
             string userAnswer; // probably re-name?
                                // created outside the do-while so we can access it outside the do-while
@@ -17,7 +17,7 @@
                 DisplayMenu();
 
                 // get the user's choice
-                userChoice = GetValidChar("What do you choose?");
+                userChoice = GetValidChar("What do you choose? ");
 
                 // execute accordingly
                 switch (userChoice)
@@ -27,21 +27,21 @@
                         int myNum = CreateRandomNumber();
                         break;
                     case 'H':
-                        // play hangman
                         PlayHangman();
                         break;
                     case 'R':
-                        // play rock paper scissors
                         PlayRockPaperScissors();
                         break;
                     case 'T':
-                        // play tic tac toe
-                        // homework: write the method header for this method
+                        PlayTicTacToe();
                         break;
                     default:
-                        // some sort of error message
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Sorry, that's not a valid option.");
+                        Console.ResetColor();
                         break;
                 }
+                Environment.Exit(0);
 
                 // ask them if they'd like to play again
                 Console.WriteLine("Would you like to play again? Enter Y for Yes and anything else to Exit.");
@@ -64,13 +64,28 @@
 
         static char GetValidChar(string prompt)
         {
-            // ask the user "prompt"
-            // try to parse their answer 
-            // if successful, return that value
-            return 'x'; // placeholder to make Visual Studio happy
-            // otherwise, loop back to the start and try again
+            char userChar = '\0'; // null character
+            bool isValid = false;
 
-            // homework: attempt a first draft of this method
+            do
+            {
+                // prompt the user
+                Console.Write(prompt);
+
+                // try to parse their answer 
+                try
+                {
+                    userChar = char.Parse(Console.ReadLine());
+                    isValid = true;
+                }
+                catch
+                {
+                    Console.WriteLine("Sorry, that's not valid.");
+                }
+                // instead of a try catch, another approach to avoid the problem would be to check the length of the string returned by ReadLine(), and only parse it if the length == 1
+            } while (!isValid);
+
+            return userChar;  // if successful, return that value
         }
 
         static int CreateRandomNumber()
@@ -84,6 +99,11 @@
         }
 
         static void PlayRockPaperScissors()
+        {
+
+        }
+
+        static void PlayTicTacToe()
         {
 
         }
