@@ -9,26 +9,29 @@
             DisplayMenu();
 
             // ask the user to choose a menu option (as a char)
-            userChoice = GetValidChar("Please make your choice: ");
+            userChoice = GetValidCharV2("Please enter your choice from the menu: ");
 
-           // branch based on their selection
-           // ask if they'd like to play again
+            // branch based on their selection
+
+            // ask if they'd like to play again
         }
-        static void DisplayMenu()   {
+        static void DisplayMenu()
+        {
             // [G]enerate bingo card
             // [D]isplay bingo card
             // [P]lay a round of bingo
             // [C]hoose dabber colour
             // [S]how stats
         }
-        static char GetValidChar(string prompt){
+        static char GetValidChar(string prompt)
+        {
             bool isValid = false;
             char userChar = '\0';
 
             do
             {
                 // prompt the user
-                Console.WriteLine(prompt);
+                Console.Write(prompt);
 
                 try
                 {  // read in their response & try to parse it
@@ -39,7 +42,21 @@
                 {
                     Console.WriteLine("Sorry, that's invalid.");
                 }
-            } while ( !isValid );  // loop back if not successful
+            } while (!isValid);  // loop back if not successful
+
+            return userChar;
+        }
+
+        static char GetValidCharV2(string prompt)
+        {
+            char userChar = '\0';
+            Console.Write(prompt);
+
+            while (!char.TryParse(Console.ReadLine(), out userChar))
+            {
+                Console.Write("Sorry, that was not valid.\n" + prompt);
+            }
+
             return userChar;
         }
     }
