@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             char userChoice;
+            string[] tvShows = new string[5];
 
             // display menu
             DisplayMenu();
@@ -17,7 +18,13 @@
             Console.WriteLine("You picked " + userChoice);
 
             // branch based on their selection
+            if(char.ToUpper(userChoice) == 'E')
+            {
+                EnterFavouriteShows(tvShows);
+            }
+
             // ask if they want to play again
+            Console.WriteLine("Thanks for playing.");
         }
 
         static void DisplayMenu()
@@ -62,6 +69,37 @@
             }
 
             return userChoice;
+        }
+
+        static void EnterFavouriteShows(string[] array) {
+            bool userContinue = true;
+
+            for (int index = 0; index < array.Length && userContinue; index++)
+            {
+                // ask the user to enter a show
+                Console.Write("Please enter a show: ");
+                array[index] = Console.ReadLine();   // each show will be saved into an array
+
+                // after each show, ask them if they want to continue?
+                if (index < array.Length - 1)
+                {
+                    Console.Write("Do you have another show to enter? Y for Yes, anything else for No: ");
+
+                    // v1:
+                    //if (Console.ReadLine().ToUpper().Equals("Y"))
+                    //    userContinue = true;
+                    //else
+                    //    userContinue = false;
+
+                    // v2:
+                    //if (!Console.ReadLine().ToUpper().Equals("Y"))
+                    //    userContinue = false;
+
+                    // v3:
+                    userContinue = (Console.ReadLine().ToUpper().Equals("Y"));
+                }
+            }
+
         }
     }
 }

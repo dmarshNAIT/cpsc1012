@@ -17,7 +17,6 @@
 
             // display values
             DisplayArray(temperatures);
-
         }
 
         static int GetValidInt(string prompt)
