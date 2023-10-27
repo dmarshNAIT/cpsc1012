@@ -6,26 +6,39 @@
         {
             char userChoice;
             string[] tvShows = new string[5];
+            bool userContinue = true;
 
-            // display menu
-            DisplayMenu();
-
-            // ask the user to choose an option
-            //userChoice = GetValidChar();
-            //Console.WriteLine("You picked " + userChoice);
-
-            userChoice = GetValidChar("Please make your choice: ");
-            Console.WriteLine("You picked " + userChoice);
-
-            // branch based on their selection
-            if(char.ToUpper(userChoice) == 'E')
+            do
             {
-                EnterFavouriteShows(tvShows);
-            }
 
-            // ask if they want to play again
+                // display menu
+                DisplayMenu();
+
+                // ask the user to choose an option
+                //userChoice = GetValidChar();
+                //Console.WriteLine("You picked " + userChoice);
+
+                userChoice = GetValidChar("Please make your choice: ");
+                Console.WriteLine("You picked " + userChoice);
+
+                // branch based on their selection
+                if (char.ToUpper(userChoice) == 'E')
+                {
+                    EnterFavouriteShows(tvShows);
+                }
+                else if (char.ToUpper(userChoice) == 'S')
+                {
+                    DisplayFavouriteShows(tvShows, 2); // TO DO: instead of hardcoding the 2, our other method could return this when we entered the shows in the first place
+                }
+
+                // ask if they want to play again
+                Console.Write("play again? y for yes, anything else for no");
+                userContinue = Console.ReadLine().ToUpper().Equals("Y");
+
+            } while (userContinue);
             Console.WriteLine("Thanks for playing.");
         }
+
 
         static void DisplayMenu()
         {
@@ -33,6 +46,7 @@
                 "\tCalculate the length of a [H]ypotenuse\n" +
                 "\tReturn today's [D]ate\n" +
                 "\t[E]nter your favourite shows\n" +
+                "\t[S]how your watchlist\n" +
                 "\tChoose what to [W]atch tonight\n" +
                 "Please make your choice: ");
         }
@@ -71,7 +85,8 @@
             return userChoice;
         }
 
-        static void EnterFavouriteShows(string[] array) {
+        static void EnterFavouriteShows(string[] array)
+        {
             bool userContinue = true;
 
             for (int index = 0; index < array.Length && userContinue; index++)
@@ -101,6 +116,18 @@
             }
 
         }
+
+        static void DisplayFavouriteShows(string[] tvShows, int numberOfShows)
+        {
+            for(int index = 0; index < numberOfShows; index++)
+            {
+               
+                    Console.WriteLine(tvShows[index]);
+
+                // the method IsNullOrEmpty() could help us
+            }
+        }
+
     }
 }
 
