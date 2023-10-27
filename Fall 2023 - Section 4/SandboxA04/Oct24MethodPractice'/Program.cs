@@ -6,7 +6,7 @@
         {
             char userChoice;
             string[] tvShows = new string[5];
-            bool userContinue = true;
+            int numberShows = 0;
 
             do
             {
@@ -22,20 +22,23 @@
                 Console.WriteLine("You picked " + userChoice);
 
                 // branch based on their selection
-                if (char.ToUpper(userChoice) == 'E')
+                switch (char.ToUpper(userChoice))
                 {
-                    EnterFavouriteShows(tvShows);
-                }
-                else if (char.ToUpper(userChoice) == 'S')
-                {
-                    DisplayFavouriteShows(tvShows, 2); // TO DO: instead of hardcoding the 2, our other method could return this when we entered the shows in the first place
+                    case 'E':
+                        numberShows = EnterFavouriteShows(tvShows);
+                        break;
+                    case 'S':
+                        DisplayFavouriteShows(tvShows, numberShows); 
+                        break;
+                    default:
+                        Console.WriteLine("Invalid!");
+                        break;
                 }
 
                 // ask if they want to play again
-                Console.Write("play again? y for yes, anything else for no");
-                userContinue = Console.ReadLine().ToUpper().Equals("Y");
+                Console.Write("play again? y for yes, anything else for no: ");
 
-            } while (userContinue);
+            } while (Console.ReadLine().ToUpper().Equals("Y"));
             Console.WriteLine("Thanks for playing.");
         }
 
@@ -85,11 +88,11 @@
             return userChoice;
         }
 
-        static void EnterFavouriteShows(string[] array)
+        static int EnterFavouriteShows(string[] array)
         {
-            bool userContinue = true;
+            int index = 0;
 
-            for (int index = 0; index < array.Length && userContinue; index++)
+            for (bool userContinue = true; index < array.Length && userContinue; index++)
             {
                 // ask the user to enter a show
                 Console.Write("Please enter a show: ");
@@ -113,18 +116,16 @@
                     // v3:
                     userContinue = (Console.ReadLine().ToUpper().Equals("Y"));
                 }
+               
             }
-
+            return index;
         }
 
         static void DisplayFavouriteShows(string[] tvShows, int numberOfShows)
         {
-            for(int index = 0; index < numberOfShows; index++)
+            for (int index = 0; index < numberOfShows; index++)
             {
-               
-                    Console.WriteLine(tvShows[index]);
-
-                // the method IsNullOrEmpty() could help us
+                Console.WriteLine(tvShows[index]);
             }
         }
 
