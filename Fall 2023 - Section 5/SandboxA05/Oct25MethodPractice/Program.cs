@@ -8,8 +8,8 @@
             int[] bColumn = new int[5]; // we need to "remember" the card in later iterations
             int[] iColumn = new int[5]; // we need to "remember" the card in later iterations
 
-            do {
-
+            do
+            {
                 DisplayMenu();
 
                 // ask the user to choose a menu option (as a char)
@@ -17,7 +17,7 @@
                 // force it to be uppercase so that our later logic can be simplified
 
                 // branch based on their selection
-                switch(userChoice)
+                switch (userChoice)
                 {
                     case 'G':
                         // [G]enerate bingo card
@@ -42,7 +42,7 @@
                         Console.WriteLine("Sorry, that's not valid. Please try again.");
                         break;
                 }
-            } while ( userChoice != 'Q');
+            } while (userChoice != 'Q');
 
             Console.WriteLine("Thanks for playing, goodbye.");
         }
@@ -100,7 +100,7 @@
             // loop through each element in my array
             // for each element, generate a random # between 1 and 15
 
-            for(int index = 0; index < array.Length; index++)
+            for (int index = 0; index < array.Length; index++)
             {
                 array[index] = numGenerator.Next(1, 16);
             }

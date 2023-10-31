@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Oct31FileIO/1.0.0": {
+        "runtime": {
+          "Oct31FileIO.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Oct31FileIO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

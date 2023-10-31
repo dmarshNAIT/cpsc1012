@@ -3,7 +3,7 @@
     internal class Program
     {
         static void Main(string[] args)
-        {
+        { // testing new comment
             char userChoice;
             string[] tvShows = new string[5];
             int numberShows = 0;
