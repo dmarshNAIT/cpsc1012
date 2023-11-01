@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct18Array", "Oct18Array\Oc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct23Methods", "Oct23Methods\Oct23Methods.csproj", "{CE06BCA8-3EB4-47A0-87A1-40116019575B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct25MethodPractice", "Oct25MethodPractice\Oct25MethodPractice.csproj", "{525089B5-99F8-43B7-841D-B62A0B8EDBCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct25MethodPractice", "Oct25MethodPractice\Oct25MethodPractice.csproj", "{525089B5-99F8-43B7-841D-B62A0B8EDBCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nov1FileIO", "Nov1FileIO\Nov1FileIO.csproj", "{9C7D77ED-EFB5-4B67-B36D-BAAEF238ED07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{525089B5-99F8-43B7-841D-B62A0B8EDBCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{525089B5-99F8-43B7-841D-B62A0B8EDBCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{525089B5-99F8-43B7-841D-B62A0B8EDBCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C7D77ED-EFB5-4B67-B36D-BAAEF238ED07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C7D77ED-EFB5-4B67-B36D-BAAEF238ED07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C7D77ED-EFB5-4B67-B36D-BAAEF238ED07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C7D77ED-EFB5-4B67-B36D-BAAEF238ED07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
