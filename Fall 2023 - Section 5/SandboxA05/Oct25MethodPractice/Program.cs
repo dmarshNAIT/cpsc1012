@@ -10,6 +10,10 @@
 
             do
             {
+                bool isFound;
+                Random numGenerator = new Random();
+                int numberToCheck;
+
                 DisplayMenu();
 
                 // ask the user to choose a menu option (as a char)
@@ -29,6 +33,12 @@
                         break;
                     case 'P':
                         // [P]lay a round of bingo
+                        numberToCheck = numGenerator.Next(1, 16);
+                        isFound = CheckForMatch(bColumn, numberToCheck);
+                        if (isFound)
+                            Console.WriteLine("Yay, we have a match!");
+                        else
+                            Console.WriteLine("Sorry, no match.");
                         break;
                     case 'C':
                         // [C]hoose dabber colour
@@ -115,6 +125,21 @@
                 Console.WriteLine(array[index]);
             }
             // TO DO: clean up the code redundancy
+        }
+
+        static bool CheckForMatch(int[] array, int valueToFind)
+        {
+            bool isFound = false;
+
+            Console.WriteLine("Searching for " + valueToFind + "...");
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == valueToFind)
+                    isFound = true;
+            }
+
+            return isFound;
         }
     }
 }
