@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Nov8Asn3Practice/1.0.0": {
+        "runtime": {
+          "Nov8Asn3Practice.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Nov8Asn3Practice/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
