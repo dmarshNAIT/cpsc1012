@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Nov9MethodPractice",
     "\\Oct11TryCatch",
     "\\Oct13MoreValidationPractice",
     "\\Oct18Array",
@@ -10,6 +11,6 @@
     "\\Sep27IfStatements",
     "\\ThursdayParties"
   ],
-  "SelectedNode": "\\Oct23Methods\\Program.cs",
+  "SelectedNode": "\\Nov9MethodPractice\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
