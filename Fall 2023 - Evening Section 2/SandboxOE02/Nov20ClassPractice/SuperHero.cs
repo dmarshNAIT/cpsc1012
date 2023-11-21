@@ -42,8 +42,10 @@ namespace Nov20ClassPractice
         }
 
         /* getter methods */
+        // HOMEWORK: write at least 2 getter methods //
 
         /* setter methods */
+        // HOMEWORK: write at least 2 setter methods. make sure at least 1 includes validation //
 
         /* other methods */
     }
