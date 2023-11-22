@@ -31,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oct25MethodPractice", "Oct2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nov1FileIO", "Nov1FileIO\Nov1FileIO.csproj", "{9C7D77ED-EFB5-4B67-B36D-BAAEF238ED07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nov9MethodPractice", "Nov9MethodPractice\Nov9MethodPractice.csproj", "{C7A97141-54E4-4C92-A3B8-48A0F9D6C3D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nov9MethodPractice", "Nov9MethodPractice\Nov9MethodPractice.csproj", "{C7A97141-54E4-4C92-A3B8-48A0F9D6C3D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nov22ClassExample", "Nov22ClassExample\Nov22ClassExample.csproj", "{E92C4AE1-35A8-4D16-8432-6FA084DB2257}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{C7A97141-54E4-4C92-A3B8-48A0F9D6C3D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7A97141-54E4-4C92-A3B8-48A0F9D6C3D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7A97141-54E4-4C92-A3B8-48A0F9D6C3D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E92C4AE1-35A8-4D16-8432-6FA084DB2257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E92C4AE1-35A8-4D16-8432-6FA084DB2257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E92C4AE1-35A8-4D16-8432-6FA084DB2257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E92C4AE1-35A8-4D16-8432-6FA084DB2257}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
