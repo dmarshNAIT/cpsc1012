@@ -31,6 +31,8 @@
             cpsc1012.DisplayInfo();
 
             dutchie.Edit();
+            dutchie.Edit();
+            dutchie.DisplayInfo();
 
             Console.WriteLine("goodbye!");
         }

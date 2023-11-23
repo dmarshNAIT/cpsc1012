@@ -127,10 +127,11 @@ namespace Nov20ClassPractice
         {
             DisplayInfo();
 
-            char userChoice = ReturnUserChar("What would you like to edit?\n" +
+            char userChoice = char.ToUpper(ReturnUserChar("What would you like to edit?\n" +
                 "\tN: Name\n" +
                 "\tP: Power\n" +
-                "\tH: Anti-Hero status");
+                "\tH: Anti-Hero status\n" +
+                "Your choice: "));
 
             switch (userChoice)
             {
