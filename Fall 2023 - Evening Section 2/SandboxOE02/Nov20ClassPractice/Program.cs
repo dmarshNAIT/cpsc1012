@@ -19,13 +19,18 @@
             cpsc1012.SetIsRetired(true);
             cpsc1012.SetUsesWeapon(true);
             cpsc1012.SetCanFly(true);
-            cpsc1012.SetYearsAsAvenger(5);
+            cpsc1012.SetYearsAsAvenger(15);
 
             Console.WriteLine($"The name of the superhero is {cpsc1012.GetName()}. " +
                 $"Their super power is {cpsc1012.GetSuperPower()}. " +
                 $"They have been an avenger for {cpsc1012.GetYearsAsAvenger()} years.");
 
-            cpsc1012.SetYearsAsAvenger(-5);
+            //cpsc1012.SetYearsAsAvenger(-5); // this will throw an exception
+
+            cpsc1012.TurnIntoAntiHero();
+            cpsc1012.DisplayInfo();
+
+            dutchie.Edit();
 
             Console.WriteLine("goodbye!");
         }
