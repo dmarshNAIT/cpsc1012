@@ -14,7 +14,10 @@
 
         // parameterized constructor
         public Deity(string name, bool isOmniscient, bool isOmnipotent, int numberOfFollowers) { 
-        
+            _name = name;
+            _isOmniscient = isOmniscient;
+            _isOmnipotent = isOmnipotent;
+            _numberOfFollowers = numberOfFollowers;
         }
 
         // optional homework: create getter & setter method for all fields

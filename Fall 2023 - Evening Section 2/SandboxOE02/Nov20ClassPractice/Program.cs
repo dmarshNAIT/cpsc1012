@@ -9,6 +9,23 @@
             SuperHero dutchie = new SuperHero("The Iron Dutchie", "wealth", "was catnapped", 2, 15, false, false, true, false);
 
             // call the 4 new methods we just created to access & mutate one of our objects
+            Console.WriteLine($"The name of the superhero is {cpsc1012.GetName()}. " +
+                $"Their super power is {cpsc1012.GetSuperPower()}. " +
+                $"They have been an avenger for {cpsc1012.GetYearsAsAvenger()} years.");
+            Console.WriteLine($"The name of the superhero is {dutchie.GetName()}. " +
+                $"Their super power is {dutchie.GetSuperPower()}. " +
+                $"They have been an avenger for {dutchie.GetYearsAsAvenger()} years.");
+
+            cpsc1012.SetIsRetired(true);
+            cpsc1012.SetUsesWeapon(true);
+            cpsc1012.SetCanFly(true);
+            cpsc1012.SetYearsAsAvenger(5);
+
+            Console.WriteLine($"The name of the superhero is {cpsc1012.GetName()}. " +
+                $"Their super power is {cpsc1012.GetSuperPower()}. " +
+                $"They have been an avenger for {cpsc1012.GetYearsAsAvenger()} years.");
+
+            cpsc1012.SetYearsAsAvenger(-5);
 
             Console.WriteLine("goodbye!");
         }

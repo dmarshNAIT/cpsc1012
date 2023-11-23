@@ -42,11 +42,48 @@ namespace Nov20ClassPractice
         }
 
         /* getter methods */
-        // HOMEWORK: write at least 2 getter methods //
+        public string GetName()
+        {
+            return _name;
+        }
+        public string GetSuperPower()
+        {
+            return _superPower;
+        }
+        public int GetYearsAsAvenger()
+        {
+            return _yearsAsAvenger;
+        }
+        // TO DO: create getter methods for all the other fields
 
         /* setter methods */
-        // HOMEWORK: write at least 2 setter methods. make sure at least 1 includes validation //
+        public void SetIsRetired(bool isRetired)
+        {
+            _isRetired = isRetired;
+        }
+        public void SetUsesWeapon(bool usesWeapon)
+        {
+            _usesWeapon = usesWeapon;
+        }
+        public void SetCanFly(bool canFly)
+        {
+            _canFly = canFly;
+        }
+        public void SetYearsAsAvenger(int yearsAsAvenger)
+        {
+            if (yearsAsAvenger >= 0)
+            {
+                _yearsAsAvenger = yearsAsAvenger;
+
+            }
+            else
+            {
+                throw new Exception("Age cannot be negative.");
+            }
+        }
+        // TO DO: create setter 
 
         /* other methods */
+        // TO DO: create a method that displays all the super hero info
     }
 }
