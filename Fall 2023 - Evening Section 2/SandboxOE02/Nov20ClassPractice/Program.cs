@@ -34,6 +34,11 @@
             dutchie.Edit();
             dutchie.DisplayInfo();
 
+            List<SuperHero> list = new List<SuperHero>();
+            list.Add(cpsc1012);
+            list.Add(dutchie);
+            list.Add(new SuperHero());
+
             Console.WriteLine("goodbye!");
         }
 

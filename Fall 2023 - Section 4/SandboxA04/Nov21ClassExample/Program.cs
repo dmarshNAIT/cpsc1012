@@ -26,6 +26,10 @@
             Console.WriteLine($"The amount of sugar after adding 2 is {fancyCoffee.AddSugar(2)}.");
 
             Console.WriteLine("Haha.");
+
+            List<string> toppings = new List<string>();
+            toppings.Add("whipped cream");
+            toppings.Capacity = 10;
         }
     }
 }

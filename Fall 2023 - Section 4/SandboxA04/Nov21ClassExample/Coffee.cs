@@ -66,7 +66,22 @@ namespace Nov21ClassExample
             else
                 _name = name;
         }
-        // HOMEWORK: make at least 1 more
+
+        public void SetTemperature(int temperature)
+        {
+            if(temperature < -5 )
+            {
+                throw new Exception("Too cold");
+            }
+            else if (temperature > 5499) // 5499 is the surface of the sun
+            {
+                throw new Exception("Too hot");
+            }
+            else
+            {
+                _temperature = temperature;
+            }
+        }
 
         // behaviour: Drink(), AddCream()
         public int AddSugar(int sugar)
