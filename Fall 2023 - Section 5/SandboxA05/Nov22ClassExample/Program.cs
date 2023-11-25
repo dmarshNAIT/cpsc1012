@@ -14,8 +14,15 @@
 
             Console.WriteLine($"The god's name is {flyingSpaghettiMonster.GetName()}.");
 
-            flyingSpaghettiMonster.Inspire();
+            Console.WriteLine(flyingSpaghettiMonster.Inspire());
 
+            List<Deity> deities = new List<Deity>();
+            deities.Add(defaultDeity);
+            deities.Add(flyingSpaghettiMonster);
+
+            deities.Capacity = 10;
+            //Deity[] deityArray = new Deity[deities.Count];
+            //deities.CopyTo(deityArray); 
 
             Console.WriteLine("Goodbye!");
         }
