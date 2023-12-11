@@ -30,15 +30,17 @@ namespace Nov20ClassPractice
 
         public SuperHero(string name, string superPower, string tragicBackstory, int yearsAsAvenger, int numKnownIdentity, bool isRetired, bool usesWeapon, bool canFly, bool antiHero)
         {
-            _name = name;
-            _superPower = superPower;
-            _tragicBackstory = tragicBackstory;
-            _yearsAsAvenger = yearsAsAvenger;
-            _numKnownIdentity = numKnownIdentity;
-            _isRetired = isRetired;
-            _usesWeapon = usesWeapon;
-            _canFly = canFly;
-            _antiHero = antiHero;
+            // it's not a great idea to use our fields directly here: 
+            // instead all of these should use mutators with built-in validation.
+            SetName(name);
+            SetPower(superPower);
+            _tragicBackstory = tragicBackstory; // not a great practice, see note above
+            SetYearsAsAvenger( yearsAsAvenger);
+            _numKnownIdentity = numKnownIdentity; // not a great practice, see note above
+            SetIsRetired(isRetired);
+            SetUsesWeapon(usesWeapon);
+            SetCanFly(canFly);
+            SetAntiHero(antiHero);
         }
 
         /* getter methods */
@@ -77,6 +79,12 @@ namespace Nov20ClassPractice
         {
             _canFly = canFly;
         }
+
+        /// <summary>
+        /// Setter for the _yearsAsAvenger field.
+        /// </summary>
+        /// <param name="yearsAsAvenger">the # of years the superhero has been an Avenger</param>
+        /// <exception cref="Exception">Years cannot be negative.</exception>
         public void SetYearsAsAvenger(int yearsAsAvenger)
         {
             if (yearsAsAvenger >= 0)

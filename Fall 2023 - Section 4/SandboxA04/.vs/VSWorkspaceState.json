@@ -1,14 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Nov21ClassExample",
     "\\Oct17ArrayExample",
     "\\Oct23Method",
-    "\\Oct24MethodPractice'",
+    "\\Oct24MethodPractice\u0027",
     "\\Oct2LoanQualifier",
     "\\Oct31FileIO",
     "\\Oct3Loops",
     "\\Sep26DecisionStructures"
   ],
-  "SelectedNode": "\\SandboxA04.sln",
+  "SelectedNode": "\\Nov21ClassExample\\Coffee.cs",
   "PreviewInSolutionExplorer": false
 }

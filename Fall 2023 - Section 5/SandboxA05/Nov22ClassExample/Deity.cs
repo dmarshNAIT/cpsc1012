@@ -15,10 +15,12 @@
         // parameterized constructor
         public Deity(string name, bool isOmniscient, bool isOmnipotent, int numberOfFollowers)
         {
-            _name = name;
-            _isOmniscient = isOmniscient;
-            _isOmnipotent = isOmnipotent;
-            _numberOfFollowers = numberOfFollowers;
+            // it's not a good practice to set our fields directly:
+            // a better implementation would use the mutators for all of these, as they have built-in validation.
+            SetName(name);
+            _isOmniscient = isOmniscient; // not a good practice - see note above
+            _isOmnipotent = isOmnipotent; // not a good practice - see note above
+            SetNumberOfFollowers(numberOfFollowers);
         }
 
         // getters
@@ -29,6 +31,10 @@
         // homework: create getter & setter method for all fields
 
         // setter method
+        /// <summary>
+        /// Sets the _name field.
+        /// </summary>
+        /// <param name="name">the new name of the Deity</param>
         public void SetName(string name)
         {
             _name = name;

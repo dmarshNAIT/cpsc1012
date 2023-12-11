@@ -26,13 +26,14 @@ namespace Nov21ClassExample
         // parameterized constructor
         public Coffee(string name, char size, int temperature, bool isIced, int numSugar, int numCream, string flavour)
         {
-            _name = name;
-            _size = size;
-            _temperature = temperature;
-            _isIced = isIced;
-            _numSugar = numSugar;
-            _numCream = numCream;
-            _flavour = flavour;
+            // our Properties / mutators have built in validation: we should use those instead of the fields directly.
+            Name = name;
+            _size = size; // not a good practice (see note above)
+            SetTemperature(temperature);
+            _isIced = isIced; // not a good practice (see note above)
+            _numSugar = numSugar; // not a good practice (see note above)
+            _numCream = numCream; // not a good practice (see note above)
+            _flavour = flavour; // not a good practice (see note above)
             //_toppings = toppings;
         }
 

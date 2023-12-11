@@ -24,6 +24,7 @@
             //Deity[] deityArray = new Deity[deities.Count];
             //deities.CopyTo(deityArray); 
 
+
             Console.WriteLine("Goodbye!");
         }
     }
