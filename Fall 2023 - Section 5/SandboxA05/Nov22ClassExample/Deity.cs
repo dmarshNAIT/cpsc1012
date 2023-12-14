@@ -63,5 +63,15 @@
             // send back an inspirational message
             return "Lionel Ritchie believes in you.";
         }
+
+        public string DisplayInfo()
+        {
+            const int COLUMN_WIDTH = 13;
+
+            return $"{"Name:",COLUMN_WIDTH} {_name}\n" +
+                $"{"Omniscient?", COLUMN_WIDTH} {(_isOmniscient ? "yes" : "no")}\n" +
+                $"{"Omnipotent?",COLUMN_WIDTH} {(_isOmnipotent ? "yes" : "no")}\n" +
+                $"{"# Followers:", COLUMN_WIDTH} {_numberOfFollowers}";
+        }
     }
 }

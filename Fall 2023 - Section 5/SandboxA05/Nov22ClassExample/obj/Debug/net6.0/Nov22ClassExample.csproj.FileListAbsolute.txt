@@ -12,3 +12,4 @@ C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Nov22C
 C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Nov22ClassExample\obj\Debug\net6.0\Nov22ClassExample.pdb
 C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Nov22ClassExample\obj\Debug\net6.0\Nov22ClassExample.genruntimeconfig.cache
 C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Nov22ClassExample\obj\Debug\net6.0\ref\Nov22ClassExample.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall 2023 - Section 5\SandboxA05\Nov22ClassExample\obj\Debug\net6.0\Nov22ClassExample.sourcelink.json
