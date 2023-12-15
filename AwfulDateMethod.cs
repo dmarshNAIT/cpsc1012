@@ -1,4 +1,7 @@
-	static string PromptValidDateTheHardWay()
+// version 1 of my date validator method from asn 3
+// judge freely, I completely re-did this to make it more user-friendly and, well, less awful.
+
+static string PromptValidDateTheHardWay()
         {
             bool isValidDate = false;
             string date;
