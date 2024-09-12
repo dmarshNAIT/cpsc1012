@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2Sandbox\\Topic2Sandbox\\Topic2Sandbox.csproj": {}
+    "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2Sandbox\\Topic2Sandbox\\Topic2Sandbox.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2Sandbox\\Topic2Sandbox\\Topic2Sandbox.csproj": {
+    "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2Sandbox\\Topic2Sandbox\\Topic2Sandbox.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2Sandbox\\Topic2Sandbox\\Topic2Sandbox.csproj",
+        "projectUniqueName": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2Sandbox\\Topic2Sandbox\\Topic2Sandbox.csproj",
         "projectName": "Topic2Sandbox",
-        "projectPath": "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2Sandbox\\Topic2Sandbox\\Topic2Sandbox.csproj",
-        "packagesPath": "C:\\Users\\DMARSH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2Sandbox\\Topic2Sandbox\\obj\\",
+        "projectPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2Sandbox\\Topic2Sandbox\\Topic2Sandbox.csproj",
+        "packagesPath": "C:\\Users\\danam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2Sandbox\\Topic2Sandbox\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DMARSH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\danam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
