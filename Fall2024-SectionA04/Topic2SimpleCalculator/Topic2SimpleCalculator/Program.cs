@@ -1,6 +1,6 @@
 ﻿/* PROGRAM NAME:    Simple Calculator application
  * AUTHOR:          Dana Marsh & section A04
- * LAST MODIFIED:   Sep 12, 2024
+ * LAST MODIFIED:   Sep 16, 2024
  * 
  * INPUT:           2 user-inputted values
  * OUTPUT:          the results of addition, subtraction, multiplication, & division
@@ -48,14 +48,14 @@ namespace Topic2SimpleCalculator
             Console.WriteLine("The sum is " + sum +
                 "\nThe difference is " + difference +
                 "\nThe product is " + product +
-                "\nThe quotient is " + quotient
+                "\nThe quotient is " + Math.Round(quotient,3)
                 );
 
             // an alternate way to display our results:
             Console.WriteLine($"The sum is ${sum}\n" +
                 $"The difference is {difference}\n" +
                 $"The product is {product}\n" +
-                $"The quotient is {quotient}");
+                $"The quotient is {Math.Round(quotient, 3)}");
 
             /* CHALLENGE: 
              * Instead of "the sum is 7"
@@ -66,6 +66,17 @@ namespace Topic2SimpleCalculator
              *              2 / 5 = 0.4
              */
 
+            // v1: using + to concatenate
+            Console.WriteLine(firstNumber + " + " + secondNumber + " = " + sum);
+
+            // v2: substitution parameters
+            Console.WriteLine("{0} + {1} = {2}", firstNumber, secondNumber, sum);
+
+            // v3: string interpolation
+            Console.WriteLine($"{firstNumber} + {secondNumber} = {sum}");
+
+            // v4: string interpolation with FEWER variables
+            Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
         }
     }
 }
