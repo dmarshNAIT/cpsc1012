@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2SimpleCalculator\\Topic2SimpleCalculator\\Topic2SimpleCalculator.csproj": {}
+    "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2SimpleCalculator\\Topic2SimpleCalculator\\Topic2SimpleCalculator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2SimpleCalculator\\Topic2SimpleCalculator\\Topic2SimpleCalculator.csproj": {
+    "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2SimpleCalculator\\Topic2SimpleCalculator\\Topic2SimpleCalculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2SimpleCalculator\\Topic2SimpleCalculator\\Topic2SimpleCalculator.csproj",
+        "projectUniqueName": "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2SimpleCalculator\\Topic2SimpleCalculator\\Topic2SimpleCalculator.csproj",
         "projectName": "Topic2SimpleCalculator",
-        "projectPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2SimpleCalculator\\Topic2SimpleCalculator\\Topic2SimpleCalculator.csproj",
-        "packagesPath": "C:\\Users\\danam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2SimpleCalculator\\Topic2SimpleCalculator\\obj\\",
+        "projectPath": "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2SimpleCalculator\\Topic2SimpleCalculator\\Topic2SimpleCalculator.csproj",
+        "packagesPath": "C:\\Users\\DMARSH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2SimpleCalculator\\Topic2SimpleCalculator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\danam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DMARSH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

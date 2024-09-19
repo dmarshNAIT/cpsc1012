@@ -1,0 +1,15 @@
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\bin\Debug\net8.0\Topic2SimpleCalculator.exe
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\bin\Debug\net8.0\Topic2SimpleCalculator.deps.json
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\bin\Debug\net8.0\Topic2SimpleCalculator.runtimeconfig.json
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\bin\Debug\net8.0\Topic2SimpleCalculator.dll
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\bin\Debug\net8.0\Topic2SimpleCalculator.pdb
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\obj\Debug\net8.0\Topic2SimpleCalculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\obj\Debug\net8.0\Topic2SimpleCalculator.AssemblyInfoInputs.cache
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\obj\Debug\net8.0\Topic2SimpleCalculator.AssemblyInfo.cs
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\obj\Debug\net8.0\Topic2SimpleCalculator.csproj.CoreCompileInputs.cache
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\obj\Debug\net8.0\Topic2SimpleCalculator.sourcelink.json
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\obj\Debug\net8.0\Topic2SimpleCalculator.dll
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\obj\Debug\net8.0\refint\Topic2SimpleCalculator.dll
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\obj\Debug\net8.0\Topic2SimpleCalculator.pdb
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\obj\Debug\net8.0\Topic2SimpleCalculator.genruntimeconfig.cache
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2SimpleCalculator\Topic2SimpleCalculator\obj\Debug\net8.0\ref\Topic2SimpleCalculator.dll

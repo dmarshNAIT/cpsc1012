@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA05\\Topic2SimpleCalculator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D035B682-721C-4F2D-9FB1-7AD3AD0AE8D4}|Topic2SimpleCalculator\\Topic2SimpleCalculator.csproj|c:\\users\\dmarsh\\documents\\github\\cpsc1012\\fall2024-sectiona05\\topic2simplecalculator\\topic2simplecalculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D035B682-721C-4F2D-9FB1-7AD3AD0AE8D4}|Topic2SimpleCalculator\\Topic2SimpleCalculator.csproj|solutionrelative:topic2simplecalculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA05\\Topic2SimpleCalculator\\Topic2SimpleCalculator\\Program.cs",
+              "RelativeDocumentMoniker": "Topic2SimpleCalculator\\Program.cs",
+              "ToolTip": "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA05\\Topic2SimpleCalculator\\Topic2SimpleCalculator\\Program.cs",
+              "RelativeToolTip": "Topic2SimpleCalculator\\Program.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAkwDoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T17:14:57.006Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

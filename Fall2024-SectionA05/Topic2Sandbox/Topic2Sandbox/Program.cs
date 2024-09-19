@@ -9,7 +9,8 @@
             Console.WriteLine("Here is your solution.");
 
             // create a variable:
-            int bob = 7;
+            int bob = 7, 
+                jerry = 7;
             Console.WriteLine("The value is " + bob + ".");
 
             double pi = 3.14;
