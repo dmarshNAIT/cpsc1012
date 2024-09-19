@@ -1,0 +1,15 @@
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\bin\Debug\net8.0\Topic2PracticePeriod.exe
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\bin\Debug\net8.0\Topic2PracticePeriod.deps.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\bin\Debug\net8.0\Topic2PracticePeriod.runtimeconfig.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\bin\Debug\net8.0\Topic2PracticePeriod.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\bin\Debug\net8.0\Topic2PracticePeriod.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\obj\Debug\net8.0\Topic2PracticePeriod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\obj\Debug\net8.0\Topic2PracticePeriod.AssemblyInfoInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\obj\Debug\net8.0\Topic2PracticePeriod.AssemblyInfo.cs
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\obj\Debug\net8.0\Topic2PracticePeriod.csproj.CoreCompileInputs.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\obj\Debug\net8.0\Topic2PracticePeriod.sourcelink.json
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\obj\Debug\net8.0\Topic2PracticePeriod.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\obj\Debug\net8.0\refint\Topic2PracticePeriod.dll
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\obj\Debug\net8.0\Topic2PracticePeriod.pdb
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\obj\Debug\net8.0\Topic2PracticePeriod.genruntimeconfig.cache
+C:\Users\danam\Documents\GitHub\cpsc1012\Fall2024-SectionA05\Topic2PracticePeriod\Topic2PracticePeriod\obj\Debug\net8.0\ref\Topic2PracticePeriod.dll
