@@ -1,0 +1,14 @@
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\bin\Debug\net8.0\Topic3Sandbox.exe
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\bin\Debug\net8.0\Topic3Sandbox.deps.json
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\bin\Debug\net8.0\Topic3Sandbox.runtimeconfig.json
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\bin\Debug\net8.0\Topic3Sandbox.dll
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\bin\Debug\net8.0\Topic3Sandbox.pdb
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\obj\Debug\net8.0\Topic3Sandbox.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\obj\Debug\net8.0\Topic3Sandbox.AssemblyInfoInputs.cache
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\obj\Debug\net8.0\Topic3Sandbox.AssemblyInfo.cs
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\obj\Debug\net8.0\Topic3Sandbox.csproj.CoreCompileInputs.cache
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\obj\Debug\net8.0\Topic3Sandbox.dll
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\obj\Debug\net8.0\refint\Topic3Sandbox.dll
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\obj\Debug\net8.0\Topic3Sandbox.pdb
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\obj\Debug\net8.0\Topic3Sandbox.genruntimeconfig.cache
+C:\Users\DMARSH\Documents\GitHub\cpsc1012\Fall2024-SectionA04\Topic3Sandbox\Topic3Sandbox\obj\Debug\net8.0\ref\Topic3Sandbox.dll
