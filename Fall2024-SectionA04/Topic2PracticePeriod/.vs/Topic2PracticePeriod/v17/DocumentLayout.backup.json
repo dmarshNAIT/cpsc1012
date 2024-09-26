@@ -18,10 +18,6 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
@@ -37,6 +33,10 @@
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Topic2PracticePeriod\\Program.cs",
               "ToolTip": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic2PracticePeriod\\Topic2PracticePeriod\\Program.cs",
               "RelativeToolTip": "Topic2PracticePeriod\\Program.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAA2wCwAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAQwEMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-19T21:18:26.963Z",
               "EditorCaption": ""

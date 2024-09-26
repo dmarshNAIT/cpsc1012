@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Topic3Sandbox")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40d54ddb6d98017a36b3fac23c96414452ec7f23")]
 [assembly: System.Reflection.AssemblyProductAttribute("Topic3Sandbox")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Topic3Sandbox")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

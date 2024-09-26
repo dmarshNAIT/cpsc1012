@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic3Sandbox\\Topic3Sandbox\\Topic3Sandbox.csproj": {}
+    "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic3Sandbox\\Topic3Sandbox\\Topic3Sandbox.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic3Sandbox\\Topic3Sandbox\\Topic3Sandbox.csproj": {
+    "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic3Sandbox\\Topic3Sandbox\\Topic3Sandbox.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic3Sandbox\\Topic3Sandbox\\Topic3Sandbox.csproj",
+        "projectUniqueName": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic3Sandbox\\Topic3Sandbox\\Topic3Sandbox.csproj",
         "projectName": "Topic3Sandbox",
-        "projectPath": "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic3Sandbox\\Topic3Sandbox\\Topic3Sandbox.csproj",
-        "packagesPath": "C:\\Users\\DMARSH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DMARSH\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic3Sandbox\\Topic3Sandbox\\obj\\",
+        "projectPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic3Sandbox\\Topic3Sandbox\\Topic3Sandbox.csproj",
+        "packagesPath": "C:\\Users\\danam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\danam\\Documents\\GitHub\\cpsc1012\\Fall2024-SectionA04\\Topic3Sandbox\\Topic3Sandbox\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DMARSH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\danam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
