@@ -58,6 +58,15 @@ namespace Topic3Sandbox
             {
                 Console.WriteLine("Go drink water now.");
             }
+
+
+
+            // suffix practice
+            double myDouble = 1.2;
+            float myFloat = -1.2f;
+
+            short myShort = 1;
+
         }
     }
 }
