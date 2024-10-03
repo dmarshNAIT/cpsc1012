@@ -91,6 +91,12 @@ namespace Topic3PracticePeriod
             Console.WriteLine($"Your expected costs are {expectedCost:c}");
 
             // suggest a better-value deal
+            // if hours are 11 or less, option A is the best deal
+            // if hours are 12: option A & B are the best
+            // if hours are 13-25: option B is the best deal
+            // if hours are 26: option B & C are the best
+            // if hours are 27 or more: option C is the best deal
+
 
         }
     }
