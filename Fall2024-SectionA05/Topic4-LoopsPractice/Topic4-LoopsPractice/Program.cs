@@ -21,14 +21,30 @@ namespace Topic4_LoopsPractice
             do
             {
                 // declare variables
-                int number, factorial = 1;
+                int number = 0,     // giving a default value, will be overwritten
+                    factorial = 1;
+                bool isValid = false;
 
                 // prompt the user for a number
                 Console.Write("Please enter a number: ");
-                number = int.Parse(Console.ReadLine());
+
+                while (!isValid)
+                {
+                    try
+                    {
+                        number = int.Parse(Console.ReadLine());
+                        isValid = true;
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Invalid input. Please try again.");
+                    }
+                }
 
                 // future improvement: limit to 12 or smaller
                 // because 13! is larger than 2.17 billion
+
+                // can we test for input of banana
 
                 // start loop
                 for (int counter = number; counter > 1; counter--)
@@ -43,6 +59,8 @@ namespace Topic4_LoopsPractice
                 // ask the user if they want to go again
                 Console.Write("Would you like to calculate another? Y/N: ");
                 userAnswer = Console.ReadLine().ToUpper();
+
+                // possible improvement: add validation to this Q
 
             } while (userAnswer == "Y");
 
