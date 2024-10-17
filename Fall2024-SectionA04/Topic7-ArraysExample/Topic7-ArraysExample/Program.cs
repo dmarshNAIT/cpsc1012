@@ -1,4 +1,11 @@
-﻿namespace Topic7_ArraysExample
+﻿/*
+ * 
+ * Purpose: play around with arrays!
+ * 
+ * 
+ * 
+ */ 
+namespace Topic7_ArraysExample
 {
     internal class Program
     {
