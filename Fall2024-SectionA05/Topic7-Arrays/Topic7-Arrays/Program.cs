@@ -1,4 +1,9 @@
-﻿namespace Topic7_Arrays
+﻿/* Fibonacci Sequence Calculator
+ * Coded by Dana and Section A05 on Oct 18, 2024
+ * 
+ * The user provides a #, and that many elements of the Fibonacci sequence are displayed.
+ */
+namespace Topic7_Arrays
 {
     internal class Program
     {
@@ -55,7 +60,7 @@
             }
 
             // display the contents of the array
-            // TODO: nicely aligned
+            // nicely aligned
             for (int index = 0; index < numberOfElements; index++)
             {
                 Console.WriteLine($"Element #{index + 1, 2:00}:   { fibonacci[index],15:n0}");
@@ -72,4 +77,3 @@
     }
 }
 
-// TODO: check scope
