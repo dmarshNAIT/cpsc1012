@@ -24,7 +24,7 @@ namespace Topic6_MethodsSandbox
         // method w/ no params that returns something
         static int[] GetWinningLotteryNumbers()
         {
-            int[] winningNumbers = { 47, 8, 23, 30, 32, 33, 49};
+            int[] winningNumbers = { 47, 8, 23, 30, 32, 33, 49 };
             return winningNumbers;
         }
 
