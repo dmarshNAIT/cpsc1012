@@ -1,5 +1,5 @@
 ﻿
-
+//TODO: DOCUMENTATION
 namespace Topic6_MethodsCandyFactory
 {
     internal class Program
@@ -56,24 +56,35 @@ namespace Topic6_MethodsCandyFactory
 
         static void PopulateArrays(string[] candy, int[] inventory)
         {
-            Console.WriteLine("put things in arrays now");
-            //TODO: complete method
+            int candyTypeCount;
 
-            // OPTION A:
-            // ask the user how many types of candy they have
-            // loop through, ask them for each candy name & inventory level
+            Console.WriteLine("We need to know how many types of candy you will be storing.");
+            candyTypeCount = GetValidInt();
 
-            // YOUR CHALLENGE: code this!
+            for (int index = 0; index < candyTypeCount; index++)
+            {
+                Console.Write("Please enter candy name: ");
+                candy[index] = Console.ReadLine();
+
+                Console.WriteLine("What is the inventory level?");
+                inventory[index] = GetValidInt();
+            }
+
 
             // alternate approach we could have taken:
             // ask them to enter a candy name, OR enter 0 to quit
             // then they enter the inventory
+            // check out the A05 Shoe Factory example if you want to see what this could look like
         }
 
-        static void DisplayInventory()
+        static void DisplayInventory(string[] candy, int[] inventory)
         {
-            Console.WriteLine("we are displaying inventory!");
-            //TODO: complete method
+
+            // loop until we hit a null value
+            // YOUR CHALLENGE: code this method
+
+            // alternatively: we could have created a separate variable which contained the LOGICAL size
+
         }
 
         static void DisplayTotalInventoryCount()
@@ -111,5 +122,35 @@ namespace Topic6_MethodsCandyFactory
             return userResponse;
         } // end of method
 
+        static int GetValidInt()
+        {
+            int userResponse = 0;
+            bool isValid = false;
+
+            Console.Write("Please enter a number: ");
+            do
+            {
+                try
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    userResponse = int.Parse(Console.ReadLine());
+                    isValid = true;
+                }
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("That is not a valid number. Please try again: ");
+                }
+                finally // this runs no matter what
+                {
+                    Console.ResetColor(); // set the text colour back to default
+                }
+            } while (!isValid);
+
+            return userResponse;
+        } // end of method
+
     } // end of class
 } // end of namespace
+
+// TODO : add a method later that lets us add to an existing array
