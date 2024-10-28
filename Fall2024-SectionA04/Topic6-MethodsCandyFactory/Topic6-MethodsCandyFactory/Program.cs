@@ -1,5 +1,4 @@
-﻿
-//TODO: DOCUMENTATION
+﻿//TODO: DOCUMENTATION
 namespace Topic6_MethodsCandyFactory
 {
     internal class Program
@@ -153,4 +152,6 @@ namespace Topic6_MethodsCandyFactory
     } // end of class
 } // end of namespace
 
-// TODO : add a method later that lets us add to an existing array
+// TODO: add a method later that lets us add to an existing array
+// TODO: add file functionality?
+// TODO: add some kind of chart/viz
