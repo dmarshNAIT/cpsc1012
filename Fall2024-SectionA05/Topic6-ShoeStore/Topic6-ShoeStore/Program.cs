@@ -43,6 +43,7 @@ namespace Topic6_ShoeStore
             {
                 case 1:
                     logicalSize = FillArrays(brandz, shoeLengths, ukSizes, logicalSize);
+                    // TODO: create this method
                     // uk size = 3 * length - 23
                     // this method will use a sentinel value
                     Console.WriteLine("filling arrays");
