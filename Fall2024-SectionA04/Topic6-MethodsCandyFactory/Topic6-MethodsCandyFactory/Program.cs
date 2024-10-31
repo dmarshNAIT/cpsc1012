@@ -6,7 +6,7 @@ namespace Topic6_MethodsCandyFactory
         static void Main(string[] args)
         {
             const int PHYSICAL_SIZE = 13; //because Hallowe'en
-            
+
             char menuChoice;
             string[] candyBucket = new string[PHYSICAL_SIZE]; // names of our candy
             int[] candyCount = new int[PHYSICAL_SIZE]; // inventory level per candy
@@ -47,7 +47,7 @@ namespace Topic6_MethodsCandyFactory
                     DisplayTotalInventoryCount();
                     break;
                 case '4':
-                    // ReadFromFile();
+                    ReadFromFile(candy, inventory);
                     break;
                 case '5':
                     // SaveToFile();
@@ -71,7 +71,7 @@ namespace Topic6_MethodsCandyFactory
             for (int index = 0; index < candyTypeCount; index++)
             {
                 Console.Write("Please enter candy name: ");
-                candy[index] = Console.ReadLine();
+                candy[index] = Console.ReadLine().Trim();
 
                 Console.WriteLine("What is the inventory level?");
                 inventory[index] = GetValidInt();
@@ -86,12 +86,22 @@ namespace Topic6_MethodsCandyFactory
 
         static void DisplayInventory(string[] candy, int[] inventory)
         {
+            const int CANDY_COLUMN_WIDTH = 15;
+            const int INVENTORY_COLUMN_WIDTH = 9;
 
-            // loop until we hit a null value
-            // YOUR CHALLENGE: code this method
+            // print out the headers for the table
+            Console.WriteLine("\nCANDY NAME     INVENTORY\n" +
+                "------------------------");
+
+            for (int i = 0; candy[i] != null; i++)
+            { // alternate condition: String.IsNullOrEmpty(candy[i])
+                Console.WriteLine($"{candy[i],-CANDY_COLUMN_WIDTH}" +
+                    $"{inventory[i],INVENTORY_COLUMN_WIDTH}");
+            }
+
+            Console.WriteLine(); // blank line after table 
 
             // alternatively: we could have created a separate variable which contained the LOGICAL size
-
         }
 
         static void DisplayTotalInventoryCount()
@@ -100,6 +110,40 @@ namespace Topic6_MethodsCandyFactory
             //TODO: complete method
             // TODO: suggest re-stock if inventory levels are low
         }
+
+        static void ReadFromFile(string[] names, int[] counts)
+        {
+            // TODO: exception handling
+            // create a stream
+            StreamReader reader = new StreamReader("../../../inventory.txt");
+
+            // throw away the header line
+            reader.ReadLine();
+
+            // read it in, line by line
+            for (int i = 0; !reader.EndOfStream; i++)
+            {
+                string line = reader.ReadLine();
+
+                // split up line, using that \t as delimiter
+                string[] magicArray = line.Split("\t");
+                // magicArray has 2 elements:
+                // magicArray[0] is the candy name
+                // magicArray[1] is the inventory
+
+                // save the name to the names array
+                names[i] = magicArray[0];
+                // save the counts to the counts array
+                counts[i] = int.Parse(magicArray[1]);
+
+            }
+
+            Console.WriteLine("File successfully loaded.");
+
+            // close the stream
+            reader.Close();
+        }
+
 
         static char GetValidChar()
         {

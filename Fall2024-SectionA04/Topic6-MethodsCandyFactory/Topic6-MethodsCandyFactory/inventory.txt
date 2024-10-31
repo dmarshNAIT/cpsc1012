@@ -1,0 +1,4 @@
+CANDY	COUNT
+Kit Kat	123
+Coffee Crisp	99
+M&Ms	4545
