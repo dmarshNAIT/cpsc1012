@@ -17,7 +17,7 @@ namespace Topic6_MethodsCandyFactory
                 menuChoice = GetValidChar();
                 HandleUserChoice(menuChoice, candyBucket, candyCount);
 
-            } while (menuChoice != '4');
+            } while (menuChoice != '6');
 
             Console.WriteLine("Thank you, goodbye.");
         }
@@ -28,7 +28,9 @@ namespace Topic6_MethodsCandyFactory
                 "\t1. Populate the arrays\n" +
                 "\t2. Display inventory\n" +
                 "\t3. Display total count\n" +
-                "\t4. Quit\n");
+                "\t4. Read data from file\n" +
+                "\t5. Save data to file\n" +
+                "\t6. Quit");
         }
 
         static void HandleUserChoice(char choice, string[] candy, int[] inventory)
@@ -39,12 +41,18 @@ namespace Topic6_MethodsCandyFactory
                     PopulateArrays(candy, inventory);
                     break;
                 case '2':
-                    DisplayInventory();
+                    DisplayInventory(candy, inventory);
                     break;
                 case '3':
                     DisplayTotalInventoryCount();
                     break;
                 case '4':
+                    // ReadFromFile();
+                    break;
+                case '5':
+                    // SaveToFile();
+                    break;
+                case '6':
                     // do nothing
                     break;
                 default:
@@ -153,5 +161,4 @@ namespace Topic6_MethodsCandyFactory
 } // end of namespace
 
 // TODO: add a method later that lets us add to an existing array
-// TODO: add file functionality?
 // TODO: add some kind of chart/viz
