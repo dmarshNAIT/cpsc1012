@@ -39,12 +39,12 @@ namespace Topic6_ShoeStore
                 "\t5. Quit\n");
         }
 
-        static void HandleUserChoice(int userChoice)
-        {// TODO: update our parameters
+        static void HandleUserChoice(int userChoice, string[] brandz, int[] shoeLengths, int[] ukSizes,  int logicalSize)
+        {
             switch (userChoice)
             {
                 case 1:
-                    logicalSize = FillArrays(brandz, shoeLengths, ukSizes, logicalSize);
+                    //logicalSize = FillArrays(brandz, shoeLengths, ukSizes, logicalSize);
                     // TODO: create this method
                     // uk size = 3 * length - 23
                     // this method will use a sentinel value
@@ -59,7 +59,7 @@ namespace Topic6_ShoeStore
                     Console.WriteLine("saving");
                     break;
                 case 4:
-                    //ReadFromFile();
+                    logicalSize = ReadFromFile(brandz, shoeLengths, ukSizes);
                     Console.WriteLine("loading");
                     break;
                 case 5:
@@ -69,6 +69,43 @@ namespace Topic6_ShoeStore
                     Console.WriteLine("That's not an option.");
                     break;
             }
+        }
+
+        static int ReadFromFile(string[] brandz, int[] lengths, int[] sizes)
+        {
+            // TO DO: exception handling
+            StreamReader reader = new StreamReader("../../../inventory.txt");
+            // from the default location, we go up 3 levels and then we find inventory.txt
+            int index;
+
+            reader.ReadLine(); // discard header
+
+            // read from the stream
+            for (index = 0; !reader.EndOfStream; index++)
+            {
+                string line = reader.ReadLine();
+
+                // magically split apart the brand & the length
+                string[] magicArray = line.Split("\t");
+                // magic Array will always be 2 elements long
+                // magicArray[0] will contain the brand name
+                // magicArray[1] will contain the shoe length
+
+                // we will put the brand name in the brandz array
+                brandz[index] = magicArray[0];
+
+                // we will put the shoe length in the shoeLength array
+                lengths[index] = int.Parse(magicArray[1]);
+
+                // TO DO: put a value in the ukSizes array
+                //int = CalculateUKSize(int)
+            }
+
+            // close the stream
+            reader.Close();
+
+            // return the # of entries read
+            return index;
         }
 
         static int GetValidInt()
@@ -95,7 +132,3 @@ namespace Topic6_ShoeStore
         } // end of the method
     } // end of the clas
 }
-
-
-// TODO:
-// arrays: one for brands, one for length, one for sizes

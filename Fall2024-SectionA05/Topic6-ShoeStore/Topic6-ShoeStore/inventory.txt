@@ -1,0 +1,4 @@
+Brand	Shoe Length
+Skechers	8
+Blundstone	7
+Adidas	9
