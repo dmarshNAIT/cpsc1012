@@ -1,6 +1,16 @@
-﻿
-//TODO: DOCUMENTATION
-
+﻿/*
+ * Shoe Factory
+ * Created by Dana Marsh & section A05
+ * 
+ * Purpose: To practice modularization by creating an inventory management system for a fictional shoe store.
+ *          
+ *          This is a menu-based program where users can choose to 
+ *          A) Manually enter records
+ *          B) Read records in from a file
+ *          C) Display records to the screen
+ *          D) Save inventory to a file
+ * 
+ */
 using System.Runtime.Intrinsics.Arm;
 
 namespace Topic6_ShoeStore
@@ -23,8 +33,7 @@ namespace Topic6_ShoeStore
                 HandleUserChoice(userChoice, brandz, shoeLengths, ukSizes, logicalSize);
 
             } while (userChoice != 5);
-            // userChoice is not 5
-            // ^ will also work
+            //} while (userChoice is not 5);  // this also works!
 
             Console.WriteLine("Thanks, goodbye!");
         }
@@ -39,14 +48,13 @@ namespace Topic6_ShoeStore
                 "\t5. Quit\n");
         }
 
-        static void HandleUserChoice(int userChoice, string[] brandz, int[] shoeLengths, int[] ukSizes,  int logicalSize)
+        static void HandleUserChoice(int userChoice, string[] brandz, int[] shoeLengths, int[] ukSizes, int logicalSize)
         {
             switch (userChoice)
             {
                 case 1:
                     //logicalSize = FillArrays(brandz, shoeLengths, ukSizes, logicalSize);
                     // TODO: create this method
-                    // uk size = 3 * length - 23
                     // this method will use a sentinel value
                     Console.WriteLine("filling arrays");
                     break;
@@ -60,7 +68,7 @@ namespace Topic6_ShoeStore
                     break;
                 case 4:
                     logicalSize = ReadFromFile(brandz, shoeLengths, ukSizes);
-                    Console.WriteLine("loading");
+                    Console.WriteLine("Successfully read from file.");
                     break;
                 case 5:
                     // do nothing
@@ -94,7 +102,7 @@ namespace Topic6_ShoeStore
                 // we will put the brand name in the brandz array
                 brandz[index] = magicArray[0];
 
-                // we will put the shoe length in the shoeLength array
+                // we will put the shoe length in the shoe length array
                 lengths[index] = int.Parse(magicArray[1]);
 
                 // TO DO: put a value in the ukSizes array
@@ -106,6 +114,12 @@ namespace Topic6_ShoeStore
 
             // return the # of entries read
             return index;
+        }
+
+        static int CalculateUKSize(int length)
+        {
+            // uk size = 3 * length - 23
+            return 0; // TODO
         }
 
         static int GetValidInt()
