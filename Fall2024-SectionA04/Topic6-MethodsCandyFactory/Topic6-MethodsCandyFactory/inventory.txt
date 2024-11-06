@@ -1,4 +1,5 @@
 CANDY	COUNT
-Kit Kat	123
-Coffee Crisp	99
-M&Ms	4545
+Twix	76
+Smarties	45687
+Aero	1
+Oh Henry	15

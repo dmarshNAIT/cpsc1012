@@ -50,7 +50,7 @@ namespace Topic6_MethodsCandyFactory
                     ReadFromFile(candy, inventory);
                     break;
                 case '5':
-                    // SaveToFile();
+                    SaveToFile(candy, inventory);
                     break;
                 case '6':
                     // do nothing
@@ -68,7 +68,7 @@ namespace Topic6_MethodsCandyFactory
             Console.WriteLine("We need to know how many types of candy you will be storing.");
             candyTypeCount = GetValidInt();
 
-            for (int index = 0; index < candyTypeCount; index++)
+            for (int index = 0; index < candyTypeCount && index < candy.Length; index++)
             {
                 Console.Write("Please enter candy name: ");
                 candy[index] = Console.ReadLine().Trim();
@@ -93,7 +93,7 @@ namespace Topic6_MethodsCandyFactory
             Console.WriteLine("\nCANDY NAME     INVENTORY\n" +
                 "------------------------");
 
-            for (int i = 0; candy[i] != null; i++)
+            for (int i = 0; i < candy.Length && candy[i] != null; i++)
             { // alternate condition: String.IsNullOrEmpty(candy[i])
                 Console.WriteLine($"{candy[i],-CANDY_COLUMN_WIDTH}" +
                     $"{inventory[i],INVENTORY_COLUMN_WIDTH}");
@@ -113,37 +113,72 @@ namespace Topic6_MethodsCandyFactory
 
         static void ReadFromFile(string[] names, int[] counts)
         {
-            // TODO: exception handling
-            // create a stream
-            StreamReader reader = new StreamReader("../../../inventory.txt");
-
-            // throw away the header line
-            reader.ReadLine();
-
-            // read it in, line by line
-            for (int i = 0; !reader.EndOfStream; i++)
+            try
             {
-                string line = reader.ReadLine();
+                // create a stream
+                StreamReader reader = new StreamReader("../../../inventory.txt");
 
-                // split up line, using that \t as delimiter
-                string[] magicArray = line.Split("\t");
-                // magicArray has 2 elements:
-                // magicArray[0] is the candy name
-                // magicArray[1] is the inventory
+                // throw away the header line
+                reader.ReadLine();
 
-                // save the name to the names array
-                names[i] = magicArray[0];
-                // save the counts to the counts array
-                counts[i] = int.Parse(magicArray[1]);
+                // read it in, line by line
+                for (int i = 0; !reader.EndOfStream; i++)
+                {
+                    string line = reader.ReadLine();
 
+                    // split up line, using that \t as delimiter
+                    string[] magicArray = line.Split("\t");
+                    // magicArray has 2 elements:
+                    // magicArray[0] is the candy name
+                    // magicArray[1] is the inventory
+
+                    // save the name to the names array
+                    names[i] = magicArray[0];
+                    // save the counts to the counts array
+                    counts[i] = int.Parse(magicArray[1]);
+
+                }
+
+                Console.WriteLine("File successfully loaded.");
+
+                // close the stream
+                reader.Close();
             }
-
-            Console.WriteLine("File successfully loaded.");
-
-            // close the stream
-            reader.Close();
+            catch
+            {
+                Console.WriteLine("Error reading file.");
+            }
         }
 
+        static void SaveToFile(string[] names, int[] counts)
+        {
+            try
+            {
+                // create our StreamWriter object
+                StreamWriter writer = new StreamWriter("../../../inventory.txt");
+
+                // hardcode the header line
+                writer.WriteLine("CANDY\tCOUNT");
+
+                // for each candy:
+                for (int i = 0; i < names.Length && names[i] != null; i++)
+                {
+                    // write to the file the candy name,
+                    // then a tab
+                    // then the candy inventory level
+                    writer.WriteLine(names[i] + "\t" + counts[i]);
+                }
+
+                // close the stream
+                writer.Close();
+
+                Console.WriteLine("File successfully read.");
+            }
+            catch
+            {
+                Console.WriteLine("Error saving to file.");
+            }
+        }
 
         static char GetValidChar()
         {
