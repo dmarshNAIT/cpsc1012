@@ -42,6 +42,11 @@
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// Draws a box of a user-specified size.
+        /// </summary>
+        /// <param name="height"># of rows</param>
+        /// <param name="width"># of columns</param>
         static void DrawBox(int height, int width)
         {
             // draw the top row
