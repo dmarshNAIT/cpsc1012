@@ -1,4 +1,6 @@
-﻿//TODO: DOCUMENTATION
+﻿/// <summary>
+/// A program to demonstrate modularization, branching, and reading/writing from a text file.
+/// </summary>
 namespace Topic6_MethodsCandyFactory
 {
     internal class Program
@@ -22,6 +24,9 @@ namespace Topic6_MethodsCandyFactory
             Console.WriteLine("Thank you, goodbye.");
         }
 
+        /// <summary>
+        /// Displays the main menu options.
+        /// </summary>
         static void DisplayMenu()
         {
             Console.WriteLine("MAIN MENU\n" +
@@ -34,15 +39,30 @@ namespace Topic6_MethodsCandyFactory
                 "\tQ. Quit");
         }
 
+        /// <summary>
+        /// Branches according to user selection.
+        /// </summary>
+        /// <param name="choice">the selected menu option</param>
+        /// <param name="candy">an array of candy names</param>
+        /// <param name="inventory">an array of stock levels</param>
         static void HandleUserChoice(char choice, string[] candy, int[] inventory)
         {
+            bool isEmpty = (candy[0] == null);
+
             switch (choice)
             {
                 case '1':
                     PopulateArrays(candy, inventory);
                     break;
                 case '2':
-                    DisplayInventory(candy, inventory);
+                    if (isEmpty)
+                    {
+                        Console.WriteLine("Nothing to display.");
+                    }
+                    else
+                    {
+                        DisplayInventory(candy, inventory);
+                    }
                     break;
                 case '3':
                     DisplayTotalInventoryCount(candy, inventory);
@@ -51,10 +71,24 @@ namespace Topic6_MethodsCandyFactory
                     ReadFromFile(candy, inventory);
                     break;
                 case '5':
-                    SaveToFile(candy, inventory);
+                    if (isEmpty)
+                    {
+                        Console.WriteLine("Nothing to save.");
+                    }
+                    else
+                    {
+                        SaveToFile(candy, inventory);
+                    }
                     break;
                 case '6':
-                    EditInventory(candy, inventory);
+                    if (isEmpty)
+                    {
+                        Console.WriteLine("Nothing to edit.");
+                    }
+                    else
+                    {
+                        EditInventory(candy, inventory);
+                    }
                     break;
                 case 'Q':
                     // do nothing
@@ -65,6 +99,11 @@ namespace Topic6_MethodsCandyFactory
             }
         }
 
+        /// <summary>
+        /// Prompt the user for values to fill the arrays.
+        /// </summary>
+        /// <param name="candy">an array of candy names</param>
+        /// <param name="inventory">a parallel array of inventory levels</param>
         static void PopulateArrays(string[] candy, int[] inventory)
         {
             int candyTypeCount;
@@ -88,6 +127,11 @@ namespace Topic6_MethodsCandyFactory
             // check out the A05 Shoe Factory example if you want to see what this could look like
         }
 
+        /// <summary>
+        /// Display the inventory level in a tabular format.
+        /// </summary>
+        /// <param name="candy">an array of candy names</param>
+        /// <param name="inventory">a parallel array of inventory levels</param>
         static void DisplayInventory(string[] candy, int[] inventory)
         {
             const int CANDY_COLUMN_WIDTH = 15;
@@ -108,6 +152,11 @@ namespace Topic6_MethodsCandyFactory
             // alternatively: we could have created a separate variable which contained the LOGICAL size
         }
 
+        /// <summary>
+        /// Calculates and displays total quantity of inventory.
+        /// </summary>
+        /// <param name="candy">an array of candy names</param>
+        /// <param name="inventory">a parallel array of inventory levels</param>
         static void DisplayTotalInventoryCount(string[] candy, int[] inventory)
         {
             const int MINIMUM_CANDY = 100;
@@ -128,18 +177,37 @@ namespace Topic6_MethodsCandyFactory
             }
         }
 
+        /// <summary>
+        /// Allows the user to modify one entry in the array.
+        /// </summary>
+        /// <param name="candy">an array of candy names</param>
+        /// <param name="inventory">a parallel array of inventory levels</param>
         static void EditInventory(string[] candy, int[] inventory)
         {
-            int index;
-            DisplayInventory(candy, inventory);
+            string userAnswer;
+            do
+            {
+                int index;
 
-            Console.WriteLine("Which candy would you like to edit?");
-            index = GetValidInt(1, candy.Length) - 1;
+                DisplayInventory(candy, inventory);
 
-            Console.WriteLine("What is the new inventory level?");
-            inventory[index] = GetValidInt(0, 1000000);
+                Console.WriteLine("Which candy would you like to edit?");
+                index = GetValidInt(1, candy.Length) - 1;
+
+                Console.WriteLine("What is the new inventory level?");
+                inventory[index] = GetValidInt(0, 1000000);
+
+                Console.Write("Is there another you'd like to edit?\nEnter Y for yes and anything else to quit: ");
+                userAnswer = Console.ReadLine().ToUpper();
+
+            } while (userAnswer == "Y");
         }
 
+        /// <summary>
+        /// Read in candy names & inventory levels from a text file.
+        /// </summary>
+        /// <param name="names">an array of candy names</param>
+        /// <param name="counts">a parallel array of inventory level</param>
         static void ReadFromFile(string[] names, int[] counts)
         {
             try
@@ -179,6 +247,11 @@ namespace Topic6_MethodsCandyFactory
             }
         }
 
+        /// <summary>
+        /// Saves candy names & inventory levels to a text file.
+        /// </summary>
+        /// <param name="names">an array of candy names</param>
+        /// <param name="counts">a parallel array of inventory level</param>
         static void SaveToFile(string[] names, int[] counts)
         {
             try
@@ -209,6 +282,10 @@ namespace Topic6_MethodsCandyFactory
             }
         }
 
+        /// <summary>
+        /// Reads in a character from the Console.
+        /// </summary>
+        /// <returns>user-inputted character</returns>
         static char GetValidChar()
         {
             char userResponse = '\0'; // null character
@@ -237,6 +314,10 @@ namespace Topic6_MethodsCandyFactory
             return userResponse;
         } // end of method
 
+        /// <summary>
+        /// Reads in an int from the Console.
+        /// </summary>
+        /// <returns>an int</returns>
         static int GetValidInt()
         {
             int userResponse = 0;
@@ -265,15 +346,21 @@ namespace Topic6_MethodsCandyFactory
             return userResponse;
         } // end of method
 
-        static int GetValidInt(int minNumber,  int maxNumber)
+        /// <summary>
+        /// Reads in an int from the Console within a specified range.
+        /// </summary>
+        /// <param name="minNumber">smallest valid value</param>
+        /// <param name="maxNumber">largest valid value</param>
+        /// <returns>an int between <c>minNumber</c> and <c>maxNumber</c>, inclusive</returns>
+        static int GetValidInt(int minNumber, int maxNumber)
         {
             int userResponse = 0;
             bool isValid = false;
 
-            while(!isValid)
+            while (!isValid)
             {
                 userResponse = GetValidInt();
-                if(userResponse < minNumber)
+                if (userResponse < minNumber)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("That number is too small.");
@@ -295,5 +382,3 @@ namespace Topic6_MethodsCandyFactory
 
     } // end of class
 } // end of namespace
-
-// TODO: update our program branching: should not be able to save/display empty arrays
