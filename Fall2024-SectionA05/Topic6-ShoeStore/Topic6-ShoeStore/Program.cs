@@ -68,7 +68,6 @@ namespace Topic6_ShoeStore
                     break;
                 case 4:
                     logicalSize = ReadFromFile(brandz, shoeLengths, ukSizes);
-                    Console.WriteLine("Successfully read from file.");
                     break;
                 case 5:
                     // do nothing
@@ -81,36 +80,47 @@ namespace Topic6_ShoeStore
 
         static int ReadFromFile(string[] brandz, int[] lengths, int[] sizes)
         {
-            // TO DO: exception handling
-            StreamReader reader = new StreamReader("../../../inventory.txt");
-            // from the default location, we go up 3 levels and then we find inventory.txt
-            int index;
-
-            reader.ReadLine(); // discard header
-
-            // read from the stream
-            for (index = 0; !reader.EndOfStream; index++)
+            int index = 0;
+            try
             {
-                string line = reader.ReadLine();
+                StreamReader reader = new StreamReader("../../../inventory.txt");
+                // from the default location, we go up 3 levels and then we find inventory.txt
 
-                // magically split apart the brand & the length
-                string[] magicArray = line.Split("\t");
-                // magic Array will always be 2 elements long
-                // magicArray[0] will contain the brand name
-                // magicArray[1] will contain the shoe length
+                reader.ReadLine(); // discard header
 
-                // we will put the brand name in the brandz array
-                brandz[index] = magicArray[0];
+                // read from the stream
+                for (index = 0; !reader.EndOfStream; index++)
+                {
+                    int lengthInInches;
 
-                // we will put the shoe length in the shoe length array
-                lengths[index] = int.Parse(magicArray[1]);
+                    string line = reader.ReadLine();
 
-                // TO DO: put a value in the ukSizes array
-                //int = CalculateUKSize(int)
+                    // magically split apart the brand & the length
+                    string[] magicArray = line.Split("\t");
+                    // magic Array will always be 2 elements long
+                    // magicArray[0] will contain the brand name
+                    // magicArray[1] will contain the shoe length
+
+                    // we will put the brand name in the brandz array
+                    brandz[index] = magicArray[0];
+
+                    // we will put the shoe length in the shoe length array
+                    lengthInInches = int.Parse(magicArray[1]);
+                    lengths[index] = lengthInInches;
+
+                    // put a value in the ukSizes array
+                    sizes[index] = CalculateUKSize(lengthInInches);
+                }
+
+                // close the stream
+                reader.Close();
+                Console.WriteLine("Successfully read from file.");
+
             }
-
-            // close the stream
-            reader.Close();
+            catch
+            {
+                Console.WriteLine("Something went wrong reading the file.");
+            }
 
             // return the # of entries read
             return index;
@@ -118,8 +128,7 @@ namespace Topic6_ShoeStore
 
         static int CalculateUKSize(int length)
         {
-            // uk size = 3 * length - 23
-            return 0; // TODO
+            return 3 * length - 23;
         }
 
         static int GetValidInt()
