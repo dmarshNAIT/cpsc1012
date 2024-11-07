@@ -180,5 +180,5 @@ namespace Topic6_ShoeStore
     } // end of the clas
 }
 
-// TO DO: colour-code my error messages
-// TO DO: add limits to user inputted ints
+// TODO: colour-code my error messages
+// TODO: add limits to user inputted ints
