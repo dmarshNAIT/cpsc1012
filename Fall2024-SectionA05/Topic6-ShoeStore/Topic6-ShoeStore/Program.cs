@@ -53,10 +53,8 @@ namespace Topic6_ShoeStore
             switch (userChoice)
             {
                 case 1:
-                    //logicalSize = FillArrays(brandz, shoeLengths, ukSizes, logicalSize);
-                    // TODO: create this method
-                    // this method will use a sentinel value
-                    Console.WriteLine("filling arrays");
+                    logicalSize = FillArrays(brandz, shoeLengths, ukSizes);
+                    Console.WriteLine(logicalSize + " entries were added.");
                     break;
                 case 2:
                     //DisplayArrays();
@@ -68,6 +66,7 @@ namespace Topic6_ShoeStore
                     break;
                 case 4:
                     logicalSize = ReadFromFile(brandz, shoeLengths, ukSizes);
+                    Console.WriteLine(logicalSize + " entries were added.");
                     break;
                 case 5:
                     // do nothing
@@ -76,6 +75,32 @@ namespace Topic6_ShoeStore
                     Console.WriteLine("That's not an option.");
                     break;
             }
+        }
+
+        static int FillArrays(string[] brandz, int[] lengths, int[] sizes)
+        {
+            int index = 0;
+            string brandName;
+            do
+            {
+                Console.Write("Please enter brand or type Q to exit: ");
+                brandName = Console.ReadLine().ToUpper();
+
+                if(brandName != "Q")
+                {
+                    brandz[index] = brandName;
+
+                    Console.WriteLine("Please enter the length in inches.");
+                    int length = GetValidInt();
+
+                    lengths[index] = length;
+                    sizes[index] = CalculateUKSize(length);
+
+                    index++;
+                }
+            } while (brandName != "Q" && index < brandz.Length);
+
+            return index; // returns the # of records
         }
 
         static int ReadFromFile(string[] brandz, int[] lengths, int[] sizes)
@@ -115,7 +140,6 @@ namespace Topic6_ShoeStore
                 // close the stream
                 reader.Close();
                 Console.WriteLine("Successfully read from file.");
-
             }
             catch
             {
@@ -155,3 +179,6 @@ namespace Topic6_ShoeStore
         } // end of the method
     } // end of the clas
 }
+
+// TO DO: colour-code my error messages
+// TO DO: add limits to user inputted ints
