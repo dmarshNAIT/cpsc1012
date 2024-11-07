@@ -1,5 +1,6 @@
 CANDY	COUNT
-Twix	76
-Smarties	45687
-Aero	1
-Oh Henry	15
+Kit Kat	123
+Reese's	456
+Oh Henry	789
+Aero	45
+Lollipops	12345

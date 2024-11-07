@@ -17,7 +17,7 @@ namespace Topic6_MethodsCandyFactory
                 menuChoice = GetValidChar();
                 HandleUserChoice(menuChoice, candyBucket, candyCount);
 
-            } while (menuChoice != '6');
+            } while (menuChoice != 'Q');
 
             Console.WriteLine("Thank you, goodbye.");
         }
@@ -30,7 +30,8 @@ namespace Topic6_MethodsCandyFactory
                 "\t3. Display total count\n" +
                 "\t4. Read data from file\n" +
                 "\t5. Save data to file\n" +
-                "\t6. Quit");
+                "\t6. Edit inventory level\n" +
+                "\tQ. Quit");
         }
 
         static void HandleUserChoice(char choice, string[] candy, int[] inventory)
@@ -44,7 +45,7 @@ namespace Topic6_MethodsCandyFactory
                     DisplayInventory(candy, inventory);
                     break;
                 case '3':
-                    DisplayTotalInventoryCount();
+                    DisplayTotalInventoryCount(candy, inventory);
                     break;
                 case '4':
                     ReadFromFile(candy, inventory);
@@ -53,6 +54,9 @@ namespace Topic6_MethodsCandyFactory
                     SaveToFile(candy, inventory);
                     break;
                 case '6':
+                    EditInventory(candy, inventory);
+                    break;
+                case 'Q':
                     // do nothing
                     break;
                 default:
@@ -66,7 +70,7 @@ namespace Topic6_MethodsCandyFactory
             int candyTypeCount;
 
             Console.WriteLine("We need to know how many types of candy you will be storing.");
-            candyTypeCount = GetValidInt();
+            candyTypeCount = GetValidInt(0, candy.Length);
 
             for (int index = 0; index < candyTypeCount && index < candy.Length; index++)
             {
@@ -74,7 +78,7 @@ namespace Topic6_MethodsCandyFactory
                 candy[index] = Console.ReadLine().Trim();
 
                 Console.WriteLine("What is the inventory level?");
-                inventory[index] = GetValidInt();
+                inventory[index] = GetValidInt(0, 1000000);
             }
 
 
@@ -90,12 +94,12 @@ namespace Topic6_MethodsCandyFactory
             const int INVENTORY_COLUMN_WIDTH = 9;
 
             // print out the headers for the table
-            Console.WriteLine("\nCANDY NAME     INVENTORY\n" +
-                "------------------------");
+            Console.WriteLine("\nID     CANDY NAME     INVENTORY\n" +
+                "-----------------------------");
 
             for (int i = 0; i < candy.Length && candy[i] != null; i++)
             { // alternate condition: String.IsNullOrEmpty(candy[i])
-                Console.WriteLine($"{candy[i],-CANDY_COLUMN_WIDTH}" +
+                Console.WriteLine($"{i + 1:00}     {candy[i],-CANDY_COLUMN_WIDTH}" +
                     $"{inventory[i],INVENTORY_COLUMN_WIDTH}");
             }
 
@@ -104,11 +108,36 @@ namespace Topic6_MethodsCandyFactory
             // alternatively: we could have created a separate variable which contained the LOGICAL size
         }
 
-        static void DisplayTotalInventoryCount()
+        static void DisplayTotalInventoryCount(string[] candy, int[] inventory)
         {
-            Console.WriteLine("we are in the display total inventory method!");
-            //TODO: complete method
-            // TODO: suggest re-stock if inventory levels are low
+            const int MINIMUM_CANDY = 100;
+            int totalQuantity = 0;
+
+            for (int index = 0; index < candy.Length && candy[index] != null; index++)
+            {
+                totalQuantity += inventory[index];
+            }
+
+            Console.WriteLine($"In total, there are {totalQuantity:n0} pieces of candy.");
+
+            if (totalQuantity < MINIMUM_CANDY)
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("RESTOCK ALERT!");
+                Console.ResetColor();
+            }
+        }
+
+        static void EditInventory(string[] candy, int[] inventory)
+        {
+            int index;
+            DisplayInventory(candy, inventory);
+
+            Console.WriteLine("Which candy would you like to edit?");
+            index = GetValidInt(1, candy.Length) - 1;
+
+            Console.WriteLine("What is the new inventory level?");
+            inventory[index] = GetValidInt(0, 1000000);
         }
 
         static void ReadFromFile(string[] names, int[] counts)
@@ -172,7 +201,7 @@ namespace Topic6_MethodsCandyFactory
                 // close the stream
                 writer.Close();
 
-                Console.WriteLine("File successfully read.");
+                Console.WriteLine("File successfully saved.");
             }
             catch
             {
@@ -236,8 +265,35 @@ namespace Topic6_MethodsCandyFactory
             return userResponse;
         } // end of method
 
+        static int GetValidInt(int minNumber,  int maxNumber)
+        {
+            int userResponse = 0;
+            bool isValid = false;
+
+            while(!isValid)
+            {
+                userResponse = GetValidInt();
+                if(userResponse < minNumber)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("That number is too small.");
+                    Console.ResetColor();
+                }
+                else if (userResponse > maxNumber)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("That number is too large.");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    isValid = true;
+                }
+            }
+            return userResponse;
+        }
+
     } // end of class
 } // end of namespace
 
-// TODO: add a method later that lets us add to an existing array
-// TODO: add some kind of chart/viz
+// TODO: update our program branching: should not be able to save/display empty arrays
