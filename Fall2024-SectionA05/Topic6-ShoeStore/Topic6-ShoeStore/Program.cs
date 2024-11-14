@@ -63,8 +63,7 @@ namespace Topic6_ShoeStore
                         Console.WriteLine("There are no data to display.");
                     break;
                 case 3:
-                    //SaveToFile();
-                    Console.WriteLine("saving");
+                    SaveToFile(brandz, shoeLengths, logicalSize);
                     break;
                 case 4:
                     logicalSize = ReadFromFile(brandz, shoeLengths, ukSizes);
@@ -114,7 +113,7 @@ namespace Topic6_ShoeStore
 
             for (int index = 0; index < logicalSize; index++)
             {
-                Console.WriteLine($"{brandz[index], -20}{lengths[index], -15}{sizes[index], -10}");
+                Console.WriteLine($"{brandz[index],-20}{lengths[index],-15}{sizes[index],-10}");
             }
 
             // TODO: add method to figure out the longest name, and use that for the first column width
@@ -167,6 +166,32 @@ namespace Topic6_ShoeStore
             return index;
         }
 
+        static void SaveToFile(string[] brandz, int[] lengths, int logicalSize)
+        {
+            try
+            {
+                // create Writer object
+                StreamWriter writer = new StreamWriter("../../../inventory.txt");
+
+                // write the header line
+                writer.WriteLine("Brand\tShoe Length");
+
+                // iterate through the arrays & save each element to the file in the correct format
+                for (int index = 0; index < logicalSize; index++)
+                {
+                    writer.WriteLine($"{brandz[index]}\t{lengths[index]}");
+                }
+
+                // close the stream
+                writer.Close();
+
+            }
+            catch
+            {
+                Console.WriteLine("Something went wrong saving the file.");
+            }
+        }
+
         static int CalculateUKSize(int length)
         {
             return 3 * length - 23;
@@ -199,3 +224,4 @@ namespace Topic6_ShoeStore
 
 // TODO: colour-code my error messages
 // TODO: add limits to user inputted ints
+// TODO: DOCUMENT EVERYTHING!!!
