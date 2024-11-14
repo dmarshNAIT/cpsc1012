@@ -30,7 +30,7 @@ namespace Topic6_ShoeStore
             {
                 DisplayMainMenu();
                 userChoice = GetValidInt();
-                HandleUserChoice(userChoice, brandz, shoeLengths, ukSizes, logicalSize);
+                HandleUserChoice(userChoice, brandz, shoeLengths, ukSizes, ref logicalSize);
 
             } while (userChoice != 5);
             //} while (userChoice is not 5);  // this also works!
@@ -48,7 +48,7 @@ namespace Topic6_ShoeStore
                 "\t5. Quit\n");
         }
 
-        static void HandleUserChoice(int userChoice, string[] brandz, int[] shoeLengths, int[] ukSizes, int logicalSize)
+        static void HandleUserChoice(int userChoice, string[] brandz, int[] shoeLengths, int[] ukSizes, ref int logicalSize)
         {
             switch (userChoice)
             {
@@ -57,8 +57,10 @@ namespace Topic6_ShoeStore
                     Console.WriteLine(logicalSize + " entries were added.");
                     break;
                 case 2:
-                    //DisplayArrays();
-                    Console.WriteLine("displaying arrays");
+                    if (logicalSize > 0)
+                        DisplayArrays(brandz, shoeLengths, ukSizes, logicalSize);
+                    else
+                        Console.WriteLine("There are no data to display.");
                     break;
                 case 3:
                     //SaveToFile();
@@ -86,7 +88,7 @@ namespace Topic6_ShoeStore
                 Console.Write("Please enter brand or type Q to exit: ");
                 brandName = Console.ReadLine().ToUpper();
 
-                if(brandName != "Q")
+                if (brandName != "Q")
                 {
                     brandz[index] = brandName;
 
@@ -101,6 +103,21 @@ namespace Topic6_ShoeStore
             } while (brandName != "Q" && index < brandz.Length);
 
             return index; // returns the # of records
+        }
+
+        static void DisplayArrays(string[] brandz, int[] lengths, int[] sizes, int logicalSize)
+        {
+            // loop through the arrays (using logicalSize as our stopping condition)
+            // display the brand, length, and size for each element
+
+            Console.WriteLine("Brand               Shoe Length    UK Size");
+
+            for (int index = 0; index < logicalSize; index++)
+            {
+                Console.WriteLine($"{brandz[index], -20}{lengths[index], -15}{sizes[index], -10}");
+            }
+
+            // TODO: add method to figure out the longest name, and use that for the first column width
         }
 
         static int ReadFromFile(string[] brandz, int[] lengths, int[] sizes)
