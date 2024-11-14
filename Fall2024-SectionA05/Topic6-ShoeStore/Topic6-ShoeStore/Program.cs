@@ -166,6 +166,12 @@ namespace Topic6_ShoeStore
             return index;
         }
 
+        /// <summary>
+        /// Save contents of the arrays to a file.
+        /// </summary>
+        /// <param name="brandz">an array containing the names of shoes</param>
+        /// <param name="lengths">a parallel array containing the lengths in inches</param>
+        /// <param name="logicalSize">the # of elements in each array</param>
         static void SaveToFile(string[] brandz, int[] lengths, int logicalSize)
         {
             try
@@ -182,6 +188,7 @@ namespace Topic6_ShoeStore
                     writer.WriteLine($"{brandz[index]}\t{lengths[index]}");
                 }
 
+                Console.WriteLine("File successfully saved.");
                 // close the stream
                 writer.Close();
 
