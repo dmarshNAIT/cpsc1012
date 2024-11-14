@@ -1,5 +1,7 @@
 ﻿/// <summary>
 /// A program to demonstrate modularization, branching, and reading/writing from a text file.
+/// 
+/// Known bug: arrays do not clear on subsequent runs.
 /// </summary>
 namespace Topic6_MethodsCandyFactory
 {
@@ -192,7 +194,8 @@ namespace Topic6_MethodsCandyFactory
                 DisplayInventory(candy, inventory);
 
                 Console.WriteLine("Which candy would you like to edit?");
-                index = GetValidInt(1, candy.Length) - 1;
+                index = GetValidInt(1, candy.Length) - 1; 
+                // TODO: this won't work for partially filled arrays
 
                 Console.WriteLine("What is the new inventory level?");
                 inventory[index] = GetValidInt(0, 1000000);
