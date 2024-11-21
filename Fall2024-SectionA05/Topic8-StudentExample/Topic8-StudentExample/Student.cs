@@ -35,6 +35,9 @@
         }
 
         // approach 2: creating Properties
+        /// <summary>
+        /// Gets or sets the <c>_name</c> field.
+        /// </summary>
         public string Name
         {
             get { return _name; }
