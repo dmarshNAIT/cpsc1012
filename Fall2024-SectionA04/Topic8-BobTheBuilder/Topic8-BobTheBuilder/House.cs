@@ -18,18 +18,6 @@ namespace Topic8_BobTheBuilder
         private double _temperature = 19;
         private bool _hasGarage;  // bools default to false
 
-        // no-argument constructor:
-        public House() { }
-
-        // greedy constructor: all the params!
-        public House(int numberRooms, int numberFloors, double temperature, bool hasGarage)
-        {
-            _numberRooms = numberRooms;
-            _numberFloors = numberFloors;
-            _temperature = temperature;
-            _hasGarage = hasGarage;
-        }
-
         public int NumberRooms
         {
             get { return _numberRooms; }
@@ -49,23 +37,6 @@ namespace Topic8_BobTheBuilder
             }
         }
 
-        // we have 2 ways of providing get/set functionality
-        // option 1: getter & setter methods
-        public double GetTemperature()
-        {
-            return _temperature;
-        }
-        public void SetTemperature(double temperature)
-        {
-            if (temperature <= 0)
-                throw new Exception("Temperature must be above 0.");
-            else if (temperature > 50)
-                throw new Exception("Temperature must be below 50.");
-            else
-                _temperature = temperature;
-        }
-
-        // option 2: properties
         public double Temperature
         {
             get { return _temperature; }
@@ -86,6 +57,38 @@ namespace Topic8_BobTheBuilder
             set { _hasGarage = value; }
         }
 
+
+        // no-argument constructor:
+        public House() { }
+
+        // greedy constructor: all the params!
+        public House(int numberRooms, int numberFloors, double temperature, bool hasGarage)
+        {
+            NumberRooms = numberRooms;
+            NumberFloors = numberFloors;
+            Temperature = temperature;
+            HasGarage = hasGarage;
+            // using the property rather than the field means we are re-using the validation that we added to our properties, instead of just accepting whatever value was provided.
+        }
+
+
+        // we have 2 ways of providing get/set functionality
+        // option 1: getter & setter methods
+        public double GetTemperature()
+        {
+            return _temperature;
+        }
+        public void SetTemperature(double temperature)
+        {
+            if (temperature <= 0)
+                throw new Exception("Temperature must be above 0.");
+            else if (temperature > 50)
+                throw new Exception("Temperature must be below 50.");
+            else
+                _temperature = temperature;
+        }
+
+       
         // LATER:
         // add some other methods
         // Renovate(), Decorate / adding furniture

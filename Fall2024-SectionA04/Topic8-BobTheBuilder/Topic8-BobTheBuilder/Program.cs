@@ -19,24 +19,33 @@
             fancyHouseV2.Temperature = 18;
             Console.WriteLine("The temperature of my other fancy house is "  + fancyHouseV2.Temperature);
 
-            string userChoice;
+            // TODO: add a list of houses
+            List<House> houses = new List<House>();
+            houses.Add(defaultHouse);
+            houses.Add(fancyHouse);
+            houses.Add(fancyHouseV2);
+
+            string userChoice = "";
             do
             {
-                // TODO before next class:
-                // display menu
-                // create a new object
-                // get # of rooms
-                // set # of rooms
-                // get # of floors
-                // set # of floors
-                // get temp
-                // set temp
-                // see if there is a garage
-                // change if there is a garage
+
+                Console.WriteLine("THE MENU");
+              // TODO: make this into a proper CW
+              // [N]ew house
+              // [D]isplay house details (# rooms, # floors, etc)
+              // [E]dit house (set # rooms, # floors, etc)
+              // [L]oad from file
+              // [S]ave to file
+              // [Q]uit
+  
 
                 // don't worry about exception handling in THIS program for now
 
                 // branch 
+                switch (userChoice)
+                {
+
+                }
 
 
             } while (userChoice != "Q");
@@ -44,6 +53,71 @@
 
             Console.WriteLine();
         }
+
+        /// <summary>
+        /// Reads in a character from the Console.
+        /// </summary>
+        /// <returns>user-inputted character</returns>
+        static char GetValidChar()
+        {
+            char userResponse = '\0'; // null character
+            bool isValid = false;
+
+            Console.Write("Please enter a character: ");
+            do
+            {
+                try
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    userResponse = char.Parse(Console.ReadLine());
+                    isValid = true;
+                }
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("That is not a valid character. Please try again: ");
+                }
+                finally // this runs no matter what
+                {
+                    Console.ResetColor(); // set the text colour back to default
+                }
+            } while (!isValid);
+
+            return userResponse;
+        } // end of method
+
+        /// <summary>
+        /// Reads in an int from the Console.
+        /// </summary>
+        /// <returns>an int</returns>
+        static int GetValidInt()
+        {
+            int userResponse = 0;
+            bool isValid = false;
+
+            Console.Write("Please enter a number: ");
+            do
+            {
+                try
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    userResponse = int.Parse(Console.ReadLine());
+                    isValid = true;
+                }
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("That is not a valid number. Please try again: ");
+                }
+                finally // this runs no matter what
+                {
+                    Console.ResetColor(); // set the text colour back to default
+                }
+            } while (!isValid);
+
+            return userResponse;
+        } // end of method
+
     }
 }
 
