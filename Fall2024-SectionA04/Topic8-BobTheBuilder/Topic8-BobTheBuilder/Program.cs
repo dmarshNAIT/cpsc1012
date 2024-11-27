@@ -17,7 +17,7 @@
 
             // test my properties:
             fancyHouseV2.Temperature = 18;
-            Console.WriteLine("The temperature of my other fancy house is "  + fancyHouseV2.Temperature);
+            Console.WriteLine("The temperature of my other fancy house is " + fancyHouseV2.Temperature);
 
             // TODO: add a list of houses
             List<House> houses = new List<House>();
@@ -28,30 +28,80 @@
             string userChoice = "";
             do
             {
-
-                Console.WriteLine("THE MENU");
-              // TODO: make this into a proper CW
-              // [N]ew house
-              // [D]isplay house details (# rooms, # floors, etc)
-              // [E]dit house (set # rooms, # floors, etc)
-              // [L]oad from file
-              // [S]ave to file
-              // [Q]uit
-  
+                Console.WriteLine("MAIN MENU\n" +
+                    "\t[N]ew house\n" +
+                    "\t[D]isplay house details\n" +
+                    "\t[E]dit house\n" +
+                    "\t[L]oad from file\n" +
+                    "\t[S]ave to file\n" +
+                    "\t[Q]uit\n");
 
                 // don't worry about exception handling in THIS program for now
+                Console.Write("Please enter your choice: ");
+                userChoice = Console.ReadLine().ToUpper();
 
-                // branch 
                 switch (userChoice)
                 {
-
+                    case "N":
+                        AddNewHouse(houses);
+                        break;
+                    case "D":
+                        Console.WriteLine("TODO: display house details");
+                        break;
+                    case "E":
+                        Console.WriteLine("TODO: edit house");
+                        break;
+                    case "L":
+                        Console.WriteLine("TODO: load file");
+                        break;
+                    case "S":
+                        Console.WriteLine("TODO save file");
+                        break;
+                    case "Q":
+                        // user wants to quit, do nothing.
+                        break;
+                    default:
+                        Console.WriteLine("Not an option. Try again.");
+                        break;
                 }
-
 
             } while (userChoice != "Q");
 
 
-            Console.WriteLine();
+            Console.WriteLine("Have a nice day!");
+        }
+
+        static void AddNewHouse(List<House> list)
+        {
+            // create a house using the no-arg constructor
+            House house = new House();
+            bool isValid = false;
+
+            // prompt the user for details & set each property
+            do
+            {
+                try
+                {
+                    house.NumberRooms = GetValidInt("Enter # rooms: ");
+                    isValid = true;
+                }
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid entry. Please try again.");
+                    Console.ResetColor();
+                }
+            } while (isValid == false);
+
+            // NEXT CHALLENGE:
+            // add the validation loops for the following 3 inputs
+
+            house.NumberFloors = GetValidInt("Enter # floors: ");
+            house.Temperature = GetValidDouble("Enter temperature in C: ");
+            house.HasGarage = GetValidBool("House has garage? True/False: ");
+
+            // add it to the list
+            list.Add(house);
         }
 
         /// <summary>
@@ -90,12 +140,12 @@
         /// Reads in an int from the Console.
         /// </summary>
         /// <returns>an int</returns>
-        static int GetValidInt()
+        static int GetValidInt(string message)
         {
             int userResponse = 0;
             bool isValid = false;
 
-            Console.Write("Please enter a number: ");
+            Console.Write(message);
             do
             {
                 try
@@ -108,6 +158,62 @@
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("That is not a valid number. Please try again: ");
+                }
+                finally // this runs no matter what
+                {
+                    Console.ResetColor(); // set the text colour back to default
+                }
+            } while (!isValid);
+
+            return userResponse;
+        } // end of method
+
+        static double GetValidDouble(string message)
+        {
+            double userResponse = 0;
+            bool isValid = false;
+
+            Console.Write(message);
+            do
+            {
+                try
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    userResponse = double.Parse(Console.ReadLine());
+                    isValid = true;
+                }
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("That is not a valid number. Please try again: ");
+                }
+                finally // this runs no matter what
+                {
+                    Console.ResetColor(); // set the text colour back to default
+                }
+            } while (!isValid);
+
+            return userResponse;
+        } // end of method
+
+        static bool GetValidBool(string message)
+        {
+            bool userResponse = false;
+            bool isValid = false;
+
+            Console.Write(message);
+            do
+            {
+                try
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    userResponse = bool.Parse(Console.ReadLine());
+                    isValid = true;
+                }
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Please enter true or false: ");
                 }
                 finally // this runs no matter what
                 {
