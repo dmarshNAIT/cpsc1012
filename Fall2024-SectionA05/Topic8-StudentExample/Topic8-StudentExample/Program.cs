@@ -26,6 +26,20 @@
             Console.WriteLine("Their GPA is " + maimee.GPA);
 
             Console.WriteLine();
+
+            // add all my students to a List
+            List<Student> students = new List<Student>();
+            students.Add( maimee );
+            students.Add( moose );
+            students.Add( spruce );
+            students.Add( aioli );
+            students.Add(maimee);
+
+            // test my Enroll method
+            Course course1 = new Course("River Surfing", "WA322", 4, 17.6);
+            spruce.EnrollStudent(course1);
+
+            spruce.EnrollStudent(new Course("Skydiving", "remote", 5, Math.PI));
         }
     }
 }

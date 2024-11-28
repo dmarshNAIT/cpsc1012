@@ -11,11 +11,9 @@
         private int _studentNumber;
         private byte _age = 18;
         private double _gpa; //default value for a double is 0
+        private List<Course> _courses = new List<Course>();
+        private List<double> _grades = new List<double>();
 
-        //TODO: Parallel arrays: one for class
-        //TODO: One for corresponding grade
-
-        //TODO: a couple of constructors
         // no-arg constructor
         public Student()
         {
@@ -37,8 +35,7 @@
             // "this" refers to the current object
         }
 
-        //TODO: getters & setters
-        // approach 1: creating getter & setter methods
+         // approach 1: creating getter & setter methods
         public string GetName()
         {
             return _name;
@@ -104,8 +101,33 @@
             // TODO: implement calculation
         }
 
+        public void EnrollStudent(Course newCourse)
+        {
+            // add that course to the student's course List
+            _courses.Add(newCourse);
+            // add an empty grade to the student's mark List
+            _grades.Add(0);
+        }
 
-        //LATER TODO: create some other methods to do things
+        // BONUS CONTENT:
+        public void EnrollStudent( params Course[] courses)
+        {
+            foreach (Course course in courses)
+            {
+                _courses.Add(course);
+                _grades.Add(0);
+            }
+        }
+
+        //TODO:
+        // DisplayEnrolledCourses: no params
+        // Withdraw: course
+        // CheckIfEnrolled: provide a course name, get a bool
+        // Grade: apply a mark for a specific course
+
 
     }
 }
+
+
+// TODO: clean up the order of things
