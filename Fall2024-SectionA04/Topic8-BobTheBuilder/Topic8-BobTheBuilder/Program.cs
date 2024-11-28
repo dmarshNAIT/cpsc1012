@@ -19,13 +19,14 @@
             fancyHouseV2.Temperature = 18;
             Console.WriteLine("The temperature of my other fancy house is " + fancyHouseV2.Temperature);
 
-            // TODO: add a list of houses
             List<House> houses = new List<House>();
             houses.Add(defaultHouse);
             houses.Add(fancyHouse);
             houses.Add(fancyHouseV2);
 
-            string userChoice = "";
+            string userChoice = "",
+                fileName = "../../../houses.csv";
+
             do
             {
                 Console.WriteLine("MAIN MENU\n" +
@@ -46,7 +47,7 @@
                         AddNewHouse(houses);
                         break;
                     case "D":
-                        Console.WriteLine("TODO: display house details");
+                        DisplayHouseDetails(houses);
                         break;
                     case "E":
                         Console.WriteLine("TODO: edit house");
@@ -55,7 +56,7 @@
                         Console.WriteLine("TODO: load file");
                         break;
                     case "S":
-                        Console.WriteLine("TODO save file");
+                        SaveToFile(fileName, houses);
                         break;
                     case "Q":
                         // user wants to quit, do nothing.
@@ -143,6 +144,56 @@
 
             // add it to the list
             list.Add(house);
+        }
+
+        static void DisplayHouseDetails(List<House> list)
+        {
+            int counter = 1;
+
+            // iterate through each house in the list
+            foreach (House element in list)
+            {
+                string garageText = element.HasGarage ? "has" : "does not have";
+
+                Console.WriteLine($"House #{counter++} has {element.NumberRooms} rooms, {element.NumberFloors} floors, is {element.Temperature} degrees, and {garageText} a garage.");
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
+        }
+
+        static void SaveToFile(string fileName, List<House> list)
+        {
+            try
+            {
+                // create our StreamWriter object
+                StreamWriter writer = new StreamWriter(fileName);
+
+                // hardcode the header line
+                writer.WriteLine("Number of Rooms\tNumber of floors\tTemperature\tGarage");
+
+                // for each house:
+                foreach (House element in list)
+                {
+                    writer.WriteLine(element.NumberRooms + "\t" +
+                         element.NumberFloors + "\t" +
+                         element.Temperature + "\t" +
+                         element.HasGarage);
+                }
+
+                // close the stream
+                writer.Close();
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("File successfully saved.");
+                Console.ResetColor();
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error saving to file.");
+                Console.ResetColor();
+            }
         }
 
         /// <summary>
