@@ -93,12 +93,53 @@
                 }
             } while (isValid == false);
 
-            // NEXT CHALLENGE:
-            // add the validation loops for the following 3 inputs
+            isValid = false;
+            do
+            {
+                try
+                {
+                    house.NumberFloors = GetValidInt("Enter # floors: ");
+                    isValid = true;
+                }
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid entry. Please try again.");
+                    Console.ResetColor();
+                }
+            } while (isValid == false);
 
-            house.NumberFloors = GetValidInt("Enter # floors: ");
-            house.Temperature = GetValidDouble("Enter temperature in C: ");
-            house.HasGarage = GetValidBool("House has garage? True/False: ");
+            isValid = false;
+            do
+            {
+                try
+                {
+                    house.Temperature = GetValidDouble("Enter temperature in C: ");
+                    isValid = true;
+                }
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid entry. Please try again.");
+                    Console.ResetColor();
+                }
+            } while (isValid == false);
+
+            isValid = false;
+            do
+            {
+                try
+                {
+                    house.HasGarage = GetValidBool("House has garage? True/False: ");
+                    isValid = true;
+                }
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid entry. Please try again.");
+                    Console.ResetColor();
+                }
+            } while (isValid == false);
 
             // add it to the list
             list.Add(house);
