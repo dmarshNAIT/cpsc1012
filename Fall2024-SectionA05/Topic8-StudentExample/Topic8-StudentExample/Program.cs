@@ -40,6 +40,11 @@
             spruce.EnrollStudent(course1);
 
             spruce.EnrollStudent(new Course("Skydiving", "remote", 5, Math.PI));
+
+
+            spruce.ApplyGrade("River Surfing", 100);
         }
+
+
     }
 }

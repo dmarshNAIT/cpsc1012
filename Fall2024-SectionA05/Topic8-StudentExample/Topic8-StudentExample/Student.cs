@@ -35,7 +35,7 @@
             // "this" refers to the current object
         }
 
-         // approach 1: creating getter & setter methods
+        // approach 1: creating getter & setter methods
         public string GetName()
         {
             return _name;
@@ -110,7 +110,7 @@
         }
 
         // BONUS CONTENT:
-        public void EnrollStudent( params Course[] courses)
+        public void EnrollStudent(params Course[] courses)
         {
             foreach (Course course in courses)
             {
@@ -119,11 +119,39 @@
             }
         }
 
+        public void ApplyGrade(string courseName, double grade)
+        {
+            // call FindCourse to get the index of the course
+            int index = FindCourse(courseName);
+
+            // set the same index of the grades List to the new grade
+            if (index == -1)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            _grades[index] = grade;
+        }
+
+        public int FindCourse(string courseName)
+        {
+            int foundLocation = -1;
+            // iterate through each element in the List
+            for (int index = 0; index < _courses.Count; index++)
+            {
+                // if an element has the same coursename ==> match!!
+                if (_courses[index].CourseName == courseName)
+                {
+                    foundLocation = index;
+                }
+            }
+            return foundLocation;
+        }
+
         //TODO:
         // DisplayEnrolledCourses: no params
         // Withdraw: course
         // CheckIfEnrolled: provide a course name, get a bool
-        // Grade: apply a mark for a specific course
 
 
     }
