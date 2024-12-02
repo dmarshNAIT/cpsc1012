@@ -42,6 +42,32 @@
             spruce.EnrollStudent(new Course("Skydiving", "remote", 5, Math.PI));
 
             spruce.ApplyGrade("River Surfing", 100);
+
+            // create Billy
+            Student billy = new Student("Billy", 19);
+            Console.WriteLine("Billy's average mark is " + billy.GPA);
+
+            // enroll Billy in classes
+            billy.EnrollStudent(new Course("Shapes 101", "playground", 1, Math.PI));
+            billy.EnrollStudent(new Course("Whistle Blowing", "Boeing HQ", 5, 4.5));
+            billy.EnrollStudent(new Course("College", "The Nest", 5, 100));
+            // give Billy marks
+            billy.ApplyGrade("Shapes 101", 87);
+            billy.ApplyGrade("Whistle Blowing", 99);
+            billy.ApplyGrade("College", 49.9);
+            // see Billy's GPA
+            Console.WriteLine("Billy's average mark is " + billy.GPA);
+
+            // let's see Billy's courses
+            Console.WriteLine(billy.GetEnrolledCourses());
+
+            // let's test the withdraw method
+            Console.WriteLine( billy.Withdraw("College") );
+            Console.WriteLine( billy.Withdraw("River surfing" ));
+
+            Console.WriteLine(billy.GetEnrolledCourses());
+
+
         }
 
 

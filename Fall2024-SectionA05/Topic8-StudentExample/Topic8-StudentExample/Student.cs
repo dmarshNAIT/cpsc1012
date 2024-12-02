@@ -8,9 +8,10 @@
         private static int _identity; // the # of students
 
         private string _name = "John Doe";
-        private int _studentNumber = _identity++ + 1; // MODIFIED
+        private int _studentNumber = ++_identity;
         private byte _age = 18;
         private double _gpa; //default value for a double is 0
+
         private List<Course> _courses = new List<Course>();
         private List<double> _grades = new List<double>();
 
@@ -58,14 +59,30 @@
 
         public double GPA
         {
-            get { return _gpa; }
-            // TODO: implement calculation
+            get
+            {
+                double sum = 0, average;
+                for (int i = 0; i < _grades.Count; i++)
+                {
+                    sum += _grades[i];
+                }
+
+                if (_grades.Count > 0)
+                {
+                    average = sum / _grades.Count;
+                }
+                else
+                { average = 0; }
+
+                return average;
+            }
         }
 
         // no-arg constructor
         public Student()
         {
         }
+
         // a constructor with lots of parameters
         public Student(string name, byte age)
         {
@@ -128,7 +145,7 @@
             _grades[index] = grade;
         }
 
-        public int FindCourse(string courseName)
+        private int FindCourse(string courseName)
         {
             int foundLocation = -1;
             // iterate through each element in the List
@@ -143,9 +160,43 @@
             return foundLocation;
         }
 
+        static public int GetNumberOfStudents()
+        {
+            return _identity;
+            // realistically: this could just be another property.
+        }
+
+        public string GetEnrolledCourses()
+        {
+            string outputMessage = "";
+
+            // for each course in the course list
+            foreach (Course course in _courses)
+            {
+                outputMessage += course.CourseName + "\n";
+            }
+
+            return outputMessage;
+        }
+
+        public bool Withdraw(string courseName)
+        {
+            // get the location of the course in the list
+            int courseIndex = FindCourse(courseName);
+            bool successfulWithdraw = false;
+
+            if (courseIndex != -1)
+            {
+                // remove the elements at that location in BOTH lists
+                _courses.RemoveAt(courseIndex);
+                _grades.RemoveAt(courseIndex);
+                successfulWithdraw = true;
+            }
+
+            return successfulWithdraw;
+        }
+
         //TODO:
-        // DisplayEnrolledCourses: no params, returns void or string
-        // Withdraw: param of coursename, returns void or bool
         // CheckIfEnrolled: param of coursename, returns bool
 
     }
