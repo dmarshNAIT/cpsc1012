@@ -8,7 +8,7 @@
         private static int _identity; // the # of students
 
         private string _name = "John Doe";
-        private int _studentNumber;
+        private int _studentNumber = _identity++ + 1; // MODIFIED
         private byte _age = 18;
         private double _gpa; //default value for a double is 0
         private List<Course> _courses = new List<Course>();
@@ -17,8 +17,6 @@
         // no-arg constructor
         public Student()
         {
-            _studentNumber = _identity + 1;
-            _identity++;
         }
         // a constructor with lots of parameters
         public Student(string name, byte age)
@@ -27,30 +25,9 @@
             Name = name;
             // using the property means I can re-use its validation and I don't need to repeat myself here
 
-            _studentNumber = _identity + 1;
-            _identity++; //TODO later: un-duplicate
-
             // set age
             this.Age = age; // "this" is optional
             // "this" refers to the current object
-        }
-
-        // approach 1: creating getter & setter methods
-        public string GetName()
-        {
-            return _name;
-        }
-
-        public void SetName(string name)
-        {
-            if (name.Length > 0 && name.Length <= 100)
-            {
-                _name = name;
-            }
-            else
-            {
-                throw new Exception("Name must be 0-100 characters.");
-            }
         }
 
         // approach 2: creating Properties
@@ -101,6 +78,24 @@
             // TODO: implement calculation
         }
 
+        // approach 1: creating getter & setter methods
+        public string GetName()
+        {
+            return _name;
+        }
+
+        public void SetName(string name)
+        {
+            if (name.Length > 0 && name.Length <= 100)
+            {
+                _name = name;
+            }
+            else
+            {
+                throw new Exception("Name must be 0-100 characters.");
+            }
+        }
+
         public void EnrollStudent(Course newCourse)
         {
             // add that course to the student's course List
@@ -149,13 +144,9 @@
         }
 
         //TODO:
-        // DisplayEnrolledCourses: no params
-        // Withdraw: course
-        // CheckIfEnrolled: provide a course name, get a bool
-
+        // DisplayEnrolledCourses: no params, returns void or string
+        // Withdraw: param of coursename, returns void or bool
+        // CheckIfEnrolled: param of coursename, returns bool
 
     }
 }
-
-
-// TODO: clean up the order of things
