@@ -14,22 +14,6 @@
         private List<Course> _courses = new List<Course>();
         private List<double> _grades = new List<double>();
 
-        // no-arg constructor
-        public Student()
-        {
-        }
-        // a constructor with lots of parameters
-        public Student(string name, byte age)
-        {
-            // set name
-            Name = name;
-            // using the property means I can re-use its validation and I don't need to repeat myself here
-
-            // set age
-            this.Age = age; // "this" is optional
-            // "this" refers to the current object
-        }
-
         // approach 2: creating Properties
         /// <summary>
         /// Gets or sets the <c>_name</c> field.
@@ -76,6 +60,22 @@
         {
             get { return _gpa; }
             // TODO: implement calculation
+        }
+
+        // no-arg constructor
+        public Student()
+        {
+        }
+        // a constructor with lots of parameters
+        public Student(string name, byte age)
+        {
+            // set name
+            Name = name;
+            // using the property means I can re-use its validation and I don't need to repeat myself here
+
+            // set age
+            this.Age = age; // "this" is optional
+            // "this" refers to the current object
         }
 
         // approach 1: creating getter & setter methods
