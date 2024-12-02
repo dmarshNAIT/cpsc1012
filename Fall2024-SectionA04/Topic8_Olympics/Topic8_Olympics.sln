@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topic8_Olympics", "Topic8_Olympics\Topic8_Olympics.csproj", "{2799382A-2D45-4E13-9F08-0EA6321C8AEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2799382A-2D45-4E13-9F08-0EA6321C8AEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2799382A-2D45-4E13-9F08-0EA6321C8AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2799382A-2D45-4E13-9F08-0EA6321C8AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2799382A-2D45-4E13-9F08-0EA6321C8AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C30CC2D8-83E8-4EDB-AAD4-AD686EDC3B7B}
+	EndGlobalSection
+EndGlobal
