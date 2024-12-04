@@ -52,7 +52,7 @@ namespace Topic8_Olympics
                 {
                     throw new Exception("Must provide name.");
                 }
-                else
+                else 
                 {
                     _athleteName = value.Trim();
                 }

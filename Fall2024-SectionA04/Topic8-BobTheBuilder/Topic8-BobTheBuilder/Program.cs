@@ -283,6 +283,8 @@
                     // split up line, using that \t as delimiter
                     string[] magicArray = line.Split("\t");
 
+                    //List<string> magicList = magicArray.ToList(); 
+
                     House house = new House(int.Parse(magicArray[0]),
                         int.Parse(magicArray[1]),
                         double.Parse(magicArray[2]),
