@@ -196,6 +196,71 @@
             return successfulWithdraw;
         }
 
+        public void SaveTranscript(string filename)
+        {
+            try
+            {
+                // create the connection
+                StreamWriter writer = new StreamWriter(filename);
+
+                // write each line
+                for (int i = 0; i < _courses.Count && i < _grades.Count; i++)
+                {
+                    writer.WriteLine(_courses[i].CourseName + ',' +
+                    _courses[i].Classroom + ',' +
+                    _courses[i].StressLevel + ',' +
+                    _courses[i].Credits + ',' +
+                    _grades[i]);
+                } // alternatively: we could create a new helper method in Course, or perhaps override the ToString() method.
+
+                // close the connection
+                writer.Close();
+
+            }
+            catch
+            {
+                throw new Exception("Something went wrong while saving.");
+            }
+        }
+
+        public void LoadTranscript(string filename)
+        {
+            try
+            {
+                // create the connection
+                StreamReader reader = new StreamReader(filename);
+
+                // read each object & add it to the List
+                while(reader.EndOfStream == false)
+                {
+                    // read in the line
+                    string line = reader.ReadLine();
+
+                    // split it up into parts
+                    string[] parts = line.Split(',');
+
+                    // create an object
+                    Course course = new Course(parts[0],
+                        parts[1],
+                        byte.Parse(parts[2]),
+                        double.Parse(parts[3]));
+
+                    // add the object to the List
+                    _courses.Add(course);
+                    _grades.Add(double.Parse(parts[4]));
+                }
+
+                // close the connection
+                reader.Close();
+
+            }
+            catch
+            {
+                throw new Exception("Something went wrong while reading file.");
+            }
+
+        }
+
         //TODO:
         // CheckIfEnrolled: param of coursename, returns bool
 

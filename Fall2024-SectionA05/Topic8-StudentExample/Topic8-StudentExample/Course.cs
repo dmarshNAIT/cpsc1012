@@ -1,4 +1,7 @@
-﻿namespace Topic8_StudentExample
+﻿//TODO: make sure that none of the fields can contain commas
+// why? because it will break our CSV
+
+namespace Topic8_StudentExample
 {
     internal class Course
     {

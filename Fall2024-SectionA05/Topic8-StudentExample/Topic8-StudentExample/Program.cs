@@ -67,7 +67,11 @@
 
             Console.WriteLine(billy.GetEnrolledCourses());
 
+            //billy.SaveTranscript("billy.csv");
 
+            billy.LoadTranscript("billy.csv");
+            Console.WriteLine("AFTER LOADING FILE:");
+            Console.WriteLine(billy.GetEnrolledCourses());
         }
 
 
