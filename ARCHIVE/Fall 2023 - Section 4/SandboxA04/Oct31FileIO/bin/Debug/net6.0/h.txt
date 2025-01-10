@@ -1,3 +1,0 @@
-this file is named lowercaseH.
-here is more text.
-and some more.
