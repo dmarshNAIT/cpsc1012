@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Chill guy shrugs shoulders.");
+            Console.Write("Chill guy shrugs shoulders.");
+            Console.WriteLine("unshrugs\n\n\nshoulders+");
         }
     }
 }
