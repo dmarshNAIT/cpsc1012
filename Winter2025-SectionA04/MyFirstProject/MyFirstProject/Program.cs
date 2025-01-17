@@ -43,11 +43,11 @@
             Console.WriteLine("\n");
 
             // let's do math:
-            int numberOfDonuts = 12;
-            int leftovers = numberOfStudents % numberOfDonuts;
-            // leftovers = the remainder when I divide 23/12
+            int numberOfDonuts = 100;
+            int leftovers = numberOfDonuts % numberOfStudents ;
+            // leftovers = the remainder when I divide 100/23
             Console.WriteLine("leftover donuts: " + leftovers);
-            int donutsPerPerson = numberOfStudents / numberOfDonuts;
+            int donutsPerPerson = numberOfDonuts /numberOfStudents ;
             Console.WriteLine("we each get " + donutsPerPerson + " donuts");
 
             // in C#, variables are named in camelCase
@@ -55,6 +55,28 @@
             // if there are multiple words, every word is capitalized except the first word
             // e.g.   numberOfStudents, itemsOrdered, donutsPerPerson...
 
+            // I cannot save a double into an int
+            int myNumber = (int) 1.99999999;
+            Console.WriteLine("The value of myNumber is " + myNumber);
+
+            // let's create a new data type, a float
+            // it is smaller than a double, but can still handle decimals
+            float myFloat = 3.14159f;
+
+            // let's create some constants. They are NOT allowed to change values.
+            const double GST_RATE = 0.05;
+            // GST_RATE = 0.07; // NOT ALLOWED
+
+            // let's create variables that are NOT numbers
+            bool isColdOutside = true;
+            bool isHotOutside = false;
+            bool isValidInput; // we will often use something like this to check if the user gave us good or bad input, and then we will respond appropriately. More on this in a future topic!
+            char myCharacter = 'b';
+            myCharacter = '8';
+            myCharacter = ' ';
+            myCharacter = '$';
+            string myName = "Dana";
+            // strings can contain any chars: letters, digits, punctuation, spaces...
         }
     }
 }
