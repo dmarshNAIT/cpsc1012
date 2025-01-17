@@ -75,6 +75,7 @@
             myCharacter = '8';
             myCharacter = ' ';
             myCharacter = '$';
+            // char can contain a SINGLE character
             string myName = "Dana";
             // strings can contain any chars: letters, digits, punctuation, spaces...
         }
