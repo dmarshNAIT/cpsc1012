@@ -1,33 +1,42 @@
-﻿namespace SimpleCalculator
+﻿using System.Collections.Generic;
+
+namespace SimpleCalculator
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            // declare variables that we need
-            string userInput;
-            int age;
+            //Create 2 variables
+            int number1,
+                number2,
+                sum;
+            string input1;
 
-            // ask a question:
-            Console.Write("What food do you want to eat? ");
+            //Get first number
+            // ask the question:
+            Console.Write("Enter first number: ");
             // get the answer:
-            userInput = Console.ReadLine();
-            // print a message including that food name
-            Console.WriteLine("Sounds like you are going to have " + userInput + " for lunch.");
+            input1 = Console.ReadLine();
+            // do something with the answer:
+            number1 = int.Parse(input1);
 
-            // let's ask another question, where the answer is a #
-            Console.Write("How old are you in years? ");
-            // read in their answer
-            userInput = Console.ReadLine();
-            // then turn it into a number
-            age = int.Parse(userInput); // Parse will attempt to turn the string into an int
-            // then I can print it out
-            Console.WriteLine("You are " + age + " years old.");
+            //Get second number
+            Console.Write("Enter second number: ");
+            input1 = Console.ReadLine();
+            number2 = int.Parse(input1);
 
-            // CHALLENGE
-            // you have the pseudocode for the REAL simple calculator
-            // we now have the skills to build it
-            // you are challenged to try.
+            //Perform addition
+            sum = number1 + number2;
+            //Output result
+            Console.WriteLine("The sum is " + sum);
+
+            // CHALLENGE: try to code the rest on your own
+            //Perform subtraction
+            //Output result
+            //Perform multiplication
+            //Output result
+            //Perform division
+            //Output result
         }
     }
 }
