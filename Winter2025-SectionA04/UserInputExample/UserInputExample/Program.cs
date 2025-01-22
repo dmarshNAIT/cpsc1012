@@ -23,6 +23,14 @@
             age = int.Parse(userInput); // Parse will attempt to turn the string into an int
                                         // then I can print it out
             Console.WriteLine("You are " + age + " years old.");
+
+
+            // let's create a double
+            // then force it into an int and see what happens
+            double bigNumber = 123456789012;
+            int otherBigNumber = (int) bigNumber;
+            Console.WriteLine("The value of otherBigNumber is " + otherBigNumber);
+
         }
     }
 }
