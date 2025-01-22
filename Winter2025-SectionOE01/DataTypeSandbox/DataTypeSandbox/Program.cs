@@ -22,6 +22,7 @@
             string userName = "Bob";
             string emptyString = "";
             string message = "Welcome to my awesome program.";
+            string sillyString = "234978&*^#$&*^#$   ...";
         }
     }
 }
