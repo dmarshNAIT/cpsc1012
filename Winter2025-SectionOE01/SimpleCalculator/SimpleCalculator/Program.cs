@@ -23,15 +23,12 @@ namespace SimpleCalculator
             // third: do something with the answer
             firstNumber = double.Parse(userInput);
 
-            // your challenge:
-            // try to write the code to 
             // ask the user for the 2nd number
+            Console.Write("Enter another number:");
             // save it into userInput
+            userInput = Console.ReadLine();
             // then turn it into a # and save it into secondNumber
-
-            // meet back here at 8:10
-
-            secondNumber = 10;
+            secondNumber = double.Parse(userInput);
 
             // Calculate the results
             sum = firstNumber + secondNumber;
@@ -44,6 +41,7 @@ namespace SimpleCalculator
             Console.WriteLine("Difference: " + difference);
             Console.WriteLine("Product: " + product);
             Console.WriteLine("Quotient: " + quotient);
+
         }
 
     }
