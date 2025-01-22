@@ -13,11 +13,25 @@ namespace SimpleCalculator
                 difference,         // subtractionResult
                 product,            // multiplicationResult
                 quotient;           // divisionResult
+            string userInput;
 
             // Get input numbers
-            //TODO: make this better
-            firstNumber = 2;
-            secondNumber = 9;
+            // first: ask the question
+            Console.Write("Enter a number:");
+            // second: get the answer
+            userInput = Console.ReadLine();
+            // third: do something with the answer
+            firstNumber = double.Parse(userInput);
+
+            // your challenge:
+            // try to write the code to 
+            // ask the user for the 2nd number
+            // save it into userInput
+            // then turn it into a # and save it into secondNumber
+
+            // meet back here at 8:10
+
+            secondNumber = 10;
 
             // Calculate the results
             sum = firstNumber + secondNumber;
