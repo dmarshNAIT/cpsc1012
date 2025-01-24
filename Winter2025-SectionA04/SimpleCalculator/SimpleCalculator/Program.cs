@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿/// <summary>
+/// This program accepts two numbers from the user, performs 4 arithmetic calculations, then displays the results.
+/// Author: Dana Marsh
+/// Last Modified Date: January 24, 2025
+/// </summary
 
 namespace SimpleCalculator
 {

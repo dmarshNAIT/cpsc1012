@@ -1,4 +1,12 @@
-﻿namespace MyFirstProject
+﻿/// <summary>
+/// The purpose of the program is to demonstrate some C# fundamentals including creating variables, writing output, and doing mathemetical calculations.
+/// Author: Dana Marsh
+/// Last Modified Date: January 24, 2025
+/// </summary
+
+
+
+namespace MyFirstProject
 {
     internal class Program
     {
