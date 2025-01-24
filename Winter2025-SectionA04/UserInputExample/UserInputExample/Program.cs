@@ -1,9 +1,27 @@
-﻿namespace UserInputExample
+﻿/// <summary>
+/// The purpose of the program is to demonstrate the use of Power and how to get input from the user.
+/// Author: Dana Marsh
+/// Last Modified Date: January 24, 2025
+/// </summary
+
+namespace UserInputExample
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            // let's practice using Math.Pow
+            // to calculate 2 to the power of 5
+            // that means 2 * 2 * 2 * 2 * 2 = 32
+            double result = Math.Pow(2, 5);
+            Console.WriteLine("The result is " + result);
+
+            int baseNumber = 2;
+            int powerNumber = 5;
+            result = Math.Pow(baseNumber, powerNumber);
+            Console.WriteLine("The result is " + result);
+
+
             // declare variables that we need
             string userInput;
             int age;
