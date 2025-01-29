@@ -6,6 +6,7 @@
  * 
  * Input:           lengths of 2 sides & the units
  * Output:          length of the hypotenuse
+ * 
  */
 
 namespace PythagoreanTheorem
