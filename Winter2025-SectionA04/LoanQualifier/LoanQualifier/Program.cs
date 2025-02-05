@@ -17,24 +17,27 @@ namespace LoanQualifier
             // get input
             Console.Write("Welcome!\n\nPlease enter your salary in $: ");
             salary = double.Parse(Console.ReadLine());
-            Console.Write("Please enter the # of years you've been employed: ");
-            tenure = int.Parse(Console.ReadLine());
 
             // check if the user's salary is high enough
-            if (true)
+            if (salary >= 30000)
             {
-                
+                // their salary is high enough, now we need to check their tenure
+                Console.Write("Please enter the # of years you've been employed: ");
+                tenure = int.Parse(Console.ReadLine());
+
+                if (tenure >= 2)
+                {
+                    Console.WriteLine("Congratulations! You qualify!");
+                }
+                else
+                {
+                    Console.WriteLine("Sorry, you haven't been working long enough.");
+                }
             }
-            // if so: check if the user has been working long enough
-            // if they haven't been working long enough, they aren't qualified
-
-            // if salary isn't high enough: let them know they aren't qualified.
-
-            // output results
-
-
-
-
+            else // this only executes if salary is NOT >= 30,000
+            {
+                Console.WriteLine("Sorry, your salary isn't high enough to qualify.");
+            }
         }
     }
 }
