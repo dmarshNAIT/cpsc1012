@@ -18,12 +18,8 @@ namespace LoanQualifierNested
             int yearsOfExperience;
 
             // prompt user for salary
-            Console.Write("Welcome!\n\nPlease enter your salary in CAD: ");
+            Console.Write("Welcome!\n\nPlease enter your salary in CAD: $");
             salary = double.Parse(Console.ReadLine());
-
-            // prompt user for yearsOfExperience
-            Console.Write("Please enter the years you've been at your current job: ");
-            yearsOfExperience = int.Parse(Console.ReadLine());
 
             // first, check if their salary is high enough.
             // if so, we then check if their experience is long enough.
@@ -33,6 +29,10 @@ namespace LoanQualifierNested
 
             if (salary >= 30000)
             {
+                // prompt user for yearsOfExperience
+                Console.Write("Please enter the years you've been at your current job: ");
+                yearsOfExperience = int.Parse(Console.ReadLine());
+
                 // salary is high enough
                 if (yearsOfExperience >= 2)
                 {
