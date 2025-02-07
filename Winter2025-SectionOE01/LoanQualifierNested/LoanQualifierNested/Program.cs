@@ -18,13 +18,35 @@ namespace LoanQualifierNested
             int yearsOfExperience;
 
             // prompt user for salary
+            Console.Write("Welcome!\n\nPlease enter your salary in CAD: ");
+            salary = double.Parse(Console.ReadLine());
+
             // prompt user for yearsOfExperience
+            Console.Write("Please enter the years you've been at your current job: ");
+            yearsOfExperience = int.Parse(Console.ReadLine());
 
             // first, check if their salary is high enough.
-                // if so, we then check if their experience is long enough.
-                    // if their experience is long enough, congrats!
-                    // otherwise, sorry you do not qualify
-                // otherwise if they don't have experience, sorry you do not quality
+            // if so, we then check if their experience is long enough.
+            // if their experience is long enough, congrats!
+            // otherwise, sorry you do not qualify
+            // otherwise if they don't have experience, sorry you do not quality
+
+            if (salary >= 30000)
+            {
+                // salary is high enough
+                if (yearsOfExperience >= 2)
+                {
+                    Console.WriteLine("Congrats! You qualify for a loan!");
+                }
+                else
+                {
+                    Console.WriteLine("Sorry, you need more work experience.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Sorry, you must make $30k/year.");
+            }
         }
     }
 }
