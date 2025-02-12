@@ -98,7 +98,9 @@ namespace TicketingSystem
 
             // if they are a student, subtract 10% from price
             //if (isStudent)
-            //    ticketPrice = ticketPrice * .90;
+            //    ticketPrice = ticketPrice * .90; // 90% of the original price
+            // OR
+            // ticketPrice = ticketPrice - .10 * ticektPrice;
             // using conditional operator:
             ticketPrice = isStudent ? ticketPrice * .90 : ticketPrice;
 
@@ -110,6 +112,8 @@ namespace TicketingSystem
                     break;
                 case 'M':
                     ticketPrice += 2;
+                    // same as: 
+                    //ticketPrice = ticketPrice + 2;
                     Console.WriteLine("You have chosen to have your ticket mailed.");
                     break;
                 default:
