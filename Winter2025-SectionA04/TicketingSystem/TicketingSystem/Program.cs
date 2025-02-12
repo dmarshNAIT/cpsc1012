@@ -78,11 +78,54 @@ namespace TicketingSystem
             // otherwise if they are 25 or less, price = 14
             // otherwise if they are 64 or less, price = 18
             // otherwise if they are 65+, price is 12
+            if (age <= 12)
+            {
+                ticketPrice = CHILD_PRICE;
+            }
+            else if (age <= 25)
+            {
+                ticketPrice = YOUTH_PRICE;
+            }
+            else if (age <= 64)
+            {
+                ticketPrice = ADULT_PRICE;
+            }
+            else
+            {
+                ticketPrice = SENIOR_PRICE;
+            }
+            // this could have been done as a switch using the new syntax, or as a series of nested conditional operators
+
             // if they are a student, subtract 10% from price
+            //if (isStudent)
+            //    ticketPrice = ticketPrice * .90;
+            // using conditional operator:
+            ticketPrice = isStudent ? ticketPrice * .90 : ticketPrice;
+
             // if they requested mailed ticket, add $2, otherwise add $0
+            switch (deliveryMethod)
+            {
+                case 'P':
+                    Console.WriteLine("You have chosen to print your ticket.");
+                    break;
+                case 'M':
+                    ticketPrice += 2;
+                    Console.WriteLine("You have chosen to have your ticket mailed.");
+                    break;
+                default:
+                    Console.WriteLine("That wasn't a valid choice.");
+                    break;
+            }
+
             // display results
+            // Your ticket will cost $14.00
+            // Your ticket will cost $12.60 (student discount)
+            Console.Write($"Your ticket will cost {ticketPrice:c}");
 
+            if (isStudent)
+                Console.Write(" (student discount)");
 
+            Console.WriteLine("\n\nThanks! Have a nice day!");
 
             // TODO NEXT WEEK: we will add the ability to get MULTIPLE tickets 
             // TODO NEXT WEEK: add input validation
