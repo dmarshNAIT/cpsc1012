@@ -18,6 +18,8 @@
             {
                 Console.WriteLine("Chill guy gets paid.");
             }
+            // i = index
+            // this is a term related to arrays
 
         }
     }
