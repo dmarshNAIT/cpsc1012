@@ -14,6 +14,7 @@ namespace TicketingSystem
             // declare variables
             int age;
             double ticketPrice;
+            bool isFree = false;
 
             const double CHILD_PRICE = 0;
             const double YOUTH_PRICE = 9.8;
@@ -37,6 +38,7 @@ namespace TicketingSystem
             else if (age <= 6)
             {
                 ticketPrice = CHILD_PRICE;
+                isFree = true;
             }
             else if (age <= 17)
             {
@@ -52,7 +54,14 @@ namespace TicketingSystem
             }
 
             // display the ticket price formatted as currency
-            Console.WriteLine($"Your ticket will cost {ticketPrice:c}");
+            Console.Write($"Your ticket will cost {ticketPrice:c}");
+
+            if (isFree) {
+                // this line will only execute if it's a child ticket
+                Console.WriteLine(" (FREE!)");
+            } // otherwise nothing will happen
+
+            Console.WriteLine("\n\nThanks! Goodbye.");
 
         }
     }
