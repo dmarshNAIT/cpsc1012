@@ -29,6 +29,7 @@
                 } while (invalidInput);
 
                 sum = sum + mark;
+                // we will add the latest mark to our running total
             }
 
             averageMark = sum / 3;
