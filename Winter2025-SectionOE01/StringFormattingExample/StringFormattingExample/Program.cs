@@ -30,8 +30,8 @@ namespace StringFormattingExample
             Console.WriteLine();
 
             // v4: let's line up on the left-side instead
-            Console.WriteLine($"Student ID: {studentID,-12:0000-0000}");
-            Console.WriteLine($"Balance:    {balance,-12:$0.00}");
+            Console.WriteLine($"Student ID: {studentID,-12:0000-0000}.");
+            Console.WriteLine($"Balance:    {balance,-12:$0.00}.");
         }
     }
 }
