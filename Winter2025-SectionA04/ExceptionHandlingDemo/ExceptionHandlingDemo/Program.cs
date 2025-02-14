@@ -56,7 +56,11 @@
                 }
             } while (!isValidNumber);
             // our condition could also be written as:  isValidNumber == false
+            // in English, line 57 is saying:
+            // keep looping as long as the condition in the () is true (i.e. isValidNumber is false)
+            // stop looping when the condition in the () becomes false (i.e. isValidNumber is true)
 
+            Console.WriteLine("Thanks, bye!");
         }
     }
 }
