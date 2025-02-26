@@ -9,38 +9,54 @@ namespace PiggyBankLoop
     {
         static void Main(string[] args)
         {
-            // declare variables
-            double depositAmount,
-                   balance,
+            double balance = 0,
                    goalAmount; // STRETCH GOAL
-            bool badInput = true; // when the program starts, we do NOT have good input yet
+            string userAnswer;
+
+            // TODO: CHALLENGE
+            // when the program first starts, ask the user for their goal
+            // every time we make a deposit, we will display the amount remaining towards the goal
 
             do
             {
-                Console.Write("Please enter the amount of your deposit: $");
-                try
+                double depositAmount = 0;
+                bool badInput = true; // when the program starts, we do NOT have good input yet
+
+                do
                 {
-                    depositAmount = double.Parse(Console.ReadLine());
-                    if (depositAmount > 0)
+                    Console.Write("Please enter the amount of your deposit: $");
+                    try
                     {
-                        badInput = false;
-                    } else // negative #
-                    {
-                        Console.WriteLine("Invalid input: you cannot deposit a negative amount.");
+                        depositAmount = double.Parse(Console.ReadLine());
+                        if (depositAmount > 0)
+                        {
+                            badInput = false;
+                        }
+                        else // negative #
+                        {
+                            Console.WriteLine("Invalid input: you cannot deposit a negative amount.");
+                        }
                     }
-                }
-                catch
-                {
-                    Console.WriteLine("Invalid input: please enter a numeric value.");
-                }
-            } while (badInput); // loop as long as we have BAD input
+                    catch
+                    {
+                        Console.WriteLine("Invalid input: please enter a numeric value.");
+                    }
+                } while (badInput); // loop as long as we have BAD input
 
-            // validate their input
-            // update the balance
-            // display the deposit and the balance, lined up by cents
+                // update the balance
+                balance = balance + depositAmount;
 
-            // ask the user if they'd like to make another deposit
+                // display the deposit and the balance, lined up by cents
+                Console.WriteLine($"Deposit: {depositAmount,10:c}" +
+                    $"\nBalance: {balance,10:c}");
 
+                // ask the user if they'd like to make another deposit
+                Console.Write("Would you like to make another deposit? y/n: ");
+                userAnswer = Console.ReadLine().ToLower();
+
+                // check scope
+            } while (userAnswer == "y");
+            Console.WriteLine("Thank you, goodbye.");
         }
     }
 }
