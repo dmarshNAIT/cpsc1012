@@ -61,6 +61,11 @@ namespace InformationStealer
                     Console.WriteLine("Invalid input: please enter a numeric value.");
                 }
             } while (badInput == true); // keep looping as long as we have bad input
+            // if we adjusted our logic a bit, we could also use other conditions like:
+            // while (salary <= 0)
+            // while (goodInput == false)
+            // while (!goodInput)
+            // while (badInput)...
 
             // if their salary is below 5000
             // give $200
