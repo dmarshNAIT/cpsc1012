@@ -15,6 +15,9 @@
                 userInput = Console.ReadLine();
 
                 goodInput = int.TryParse(userInput, out age);
+                // this line will try to parse userInput as an int
+                // if successful, goodInput is now TRUE and age now has a value
+                // otherwise, goodInput is now FALSE
 
             } while (goodInput == false);
 
