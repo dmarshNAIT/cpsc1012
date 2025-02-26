@@ -11,8 +11,9 @@ namespace InformationStealer
         static void Main(string[] args)
         {
             // declare variables:
-            int age;
-            double salary;
+            int age = 0;// starting value that will be replaced with user input
+            double salary = 0, // starting value that will be replaced with user input
+                gift; // this represents the NEW balance after we add/remove funds
             bool restartLoop,
                 badInput = true;
 
@@ -69,10 +70,25 @@ namespace InformationStealer
 
             // if their salary is below 5000
             // give $200
+            if (salary < 5000)
+            {
+                gift = salary + 200;
+            }
             // if their salary is above 7000
             // take $1000
+            else if (salary > 7000)
+            {
+                gift = salary - 1000;
+            }
+            else
+            {
+                gift = salary;
+            }
 
             // output those values, nicely aligned
+            Console.WriteLine($"Age: {age}" +
+                $"\nSalary: {salary}" +
+                $"\nAdjusted Salary: {gift}");
             // then ask if they want to go again
 
             Console.WriteLine("Thanks, bye!");
