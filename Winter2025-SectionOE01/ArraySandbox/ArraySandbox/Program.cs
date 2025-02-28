@@ -41,7 +41,7 @@ namespace ArraySandbox
             // iterate through a loop and DISPLAY its contents
             for (int i = 0; i < catNames.Length; i++)
             {
-                Console.WriteLine($"Cat #{i+1}: {catNames[i]}");
+                Console.WriteLine($"Cat #{i + 1}: {catNames[i]}");
             }
 
 
