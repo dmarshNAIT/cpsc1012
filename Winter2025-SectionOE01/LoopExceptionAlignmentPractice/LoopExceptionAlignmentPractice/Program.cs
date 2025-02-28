@@ -44,7 +44,7 @@ namespace LoopExceptionAlignmentPractice
             // print out the original value & the GST, with the numbers aligned
             Console.WriteLine($"Price: {price,11:c}\n" +
                 $"GST:   {gst,11:c}");
-            // we used a width of $11 to support numbers up to $10,000.00
+            // we used a width of 11 to support numbers up to $10,000.00
             // we used c to format both numbers as currency
 
         }
