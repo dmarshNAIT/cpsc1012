@@ -28,8 +28,11 @@ namespace MonthLookUp
 
                 // ask the user to input a number
                 Console.Write("Please enter a number: ");
-                monthNumber = int.Parse(Console.ReadLine());
-                // TODO: ADD VALIDATION!!!! check data type, and check for valid #s only
+
+                while (!int.TryParse(Console.ReadLine(), out monthNumber) || monthNumber < 1 || monthNumber > 12) // we cannot parse the int OR the number is 0 or less OR the number is >12
+                {
+                    Console.Write("Invalid input. Please enter a valid number: ");
+                }
 
                 // show the month name
                 monthName = monthNames[monthNumber]; // monthNumber is the index of the array
@@ -39,7 +42,7 @@ namespace MonthLookUp
                 // if they say no, change userWantsToContinue to be FALSE
                 Console.Write("Press Q to Quit or any other key to continue: ");
                 userAnswer = Console.ReadLine().ToUpper();
-                if(userAnswer == "Q")
+                if (userAnswer == "Q")
                 {
                     userWantsToContinue = false;
                 }
