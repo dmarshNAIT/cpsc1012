@@ -1,7 +1,7 @@
 ﻿/*
  * Purpose:  Provided a month number, the program will display the month name.
  * Author:   Dana & OE01
- * Modified: Feb 27, 2025
+ * Modified: Mar 4, 2025
  */
 namespace MonthLookUp
 {
@@ -26,6 +26,9 @@ namespace MonthLookUp
                 // create the array
                 string[] monthNames = { null, "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
+                //Console.WriteLine("The length of monthNames is " + monthNames.Length);
+                //Console.WriteLine("The current month is " + monthNames[3]); // 3 = index of the element I want
+
                 // ask the user to input a number
                 Console.Write("Please enter a number: ");
 
@@ -41,8 +44,8 @@ namespace MonthLookUp
                 // ask if they want to go again
                 // if they say no, change userWantsToContinue to be FALSE
                 Console.Write("Press Q to Quit or any other key to continue: ");
-                userAnswer = Console.ReadLine().ToUpper();
-                if (userAnswer == "Q")
+                userAnswer = Console.ReadLine();
+                if (userAnswer.ToUpper() == "Q")
                 {
                     userWantsToContinue = false;
                 }
