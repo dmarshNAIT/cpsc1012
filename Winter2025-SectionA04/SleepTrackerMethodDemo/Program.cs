@@ -12,8 +12,16 @@ namespace SleepTrackerMethodDemo
     {
         static void Main(string[] args)
         {
-            //Arrays
-            //Hold dates
+            // create our arrays & objects
+            string[] days = { "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY" };
+            double[] hours = new double[7];
+            int logicalSize = 0;
+
+            // quick test:
+            logicalSize = EnterValues(hours);
+            // arrays are a reference type: that means when we provide them to a method, that method can CHANGE the contents and we see the changes here.
+            ViewContent(days, hours, logicalSize);
+
             //Hold hours
             //Looping a switch (menu - based program)
             // Enter values (includes exception handling)
@@ -24,7 +32,7 @@ namespace SleepTrackerMethodDemo
             //Formatting & colouring of text
 
             // declare variables:
-            int sleepHoursThisWeek;
+            double sleepHoursThisWeek;
             string name,
                 didYouSleep;
 
@@ -40,6 +48,11 @@ namespace SleepTrackerMethodDemo
             // call our GetUserString method a few different times, with different questions
             name = GetUserString("What is your name?");
             didYouSleep = GetUserString("Did you sleep last night?");
+            // each time we call GetUserString, it RETURNs a string
+            // we are saving that returned value into a variable e.g. didYouSleep
+
+            sleepHoursThisWeek = GetUserDouble("How many hours did you sleep? ");
+            Console.WriteLine($"You slept {sleepHoursThisWeek} hours this week!");
 
             Console.WriteLine("Thanks, goodbye!");
 
@@ -56,12 +69,44 @@ namespace SleepTrackerMethodDemo
                 "\t[q]uit\n");
         }
 
+        static void ViewContent(string[] days, double[] values, int logicalSize)
+        {
+            // loop through the arrays
+            // starting at 0
+            // using logicalSize to help us know when to stop
+            // for each element, we will print out the values to the Console
+            for (int index = 0; index < logicalSize; index++)
+            {
+                Console.WriteLine(days[index] + ": " + values[index] + " hours");
+                // TODO: add in alignment
+            }
+
+            // TODO: add in some validation to make sure that we don't have bad data that crashes the program
+            // we need to check that count is valid (not too big, not too small)
+        }
+
+        static int EnterValues(double[] values)
+        {
+            // TODO: ask the user how many numbers they want to enter 
+
+            // loop through ALL elements of the hours array
+            // for each element, ask the user to enter the # of hours
+            // return the # of elements added to the array
+            int i = 0;
+            for (; i < values.Length;i++)
+            {
+                values[i] = GetUserDouble("How many hours of sleep did you get? ");
+            }
+
+            return i;
+            // TODO later: add day names
+        }
+
         static int GiveMeNumber()
         {
             return 78;
         }
 
-        // NEW CONTENT TO BE REVIEWED FRIDAY
         static string GetUserString(string question)
         {
             string userResponse;
@@ -73,6 +118,32 @@ namespace SleepTrackerMethodDemo
             return userResponse;
         }
 
+        static double GetUserDouble(string question)
+        {
+            while (true)
+            {
+                // ask the user a question
+                Console.Write(question);
 
-    }
-}
+                // read in their answer
+                // try to parse it as a double
+                try
+                {
+                    return double.Parse(Console.ReadLine());
+                    // if that works, return it
+                    // this is the only way to exit the method
+                }
+                catch  // otherwise, loop back & try again
+                {
+                    Console.WriteLine("Please enter a valid number. Try again.");
+                }
+            } // end of loop
+        } // end of method
+
+
+    } // end of my class
+} // end of my namespace
+
+// FRIDAY PRIORITY LIST: array things!
+// for loop
+// value vs reference
