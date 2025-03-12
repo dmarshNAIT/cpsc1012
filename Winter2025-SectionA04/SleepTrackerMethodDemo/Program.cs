@@ -131,6 +131,7 @@ namespace SleepTrackerMethodDemo
         {
             // empty out any "old" data, first:
             Array.Clear(values);
+
             // ask the user how many numbers they want to enter 
             int numberOfValues = GetUserInt("How many days of values would you like to input? ");
             // if they give us a # that is too big OR too small, ask again
@@ -181,6 +182,11 @@ namespace SleepTrackerMethodDemo
         static int GiveMeNumber()
         {
             return 78;
+        }
+
+        static int GiveMeNumber(int input) //overloaded method
+        {
+            return input;
         }
 
         static string GetUserString(string question)
