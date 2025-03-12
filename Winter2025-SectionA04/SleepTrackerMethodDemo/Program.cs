@@ -23,17 +23,17 @@ namespace SleepTrackerMethodDemo
                 // show the menu
                 DisplayMainMenu();
 
-                // get the user's choice
+                // get the user's choice & force it to be lowercase:
                 userChoice = Char.ToLower(GetUserChar("Please make your choice: "));
 
                 // branch according to their choice
                 switch (userChoice)
                 {
                     case 'e':
-                        // TODO: enter values
+                       logicalSize = EnterValues(hours, days);
                         break;
                     case 'v':
-                        // TODO: view values
+                        ViewContent(days, hours, logicalSize);
                         break;
                     case 's':
                         // TODO: save to file
@@ -124,21 +124,27 @@ namespace SleepTrackerMethodDemo
             // we need to check that count is valid (not too big, not too small)
         }
 
-        static int EnterValues(double[] values)
+        static int EnterValues(double[] values, string[] dayNames)
         {
-            // TODO: ask the user how many numbers they want to enter 
-
-            // loop through ALL elements of the hours array
-            // for each element, ask the user to enter the # of hours
-            // return the # of elements added to the array
-            int i; // initialize outside of loop as we will need to access it after the loop ends
-            for (i = 0; i < values.Length; i++)
+            // ask the user how many numbers they want to enter 
+            int numberOfValues = GetUserInt("How many days of values would you like to input? ");
+            // if they give us a # that is too big OR too small, ask again
+            while (numberOfValues < 0 || numberOfValues > values.Length)
             {
-                values[i] = GetUserDouble("How many hours of sleep did you get? ");
+                numberOfValues = GetUserInt("Sorry, you must enter a number between 0 and 7: ");
             }
 
+            // loop through the elements of the hours array
+            // for each element, ask the user to enter the # of hours
+            int i; // initialize outside of loop as we will need to access it after the loop ends
+            for (i = 0; i < numberOfValues; i++)
+            {
+                string currentDayOfWeek = dayNames[i];
+                values[i] = GetUserDouble($"How many hours of sleep did you get on {currentDayOfWeek}? ");
+            }
+
+            // return the # of elements added to the array
             return i;
-            // TODO later: add day names
         }
 
         static int GiveMeNumber()
@@ -169,6 +175,28 @@ namespace SleepTrackerMethodDemo
                 try
                 {
                     return double.Parse(Console.ReadLine());
+                    // if that works, return it
+                    // this is the only way to exit the method
+                }
+                catch  // otherwise, loop back & try again
+                {
+                    Console.WriteLine("Please enter a valid number. Try again.");
+                }
+            } // end of loop
+        } // end of method
+
+        static int GetUserInt(string question)
+        {
+            while (true)
+            {
+                // ask the user a question
+                Console.Write(question);
+
+                // read in their answer
+                // try to parse it as a int
+                try
+                {
+                    return int.Parse(Console.ReadLine());
                     // if that works, return it
                     // this is the only way to exit the method
                 }
