@@ -30,7 +30,7 @@ namespace HotelMethodExample
                 switch (userAnswer)
                 {
                     case "v":
-                        // TODO: view reservations
+                        ViewReservations(reservationNames, numberOfGuests, numberOfReservations);
                         break;
                     case "e":
                         // TODO: edit reservations
@@ -81,6 +81,7 @@ namespace HotelMethodExample
             return 2;
         }
 
+        #region
         static string GetUserString(string question)
         {
             string userInput;
@@ -117,6 +118,7 @@ namespace HotelMethodExample
                 }
             }
         }
+        #endregion
 
         static int AddReservation(string[] names, int[] numberOfGuests, int logicalSize)
         {
@@ -154,25 +156,56 @@ namespace HotelMethodExample
 
         static void ViewReservations(string[] names, int[] numberOfGuests, int logicalSize)
         {
-            if (logicalSize < names.Length && logicalSize < numberOfGuests.Length)
+            if (logicalSize <= names.Length && logicalSize <= numberOfGuests.Length)
             {
-
-                Console.WriteLine("Name         # of Guests");
+                string outputMessage = "Name        # of Guests\n";
+                int nameLength = GetMaxLength(names, logicalSize) + 2;
+                // TODO: Come up with a real solution
+                const int COLUMN_WIDTH = 12;
 
                 // iterate through the arrays
-                // v1: display the raw values
+                // & display the raw values
                 for (int i = 0; i < logicalSize; i++)
                 {
-                    Console.WriteLine(names[i] + numberOfGuests[i]);
+                    string name = names[i];
+                    int currentNumberOfGuests = numberOfGuests[i];
+                    outputMessage += $"{name,-COLUMN_WIDTH}{currentNumberOfGuests}\n";
                 }
 
-                // TODO: alignment / make it look pretty
+                Console.WriteLine(outputMessage);
             }
             else
             {
                 Console.WriteLine("There is an error in our data.");
             }
+        }
 
+        static int GetMaxLength(string[] names, int logicalSize)
+        {
+            int maxNumberOfCharacters = 0;
+
+            for (int i = 0; i < logicalSize; i++)
+            {
+                // go through the array
+                string currentName = names[i];
+                // if the current name has more characters, set that to be the new maximum
+                if (currentName.Length > maxNumberOfCharacters)
+                {
+                    maxNumberOfCharacters = currentName.Length;
+                }
+            }
+
+            return maxNumberOfCharacters;
+        }
+        
+        static void EditReservation(string[] names, int[] numberOfGuests, int logicalSize)
+        {
+            // let's show the user all the reservations
+            // ask the user to pick a number
+            // validate that it's a valid index/number
+            // ask the user to re-enter the name, and save it to the array
+            // ask the user to re-enter the # of guests, and save that to the array
+            // show a confirmation of the new values
         }
 
     }
@@ -182,8 +215,6 @@ namespace HotelMethodExample
 
 
 
-//// call a method with a return value:
-//numberOfRooms = GiveMeNumber();
 
 
 
