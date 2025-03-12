@@ -30,7 +30,7 @@ namespace SleepTrackerMethodDemo
                 switch (userChoice)
                 {
                     case 'e':
-                       logicalSize = EnterValues(hours, days);
+                        logicalSize = EnterValues(hours, days);
                         break;
                     case 'v':
                         ViewContent(days, hours, logicalSize);
@@ -110,18 +110,27 @@ namespace SleepTrackerMethodDemo
 
         static void ViewContent(string[] days, double[] values, int logicalSize)
         {
-            // loop through the arrays
-            // starting at 0
-            // using logicalSize to help us know when to stop
-            // for each element, we will print out the values to the Console
-            for (int index = 0; index < logicalSize; index++)
+            // let's validate our inputs:
+            if (logicalSize == 0)
             {
-                Console.WriteLine(days[index] + ": " + values[index] + " hours");
-                // TODO: add in alignment
+                Console.WriteLine("There is no data to display.");
             }
-
-            // TODO: add in some validation to make sure that we don't have bad data that crashes the program
-            // we need to check that count is valid (not too big, not too small)
+            else if (logicalSize < 0 || logicalSize > days.Length || logicalSize > values.Length)
+            {
+                Console.WriteLine("There is something wrong with the data.");
+            }
+            else
+            {
+                // loop through the arrays
+                // starting at 0
+                // using logicalSize to help us know when to stop
+                // for each element, we will print out the values to the Console
+                for (int index = 0; index < logicalSize; index++)
+                {
+                    Console.WriteLine(days[index] + ": " + values[index] + " hours");
+                    // TODO: add in alignment
+                }
+            }
         }
 
         static int EnterValues(double[] values, string[] dayNames)
