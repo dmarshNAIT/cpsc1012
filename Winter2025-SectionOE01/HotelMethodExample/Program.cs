@@ -156,20 +156,19 @@ namespace HotelMethodExample
 
         static void ViewReservations(string[] names, int[] numberOfGuests, int logicalSize)
         {
+            // check to ensure we have valid inputs (DEFENSIVE CODING)
             if (logicalSize <= names.Length && logicalSize <= numberOfGuests.Length)
             {
-                string outputMessage = "Name        # of Guests\n";
-                int nameLength = GetMaxLength(names, logicalSize) + 2;
-                // TODO: Come up with a real solution
-                const int COLUMN_WIDTH = 12;
+                int columWidth = GetMaxLength(names, logicalSize) + 2;
+
+                string outputMessage = "Name".PadRight(columWidth) + "# of Guests\n";
 
                 // iterate through the arrays
                 // & display the raw values
                 for (int i = 0; i < logicalSize; i++)
                 {
-                    string name = names[i];
-                    int currentNumberOfGuests = numberOfGuests[i];
-                    outputMessage += $"{name,-COLUMN_WIDTH}{currentNumberOfGuests}\n";
+                    //TODO: discuss changes!
+                    outputMessage += names[i].PadRight(columWidth) + numberOfGuests[i] + "\n";
                 }
 
                 Console.WriteLine(outputMessage);
@@ -197,7 +196,7 @@ namespace HotelMethodExample
 
             return maxNumberOfCharacters;
         }
-        
+
         static void EditReservation(string[] names, int[] numberOfGuests, int logicalSize)
         {
             // let's show the user all the reservations
