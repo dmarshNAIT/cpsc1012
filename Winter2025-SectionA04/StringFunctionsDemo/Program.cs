@@ -23,6 +23,10 @@
             Console.WriteLine("Bob".PadRight(10, '*') + value);
             Console.WriteLine("Aioli".PadRight(10, '*') + value);
 
+            // testing an array method
+            int[] values = { 1, 2, 3, 4, 5 };
+            Console.WriteLine(values.Max());
+
         }
     }
 }

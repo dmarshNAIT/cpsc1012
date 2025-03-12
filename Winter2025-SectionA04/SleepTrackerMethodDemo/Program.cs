@@ -42,26 +42,20 @@ namespace SleepTrackerMethodDemo
                         // TODO: load from file
                         break;
                     case 'p':
-                        // TODO: predict tonight's sleep
+                        int prediction = PredictHours(hours, logicalSize);
+                        Console.WriteLine($"I predict you will get {prediction} hours of sleep tonight.");
                         break;
                     case 'q':
                         // quit
                         break;
                     default:
-                        // TODO: invalid input
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Sorry, that was not a valid choice. Try again.");
+                        Console.ResetColor();
                         break;
                 }
 
             } while (userChoice != 'q');
-
-            //Hold hours
-            //Looping a switch (menu - based program)
-            // Enter values (includes exception handling)
-            // View values
-            // Save values to a file
-            // Read values from a file
-            // Predict tonight's sleep
-            //Formatting & colouring of text
 
             #region
 
@@ -127,14 +121,16 @@ namespace SleepTrackerMethodDemo
                 // for each element, we will print out the values to the Console
                 for (int index = 0; index < logicalSize; index++)
                 {
-                    Console.WriteLine(days[index] + ": " + values[index] + " hours");
-                    // TODO: add in alignment
+                    string currentDay = days[index];
+                    Console.WriteLine(currentDay.PadLeft(9) + ": " + values[index] + " hours");
                 }
             }
         }
 
         static int EnterValues(double[] values, string[] dayNames)
         {
+            // empty out any "old" data, first:
+            Array.Clear(values);
             // ask the user how many numbers they want to enter 
             int numberOfValues = GetUserInt("How many days of values would you like to input? ");
             // if they give us a # that is too big OR too small, ask again
@@ -154,6 +150,32 @@ namespace SleepTrackerMethodDemo
 
             // return the # of elements added to the array
             return i;
+        }
+
+        static int PredictHours(double[] values, int logicalSize)
+        {
+            int prediction = 0;
+            // to create a random number: first, create a Random object. 
+            Random numberGenerator = new Random(); // this is our random number generator
+            // then we will use the Next() method to generate a random int
+
+            if (logicalSize == 0) // predict a random number between 4 & 10   
+            {
+                const int SMALLEST_NUMBER = 4;
+                const int LARGEST_NUMBER = 10;
+                // use the object to generate a new int:
+                prediction = numberGenerator.Next(SMALLEST_NUMBER, LARGEST_NUMBER + 1); // an int that is AT LEAST 4 and LESS THAN 11
+            }
+            else
+            {
+                // get the smallest value from values
+                int smallestNumber = (int)values.Min() - 2;
+                // get the largest value from values
+                int largestNumber = (int)values.Max() + 2;
+                // use those to predict a new random number:
+                prediction = numberGenerator.Next(smallestNumber, largestNumber + 1);
+            }
+            return prediction;
         }
 
         static int GiveMeNumber()
@@ -241,7 +263,3 @@ namespace SleepTrackerMethodDemo
 
     } // end of my class
 } // end of my namespace
-
-// FRIDAY PRIORITY LIST: array things!
-// for loop
-// value vs reference
