@@ -118,9 +118,9 @@ namespace HotelMethodExample
             }
         }
 
-        static int AddReservation(string[] names, int[] numberOfGuests, int count)
+        static int AddReservation(string[] names, int[] numberOfGuests, int logicalSize)
         {
-            if (count == names.Length || count == numberOfGuests.Length)
+            if (logicalSize == names.Length || logicalSize == numberOfGuests.Length)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Sorry, we are not accepting new reservations.");
@@ -130,15 +130,15 @@ namespace HotelMethodExample
             {
                 // ask the user for their name
                 // save that into the array
-                names[count] = GetUserString("What is the name on the reservation? ");
+                names[logicalSize] = GetUserString("What is the name on the reservation? ");
 
                 // ask the user for their # of guests
                 // save that into the array
                 // validate that numberOfGuests is 10 or fewer
-                while (numberOfGuests[count] < 1 || numberOfGuests[count] > 10)
+                while (numberOfGuests[logicalSize] < 1 || numberOfGuests[logicalSize] > 10)
                 {
-                    numberOfGuests[count] = GetUserInt("How many guests will be staying with us? ");
-                    if (numberOfGuests[count] < 1 || numberOfGuests[count] > 10)
+                    numberOfGuests[logicalSize] = GetUserInt("How many guests will be staying with us? ");
+                    if (numberOfGuests[logicalSize] < 1 || numberOfGuests[logicalSize] > 10)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("You must have between 1 and 10 guests.");
@@ -147,9 +147,32 @@ namespace HotelMethodExample
                 }
 
                 // return the new # of elements
-                count++;
+                logicalSize++;
             }
-            return count;
+            return logicalSize;
+        }
+
+        static void ViewReservations(string[] names, int[] numberOfGuests, int logicalSize)
+        {
+            if (logicalSize < names.Length && logicalSize < numberOfGuests.Length)
+            {
+
+                Console.WriteLine("Name         # of Guests");
+
+                // iterate through the arrays
+                // v1: display the raw values
+                for (int i = 0; i < logicalSize; i++)
+                {
+                    Console.WriteLine(names[i] + numberOfGuests[i]);
+                }
+
+                // TODO: alignment / make it look pretty
+            }
+            else
+            {
+                Console.WriteLine("There is an error in our data.");
+            }
+
         }
 
     }
