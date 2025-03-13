@@ -12,8 +12,8 @@
 
             Console.WriteLine(age); // age is still 25
 
-            ChangeAge(ref age);
-            Console.WriteLine(age); // age is now 100
+            //ChangeAge(ref age);
+            //Console.WriteLine(age); // age is now 100
 
         }
 
@@ -23,10 +23,10 @@
             // this only changes the COPY of the value, not the original variable
         }
 
-        static void ChangeAge (ref int age)
-        {
-            age = 100;
-            // this is now a REFERENCE type: we are accessing the actual object in memory
-        }
+        //static void ChangeAge (ref int age)
+        //{
+        //    age = 100;
+        //    // this is now a REFERENCE type: we are accessing the actual object in memory
+        //}
     }
 }
