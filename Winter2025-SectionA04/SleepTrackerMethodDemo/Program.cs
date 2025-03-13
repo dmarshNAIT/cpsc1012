@@ -109,6 +109,7 @@ namespace SleepTrackerMethodDemo
             {
                 Console.WriteLine("There is no data to display.");
             }
+            /*****************DEFENSIVE CODING******************/
             else if (logicalSize < 0 || logicalSize > days.Length || logicalSize > values.Length)
             {
                 Console.WriteLine("There is something wrong with the data.");
