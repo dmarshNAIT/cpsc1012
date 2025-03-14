@@ -1,0 +1,6 @@
+cat
+rat
+lion
+elephant
+axolotl
+bear

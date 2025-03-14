@@ -25,6 +25,45 @@
             }
 
             /*** reading FROM a file ***/
+            try
+            {
+                // create our reader object
+                StreamReader reader = new StreamReader("../../../animals.txt");
+
+                // read from the file, line by line
+                while (reader.EndOfStream == false)
+                {
+                    string line = reader.ReadLine();
+                    Console.WriteLine(line);
+                }
+
+                // close the connection
+                reader.Close();
+            }
+            catch
+            {
+                Console.WriteLine("Could not read from file.");
+            }
+
+            // are you worried about forgetting to close the file?
+            // the keyword USING will automatically close the stream for us
+            try
+            {
+                // create our reader object
+                using (StreamReader reader = new StreamReader("../../../animals.txt"))
+                {
+                    // read from the file, line by line
+                    while (reader.EndOfStream == false)
+                    {
+                        string line = reader.ReadLine();
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Could not read from file.");
+            }
         }
     }
 }
