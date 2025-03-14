@@ -235,29 +235,36 @@ namespace HotelMethodExample
         static int LoadFromFile(string[] names, int[] numberOfGuests)
         {
             int index = 0;
-            // create our StreamReader object
-            using (StreamReader reader = new StreamReader("../../../reservations.csv"))
+            try
             {
-                reader.ReadLine(); // read in the header, and do nothing with it
-                
-                // read the file line by line
-                while (reader.EndOfStream == false)
+                // create our StreamReader object
+                using (StreamReader reader = new StreamReader("../../../reservations.csv"))
                 {
-                    string line = reader.ReadLine();
+                    reader.ReadLine(); // read in the header, and do nothing with it
 
-                    // for each line, we need to split apart the name & # of guests
-                    string[] parts = line.Split(',');
-                    string name = parts[0];
-                    int number = int.Parse(parts[1]);
+                    // read the file line by line
+                    while (reader.EndOfStream == false)
+                    {
+                        string line = reader.ReadLine();
 
-                    // then we will save each into the relevant array
-                    names[index] = name;
-                    numberOfGuests[index] = number;
+                        // for each line, we need to split apart the name & # of guests
+                        string[] parts = line.Split(',');
+                        string name = parts[0];
+                        int number = int.Parse(parts[1]);
 
-                    index++;
+                        // then we will save each into the relevant array
+                        names[index] = name;
+                        numberOfGuests[index] = number;
+
+                        index++;
+                    }
                 }
+                Console.WriteLine($"Successfully loaded {index} records.");
             }
-            // don't forget exception handling, Dana!!!!
+            catch
+            {
+                Console.WriteLine("Something went wrong reading from the file.");
+            }
             return index; // return the # of guests successfully read from the file
         }
 
