@@ -11,11 +11,18 @@
             double[] temperatures = { -10, 0, -20 }; // arrays are REFERENCE type
             ChangeElement(temperatures); // we're passing a reference to the array
             Console.WriteLine(temperatures[0]); // now the element is 100
+
         }
 
         static void ChangeNumber(double number)
         {
             // this is a completely separate variable
+            number = 100;
+        }
+
+        // overloaded method: same name, different params:
+        static void ChangeNumber(int number)
+        {
             number = 100;
         }
 

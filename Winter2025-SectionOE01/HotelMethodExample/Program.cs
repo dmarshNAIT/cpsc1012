@@ -40,10 +40,10 @@ namespace HotelMethodExample
                             numberOfGuests, numberOfReservations);
                         break;
                     case "s":
-                        // TODO: save reservations to a file
+                        SaveToFile(reservationNames, numberOfGuests, numberOfReservations);
                         break;
                     case "l":
-                        // TODO: load reservations from a file
+                        numberOfReservations = LoadFromFile(reservationNames, numberOfGuests);
                         break;
                     case "q":
                         // quit
@@ -167,7 +167,6 @@ namespace HotelMethodExample
                 // & display the raw values
                 for (int i = 0; i < logicalSize; i++)
                 {
-                    //TODO: discuss changes!
                     outputMessage += names[i].PadRight(columWidth) + numberOfGuests[i] + "\n";
                 }
 
@@ -199,12 +198,67 @@ namespace HotelMethodExample
 
         static void EditReservation(string[] names, int[] numberOfGuests, int logicalSize)
         {
+            // TODO:
             // let's show the user all the reservations
             // ask the user to pick a number
             // validate that it's a valid index/number
             // ask the user to re-enter the name, and save it to the array
             // ask the user to re-enter the # of guests, and save that to the array
             // show a confirmation of the new values
+        }
+
+        static void SaveToFile(string[] names, int[] numberOfGuests, int logicalSize)
+        {
+            try
+            {
+                // create the StreamWriter object
+                StreamWriter writer = new StreamWriter("../../../reservations.csv");
+                // add the header
+                writer.WriteLine("Reservation Name,Number Of Guests");
+
+                // go through our arrays, and print the data line by line
+                for (int i = 0; i < logicalSize; i++)
+                {
+                    writer.WriteLine(names[i] + "," + numberOfGuests[i]);
+                }
+
+                // close the connection
+                writer.Close();
+                Console.WriteLine("Successfully saved to file.");
+            }
+            catch
+            {
+                Console.WriteLine("Something went wrong saving the file.");
+            }
+        }
+
+        static int LoadFromFile(string[] names, int[] numberOfGuests)
+        {
+            int index = 0;
+            // create our StreamReader object
+            using (StreamReader reader = new StreamReader("../../../reservations.csv"))
+            {
+                reader.ReadLine(); // read in the header, and do nothing with it
+                
+                // read the file line by line
+                while (reader.EndOfStream == false)
+                {
+                    string line = reader.ReadLine();
+
+                    // for each line, we need to split apart the name & # of guests
+                    string[] parts = line.Split(',');
+                    string name = parts[0];
+                    int number = int.Parse(parts[1]);
+
+                    // then we will save each into the relevant array
+                    names[index] = name;
+                    numberOfGuests[index] = number;
+
+                    index++;
+                }
+            }
+            // don't forget exception handling, Dana!!!!
+            return index; // return the # of guests successfully read from the file
         }
 
     }
