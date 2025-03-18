@@ -10,6 +10,10 @@ namespace SleepTrackerMethodDemo
 {
     internal class Program
     {
+        /// <summary>
+        /// Loops through the main menu and branch according to user's selection.
+        /// </summary>
+        /// <param name="args">Unused command-line arguments.</param>
         static void Main(string[] args)
         {
             // create our arrays & objects
@@ -36,10 +40,10 @@ namespace SleepTrackerMethodDemo
                         ViewContent(days, hours, logicalSize);
                         break;
                     case 's':
-                        // TODO: save to file
+                        // TODO: call method to save to file
                         break;
                     case 'l':
-                        // TODO: load from file
+                        // TODO: call method to load from file
                         break;
                     case 'p':
                         int prediction = PredictHours(hours, logicalSize);
@@ -57,7 +61,7 @@ namespace SleepTrackerMethodDemo
 
             } while (userChoice != 'q');
 
-            #region
+            #region old stuff
 
             //// quick test:
             //logicalSize = EnterValues(hours);
@@ -85,12 +89,15 @@ namespace SleepTrackerMethodDemo
 
             //sleepHoursThisWeek = GetUserDouble("How many hours did you sleep? ");
             //Console.WriteLine($"You slept {sleepHoursThisWeek} hours this week!");
-            #endregion
+            #endregion old stuff
 
             Console.WriteLine("Thanks, goodbye!");
 
         }
 
+        /// <summary>
+        /// Prints Main Manu options to the Console.
+        /// </summary>
         static void DisplayMainMenu()
         {
             Console.WriteLine("MENU OPTIONS:\n" +
@@ -102,6 +109,12 @@ namespace SleepTrackerMethodDemo
                 "\t[q]uit\n");
         }
 
+        /// <summary>
+        /// Loops through the contents of provided arrays and prints their contents to the Console.
+        /// </summary>
+        /// <param name="days">An array containing the names of the days of the week.</param>
+        /// <param name="values">Numeric values corresponding to each day of the week.</param>
+        /// <param name="logicalSize">The # of elements in each array.</param>
         static void ViewContent(string[] days, double[] values, int logicalSize)
         {
             // let's validate our inputs:
@@ -128,6 +141,12 @@ namespace SleepTrackerMethodDemo
             }
         }
 
+        /// <summary>
+        /// Allows the user to enter new values into a provided array.
+        /// </summary>
+        /// <param name="values">Numeric values corresponding to each day of the week.</param>
+        /// <param name="dayNames">An array containing the names of the days of the week.</param>
+        /// <returns>The # of elements added.</returns>
         static int EnterValues(double[] values, string[] dayNames)
         {
             // empty out any "old" data, first:
@@ -154,6 +173,12 @@ namespace SleepTrackerMethodDemo
             return i;
         }
 
+        /// <summary>
+        /// Using provided values, predicts the user's next night of sleep.
+        /// </summary>
+        /// <param name="values">Numeric values corresponding to each day of the week.</param>
+        /// <param name="logicalSize">The # of elements in the array.</param>
+        /// <returns>An integer representing the # of hours of sleep.</returns>
         static int PredictHours(double[] values, int logicalSize)
         {
             int prediction = 0;
@@ -180,16 +205,30 @@ namespace SleepTrackerMethodDemo
             return prediction;
         }
 
+        /// <summary>
+        /// A silly method that returns someone's favourite number.
+        /// </summary>
+        /// <returns>The number 78. Always. No matter what.</returns>
         static int GiveMeNumber()
         {
             return 78;
         }
 
+        /// <summary>
+        /// A silly method which echoes the user's input back to them.
+        /// </summary>
+        /// <param name="input">A user-provided value.</param>
+        /// <returns>The same user-provided value.</returns>
         static int GiveMeNumber(int input) //overloaded method
         {
             return input;
         }
 
+        /// <summary>
+        /// A reusable method which prompts the user for input then returns their inputted string.
+        /// </summary>
+        /// <param name="question">A message to display to the user.</param>
+        /// <returns>The user-inputted text.</returns>
         static string GetUserString(string question)
         {
             string userResponse;
@@ -201,6 +240,11 @@ namespace SleepTrackerMethodDemo
             return userResponse;
         }
 
+        /// <summary>
+        /// A reusable method which prompts the user for input then returns their inputted double.
+        /// </summary>
+        /// <param name="question">A message to display to the user.</param>
+        /// <returns>A user-entered double.</returns>
         static double GetUserDouble(string question)
         {
             while (true)
@@ -223,6 +267,11 @@ namespace SleepTrackerMethodDemo
             } // end of loop
         } // end of method
 
+        /// <summary>
+        /// A reusable method which prompts the user for input then returns their inputted int.
+        /// </summary>
+        /// <param name="question">A message to display to the user.</param>
+        /// <returns>A user-entered int.</returns>
         static int GetUserInt(string question)
         {
             while (true)
@@ -245,6 +294,11 @@ namespace SleepTrackerMethodDemo
             } // end of loop
         } // end of method
 
+        /// <summary>
+        /// A reusable method which prompts the user for input then returns their inputted char.
+        /// </summary>
+        /// <param name="question">A message to display to the user.</param>
+        /// <returns>A user-entered char.</returns>
         static char GetUserChar(string question)
         {
             while (true)
