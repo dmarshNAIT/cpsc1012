@@ -45,6 +45,7 @@
                 Console.WriteLine("Could not read from file.");
             }
 
+            /***************** alternate approach ****************/
             // are you worried about forgetting to close the file?
             // the keyword USING will automatically close the stream for us
             try
