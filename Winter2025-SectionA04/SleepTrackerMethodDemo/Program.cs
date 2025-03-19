@@ -40,10 +40,10 @@ namespace SleepTrackerMethodDemo
                         ViewContent(days, hours, logicalSize);
                         break;
                     case 's':
-                        // TODO: call method to save to file
+                        SaveToFile(days, hours, logicalSize);
                         break;
                     case 'l':
-                        // TODO: call method to load from file
+                        logicalSize = LoadFromFile(days, hours);
                         break;
                     case 'p':
                         int prediction = PredictHours(hours, logicalSize);
@@ -173,24 +173,105 @@ namespace SleepTrackerMethodDemo
             return i;
         }
 
-        // todo: create SaveToFile()
-        // inputs: array with the names of the days, array with the hours, logical size
-        // output: print a confirmation message, and create a file
+        /// <summary>
+        /// Saves the contents of the parallel arrays into a CSV file.
+        /// </summary>
+        /// <param name="dayNames">an array of string values representing the names of the days of the week</param>
+        /// <param name="values">an array of double values that represents hours per day</param>
+        /// <param name="logicalSize">the # of elements in the array</param>
+        static void SaveToFile(string[] dayNames, double[] values, int logicalSize)
+        {
+            string filename = GetUserString("Please enter a file name: ");
+            // KNOWN GAP: the user could enter nonsense. We'll ignore this possibility for now.
 
-        // create a stream to the file
-        // go through the array, day by day, and add the info to the file
-        // close the stream
-        // don't forget exception handling!
+            try
+            {
+                // create a stream to the file
+                StreamWriter writer = new StreamWriter("../../../" + filename);
+                // as written, if we use the name of an existing file, we will replace that file's contents.
 
-        /*
-            DAY,HOURS 
-            SUNDAY,7.0
-            MONDAY,8.5
-            TUESDAY,7.2
-         */
+                // save the header line:
+                writer.WriteLine("DAY,HOURS");
+
+                // go through the array, day by day, and add the info to the file
+                for (int i = 0; i < logicalSize; i++)
+                {
+                    // print the name of the day of the week, the hours for that day
+                    writer.WriteLine($"{dayNames[i]},{values[i]:0.0}");
+                }
+
+                // close the stream
+                writer.Close();
+                // if we don't, it's possible that other processes won't be able to access this file.
+
+                Console.WriteLine("Successfully saved file.");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Something went wrong while saving to the file.");
+            }
+
+            /* file format: 
+
+                DAY,HOURS 
+                SUNDAY,7.0
+                MONDAY,8.5
+                TUESDAY,7.2
+             */
 
 
-        // todo: create LoadFromFile()
+        }
+
+        /// <summary>
+        /// Loads day names & values from a file into 2 parallel arrays.
+        /// </summary>
+        /// <param name="dayNames">an array of string values representing the names of the days of the week</param>
+        /// <param name="values">an array of double values that represents hours per day</param>
+        /// <returns>the # of elements added to the arrays</returns>
+        static int LoadFromFile(string[] dayNames, double[] values)
+        {
+            int i = 0;
+            // get the filename from the user
+            string filename = GetUserString("Please enter a file name: ");
+            // KNOWN GAP: the user could enter nonsense. We'll ignore this possibility for now.
+
+            try
+            {
+                // create a stream Reader
+                StreamReader reader = new StreamReader("../../../" + filename);
+                reader.ReadLine(); // reading in the header
+
+                while (reader.EndOfStream == false) // keep looping until the end of the file
+                {
+                    // read the file line by line
+                    string line = reader.ReadLine();
+
+                    // split up the parts
+                    string[] parts = line.Split(','); // break up that line, using the comma to separate the values
+                    string dayName = parts[0]; // the day name was the first "part" of the string we read
+                    double hours = double.Parse(parts[1]); // the hours were the next "part" of the string we read
+
+                    // save the day into the day array
+                    dayNames[i] = dayName;
+
+                    // save the hours value into the values array 
+                    values[i] = hours;
+
+                    i++; // increase the # of elements loaded
+                }
+
+                // close the stream
+                reader.Close();
+
+                Console.WriteLine($"Successfully loaded {i} records.");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Something went wrong loading this file.");
+            }
+
+            return i; // the # of elements
+        }
 
 
         /// <summary>
