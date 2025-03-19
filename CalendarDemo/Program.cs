@@ -248,7 +248,3 @@
 
     }
 }
-
-
-// TODO: make all errors in red
-// user inputs in awua?
