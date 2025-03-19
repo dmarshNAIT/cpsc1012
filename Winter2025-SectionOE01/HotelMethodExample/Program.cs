@@ -33,7 +33,7 @@ namespace HotelMethodExample
                         ViewReservations(reservationNames, numberOfGuests, numberOfReservations);
                         break;
                     case "e":
-                        // TODO: edit reservations
+                        EditReservation(reservationNames, numberOfGuests, numberOfReservations);
                         break;
                     case "a": // add reservation
                         numberOfReservations = AddReservation(reservationNames,
@@ -156,18 +156,22 @@ namespace HotelMethodExample
 
         static void ViewReservations(string[] names, int[] numberOfGuests, int logicalSize)
         {
+            if ( logicalSize == 0)
+            {
+                Console.WriteLine("Sorry, there is no data to display.");
+            }
             // check to ensure we have valid inputs (DEFENSIVE CODING)
-            if (logicalSize <= names.Length && logicalSize <= numberOfGuests.Length)
+            else if (logicalSize <= names.Length && logicalSize <= numberOfGuests.Length)
             {
                 int columWidth = GetMaxLength(names, logicalSize) + 2;
 
-                string outputMessage = "Name".PadRight(columWidth) + "# of Guests\n";
+                string outputMessage = "Res# Name".PadRight(columWidth) + "# of Guests\n";
 
                 // iterate through the arrays
                 // & display the raw values
                 for (int i = 0; i < logicalSize; i++)
                 {
-                    outputMessage += names[i].PadRight(columWidth) + numberOfGuests[i] + "\n";
+                    outputMessage += $"{i+1:000}  " + names[i].PadRight(columWidth) + numberOfGuests[i] + "\n";
                 }
 
                 Console.WriteLine(outputMessage);
@@ -198,13 +202,32 @@ namespace HotelMethodExample
 
         static void EditReservation(string[] names, int[] numberOfGuests, int logicalSize)
         {
-            // TODO:
+            int reservationID,
+                index;
+
             // let's show the user all the reservations
+            ViewReservations(names, numberOfGuests, logicalSize);
+
             // ask the user to pick a number
-            // validate that it's a valid index/number
+            reservationID = GetUserInt("Please enter the reservation # you want to edit: ");
+            while( reservationID <1 || reservationID > logicalSize )
+            {
+                reservationID = GetUserInt("Please enter a valid #: ");
+            }
+            index = reservationID - 1;
+
             // ask the user to re-enter the name, and save it to the array
+            names[index] = GetUserString("Please enter the new name: ");
             // ask the user to re-enter the # of guests, and save that to the array
+            numberOfGuests[index] = GetUserInt("Please enter the new # of guests: ");
+            while((numberOfGuests[index] < 1 || numberOfGuests[index] > 10))
+            {
+                numberOfGuests[index] = GetUserInt("Sorry, you must have between 1 & 10 guests.\n" +
+                    "Enter the new # of guests:  ");
+            }
+
             // show a confirmation of the new values
+            Console.WriteLine($"Reservation #{reservationID} for guest {names[index]} is confirmed for {numberOfGuests[index]} guests.");
         }
 
         static void SaveToFile(string[] names, int[] numberOfGuests, int logicalSize)
