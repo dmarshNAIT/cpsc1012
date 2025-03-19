@@ -11,7 +11,7 @@ namespace SleepTrackerMethodDemo
     internal class Program
     {
         /// <summary>
-        /// Loops through the main menu and branch according to user's selection.
+        /// Loops through the main menu and branches according to user's selection.
         /// </summary>
         /// <param name="args">Unused command-line arguments.</param>
         static void Main(string[] args)
@@ -172,6 +172,26 @@ namespace SleepTrackerMethodDemo
             // return the # of elements added to the array
             return i;
         }
+
+        // todo: create SaveToFile()
+        // inputs: array with the names of the days, array with the hours, logical size
+        // output: print a confirmation message, and create a file
+
+        // create a stream to the file
+        // go through the array, day by day, and add the info to the file
+        // close the stream
+        // don't forget exception handling!
+
+        /*
+            DAY,HOURS 
+            SUNDAY,7.0
+            MONDAY,8.5
+            TUESDAY,7.2
+         */
+
+
+        // todo: create LoadFromFile()
+
 
         /// <summary>
         /// Using provided values, predicts the user's next night of sleep.
