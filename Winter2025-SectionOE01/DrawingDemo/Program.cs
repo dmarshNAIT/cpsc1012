@@ -4,18 +4,20 @@
     {
         static void Main(string[] args)
         {
-            //DrawBox();
+            DrawBox();
 
-            //Console.WriteLine("now version 2:");
+            Console.WriteLine("now version 2:");
 
-            //// we will hardcode this for v1; a more realistic implementation would prompt the user to provide these
-            //DrawBox(10, 5);
+            // we will hardcode this for v1; a more realistic implementation would prompt the user to provide these
+            DrawBox(10, 5);
 
-            //Console.WriteLine("and now a tiny box:");
+            Console.WriteLine("and now a tiny box:");
 
-            //DrawBox(4, 3);
+            DrawBox(4, 3);
 
-            //DrawBox(2, 1);
+            DrawBox(2, 1);
+
+            Console.WriteLine("Now let's make a calendar for March 2025:\n\n");
 
             DrawCalendar();
 
