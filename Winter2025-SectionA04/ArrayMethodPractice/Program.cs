@@ -62,6 +62,11 @@ namespace ArrayMethodPractice
             }
         }
 
+        /// <summary>
+        /// Allows user to enter values using the Console.
+        /// </summary>
+        /// <param name="array">an array that will be overwritten</param>
+        /// <returns>the logical count</returns>
         static int EnterValues(string[] array)
         {
             int index = 0;
