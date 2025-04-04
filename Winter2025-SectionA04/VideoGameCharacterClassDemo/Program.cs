@@ -19,6 +19,18 @@
             Console.WriteLine($"The object's name is {kirby.GetName()}");
             kirby.SetName("Kirby");
             Console.WriteLine($"The object's name is {kirby.GetName()}");
+            try
+            {
+                kirby.SetName("X");
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(ex.Message);
+                Console.ResetColor();
+            }
+            Console.WriteLine($"The object's name is {kirby.GetName()}");
+
 
         }
     }

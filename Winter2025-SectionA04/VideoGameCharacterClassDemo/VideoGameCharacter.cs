@@ -41,9 +41,16 @@
 
         /*** MUTATOR METHODS ***/
         // name: name must be 2-10 characters long
-        public void SetName(string name) { 
-            _name = name;
-            // TODO: MISSING VALIDATION
+        public void SetName(string name)
+        {
+            if (name.Trim().Length >= 2 && name.Trim().Length <= 10)
+            {
+                _name = name;
+            }
+            else
+            {
+                throw new Exception("The name must be 2-10 characters long.");
+            }
         }
 
 
