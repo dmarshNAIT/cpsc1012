@@ -16,6 +16,26 @@
             Console.WriteLine($"The level of the character is {mario.GetLevel()}.");
             Console.WriteLine($"The HP of the character is {mario.GetHP()}.");
 
+            // let's test our mutator methods:
+            mario.SetLevel(5);
+            mario.SetHP(150);
+            Console.WriteLine($"The level of the character is {mario.GetLevel()}.");
+            Console.WriteLine($"The HP of the character is {mario.GetHP()}.");
+
+            // now let's test our propery
+            Console.WriteLine($"The HP of the character is {letmesoloher.HP}.");
+            letmesoloher.HP = 200;
+            Console.WriteLine($"The HP of the character is {letmesoloher.HP}.");
+
+
+
+
+
+
+
+            // let's try creating something impossible
+            VideoGameCharacter bob = new VideoGameCharacter("Bob", 1000, 10000);
+
 
         }
     }
