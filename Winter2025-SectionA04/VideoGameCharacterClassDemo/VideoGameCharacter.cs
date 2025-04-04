@@ -53,6 +53,8 @@
             }
         }
 
+        // TODO on Tuesday: create the same thing but as a property
+
 
         // hp: this cannot be directly set to a new value
         // TODO: armor: this can change but it must be picked from a list of things they have
