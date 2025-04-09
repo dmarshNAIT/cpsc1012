@@ -31,6 +31,25 @@
             }
             Console.WriteLine($"The object's name is {kirby.GetName()}");
 
+            // test our property:
+            Console.WriteLine("The character's name is " + kirby.Name);
+            kirby.Name = "Garlack th";
+            Console.WriteLine("The character's name is " + kirby.Name);
+
+            // test our armor functionality:
+            // try to set the armor to an unallowed value
+            try { kirby.Armor = "mud"; }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+
+            // add armor to our inventory
+            kirby.LootBattlefield();
+            // try to set the armor to a allowed value
+            kirby.Armor = "Ivaldi's Curse";
+            // try to set the armor to an unallowed value
+            try { kirby.Armor = "mud"; }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+
+
 
         }
     }
