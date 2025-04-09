@@ -2,7 +2,16 @@
 {
     internal class Program
     {
+
         static void Main(string[] args)
+        {
+            // uncomment the next line if you want to run the test code
+            //TestClass();
+
+            RunProgram();
+        }
+
+        static void TestClass()
         {
             // instantiate an object, using the default values
             // the name of the object is "kirby"
@@ -51,6 +60,20 @@
 
 
 
+        }
+
+        static void RunProgram()
+        {
+            // TODO: when the program starts, load in our characters from a file
+            // PRIORITY TODO: save our characters into a List
+
+            // Display MENU to the user (TODO: create this method)
+            // Add a new Character (TODO: create this method)
+            // View all the Characters (TODO: create this method)
+            // Edit a Character (TODO: create this method)
+
+
+            // TODO: When the user quits, save the contents of the List to a file
         }
     }
 }
