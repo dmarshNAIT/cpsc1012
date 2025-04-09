@@ -32,8 +32,10 @@
             characters.Add(letmesoloher);
             characters.Add(mario);
 
-
-
+            // let's level up Mario & check his rank
+            Console.WriteLine("Mario's rank was originally " + mario.CharacterRank);
+            mario.SetLevel(42);
+            Console.WriteLine("Mario's rank is now " + mario.CharacterRank);
 
 
             // let's try creating something impossible
