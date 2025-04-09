@@ -51,8 +51,8 @@
             catch (Exception ex) { Console.WriteLine(ex.Message); }
 
             // add armor to our inventory
-            string loot = GetUserString("What did you get from the loot box? ")
-            kirby.LootBattlefield(loot);
+            string loot = GetUserString("What did you get from the loot box? ");
+            kirby.AddArmorToInventory(loot);
             // try to set the armor to a allowed value
             kirby.Armor = "Ivaldi's Curse";
             // try to set the armor to an unallowed value
@@ -82,7 +82,7 @@
                 switch (userChoice)
                 {
                     case 'a':
-                        // TODO:
+                        AddCharacter(characters);
                         break;
                     case 'v':
                         // TODO:
@@ -119,7 +119,34 @@
                 "\t[q]uit\n");
         }
 
+        static void AddCharacter(List<VideoGameCharacter> characters)
+        {
+            // option 1:
+            // let's create a default character
+            VideoGameCharacter character = new VideoGameCharacter();
+            bool isValidName = false;
 
+            // then we will ask the user to provide each of the fields, and use setters to change them
+            // first let's give the character a name
+            do
+            {
+                try
+                {
+                    character.Name = GetUserString("What is your character's name? ");
+                    isValidName = true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            while ( !isValidName );
+
+            // option 2:
+            // get all the inputs, then call the greedy constructor
+
+            characters.Add(character);
+        }
 
         /// <summary>
         /// A reusable method which prompts the user for input then returns their inputted string.

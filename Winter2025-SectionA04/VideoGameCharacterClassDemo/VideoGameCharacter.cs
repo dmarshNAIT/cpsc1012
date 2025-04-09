@@ -11,9 +11,7 @@ namespace VideoGameCharacterClassDemo
         private string _armor = "None";
         private string _weapon = "Fist";
         private List<string> _armorInventory = new List<string>();
-        // TODO: add armor to the list
-        // TODO: view armor that we have
-        // TODO: FUTURE challenge: perhaps instead of a list of strings, we have a list of Armor objects, having properties of "type of armor", "strength", "what it protects against..."
+        private List<Weapon> _weaponInventory = new List<Weapon>();
 
         // stamina
         // gender
@@ -66,7 +64,7 @@ namespace VideoGameCharacterClassDemo
             
             Name = name; // take advantage of the validation in the property
             SetHP(hp); // take advantage of the validation in SetHP()
-            _armor = armor; // TODO: add validation
+            Armor = armor; // take advantage of the validation in the property
             _weapon = weapon; // TODO: add validation
         }
 
@@ -101,16 +99,27 @@ namespace VideoGameCharacterClassDemo
                 _hp = hp;
         }
 
-        public void SetWeapon(string weapon)
+        public void SetWeapon(string weaponName)
         {
+            // look at the names of the weapons I have
+            // we're only allowed to use those names
+
+            bool isFound = false;
+
+            // loop through our inventory and see if that weapon is in inventory already:
+            foreach (Weapon weapon in _weaponInventory)
+            {
+                // if the parameter exactly matches the Name property of the weapon:
+                if (weaponName == weapon.Name)
+                    isFound = true;
+            }
+
+            if (isFound)
+                _weapon = weaponName;
+            else
+                throw new Exception("Sorry, you don't have that weapon.");
 
         }
-
-
-        // hp: this cannot be directly set to a new value
-        // TODO: armor: this can change but it must be picked from a list of things they have
-        // TODO: weapon: same idea as armor
-
 
 
         // attack?
@@ -118,10 +127,10 @@ namespace VideoGameCharacterClassDemo
         // signature attack?
 
         /*** OTHER METHODS ***/
-        public void LootBattlefield(string loot)
+        public void AddArmorToInventory(string newArmorName)
         {            
             // add the item to the list
-            _armorInventory.Add(loot);
+            _armorInventory.Add(newArmorName);
         }
 
         
