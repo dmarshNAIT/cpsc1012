@@ -51,7 +51,8 @@
             catch (Exception ex) { Console.WriteLine(ex.Message); }
 
             // add armor to our inventory
-            kirby.LootBattlefield();
+            string loot = GetUserString("What did you get from the loot box? ")
+            kirby.LootBattlefield(loot);
             // try to set the armor to a allowed value
             kirby.Armor = "Ivaldi's Curse";
             // try to set the armor to an unallowed value
@@ -64,16 +65,157 @@
 
         static void RunProgram()
         {
+            List<VideoGameCharacter> characters = new List<VideoGameCharacter>();
+            char userChoice;
+
             // TODO: when the program starts, load in our characters from a file
-            // PRIORITY TODO: save our characters into a List
 
-            // Display MENU to the user (TODO: create this method)
-            // Add a new Character (TODO: create this method)
-            // View all the Characters (TODO: create this method)
-            // Edit a Character (TODO: create this method)
+            do
+            {
+                // show the menu
+                DisplayMainMenu();
 
+                // get the user's choice & force it to be lowercase:
+                userChoice = Char.ToLower(GetUserChar("Please make your choice: "));
 
-            // TODO: When the user quits, save the contents of the List to a file
+                // branch according to their choice
+                switch (userChoice)
+                {
+                    case 'a':
+                        // TODO:
+                        break;
+                    case 'v':
+                        // TODO:
+                        break;
+                    case 'e':
+                        // TODO:
+                        break;
+                    case 's':
+                        // TODO:
+                        break;
+                    case 'q':
+                        // quit
+                        // TODO: When the user quits, save the contents of the List to a file
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Sorry, that was not a valid choice. Try again.");
+                        Console.ResetColor();
+                        break;
+                }
+
+            } while (userChoice != 'q');
+
+            Console.WriteLine("Thanks, goodbye!");
         }
+
+        static void DisplayMainMenu()
+        {
+            Console.WriteLine("MENU OPTIONS:\n" +
+                "\t[a]dd new character\n" + // (TODO: create this method)
+                "\t[v]iew characters\n" + // (TODO: create this method)
+                "\t[e]dit character\n" + // TODO: create this method)
+                "\t[s]wing sword at new character\n" + // TODO: come up with something fun!
+                "\t[q]uit\n");
+        }
+
+
+
+        /// <summary>
+        /// A reusable method which prompts the user for input then returns their inputted string.
+        /// </summary>
+        /// <param name="question">A message to display to the user.</param>
+        /// <returns>The user-inputted text.</returns>
+        public static string GetUserString(string question)
+        {
+            string userResponse;
+            // ask the question
+            Console.Write(question);
+            // get the answer
+            userResponse = Console.ReadLine();
+            // return the answer
+            return userResponse;
+        }
+
+        /// <summary>
+        /// A reusable method which prompts the user for input then returns their inputted double.
+        /// </summary>
+        /// <param name="question">A message to display to the user.</param>
+        /// <returns>A user-entered double.</returns>
+        public static double GetUserDouble(string question)
+        {
+            while (true)
+            {
+                // ask the user a question
+                Console.Write(question);
+
+                // read in their answer
+                // try to parse it as a double
+                try
+                {
+                    return double.Parse(Console.ReadLine());
+                    // if that works, return it
+                    // this is the only way to exit the method
+                }
+                catch  // otherwise, loop back & try again
+                {
+                    Console.WriteLine("Please enter a valid number. Try again.");
+                }
+            } // end of loop
+        } // end of method
+
+        /// <summary>
+        /// A reusable method which prompts the user for input then returns their inputted int.
+        /// </summary>
+        /// <param name="question">A message to display to the user.</param>
+        /// <returns>A user-entered int.</returns>
+        public static int GetUserInt(string question)
+        {
+            while (true)
+            {
+                // ask the user a question
+                Console.Write(question);
+
+                // read in their answer
+                // try to parse it as a int
+                try
+                {
+                    return int.Parse(Console.ReadLine());
+                    // if that works, return it
+                    // this is the only way to exit the method
+                }
+                catch  // otherwise, loop back & try again
+                {
+                    Console.WriteLine("Please enter a valid number. Try again.");
+                }
+            } // end of loop
+        } // end of method
+
+        /// <summary>
+        /// A reusable method which prompts the user for input then returns their inputted char.
+        /// </summary>
+        /// <param name="question">A message to display to the user.</param>
+        /// <returns>A user-entered char.</returns>
+        public static char GetUserChar(string question)
+        {
+            while (true)
+            {
+                // ask the user a question
+                Console.Write(question);
+
+                // read in their answer
+                // try to parse it as a char
+                try
+                {
+                    return char.Parse(Console.ReadLine());
+                    // if that works, return it
+                    // this is the only way to exit the method
+                }
+                catch  // otherwise, loop back & try again
+                {
+                    Console.WriteLine("Please enter a valid character. Try again.");
+                }
+            } // end of loop
+        } // end of method
     }
 }
