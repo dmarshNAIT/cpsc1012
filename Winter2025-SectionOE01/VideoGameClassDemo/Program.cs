@@ -27,15 +27,25 @@
             letmesoloher.HP = 200;
             Console.WriteLine($"The HP of the character is {letmesoloher.HP}.");
 
-
+            // let's create a list of characters
+            List<VideoGameCharacter> characters = new List<VideoGameCharacter>();
+            characters.Add(letmesoloher);
+            characters.Add(mario);
 
 
 
 
 
             // let's try creating something impossible
+            try
+            {
             VideoGameCharacter bob = new VideoGameCharacter("Bob", 1000, 10000);
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
         }
     }
