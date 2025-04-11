@@ -89,7 +89,7 @@
                         ViewCharacters(characters);
                         break;
                     case 'e':
-                        // TODO:
+                        RunEditMenu(characters);
                         break;
                     case 's':
                         // TODO:
@@ -119,6 +119,72 @@
                 "\t[e]dit character\n" + // TODO: create this method)
                 "\t[s]wing sword at new character\n" + // TODO: come up with something fun!
                 "\t[q]uit\n");
+        }
+
+        static void RunEditMenu(List<VideoGameCharacter> characters)
+        {
+            char userChoice;
+            VideoGameCharacter character;
+            ViewCharacters(characters);
+            int index = GetUserInt("Please enter the # of the Character you wish to edit: ");
+            while (index < 0 || index >= characters.Count)
+            {
+                index = GetUserInt("INVALID. Please try again: ");
+            }
+            character = characters[index];
+
+            do
+            {
+                Console.WriteLine("EDIT MENU\n" +
+                    "N: Name\n" +
+                    "H: HP\n" +
+                    "W: Weapon\n" +
+                    "A: Armor\n" +
+                    "Q: Quit to Main Menu\n");
+
+                // get the user's choice & force it to be lowercase:
+                userChoice = Char.ToLower(GetUserChar("Please make your choice: "));
+
+                // branch according to their choice
+                switch (userChoice)
+                {
+                    case 'n':
+                        // get the new value for name
+                        string newName = GetUserString("What is the new name? ");
+                        // try and change it 
+                        try
+                        {
+                            character.Name = newName;
+                            Console.WriteLine("Successfully updated name.");
+                        }
+                        // exception handling
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        } 
+                        // this method is getting too long, we should create helper methods
+                        break;
+                    case 'h':
+                        // TODO
+                        break;
+                    case 'w':
+                        // TODO
+                        break;
+                    case 'a':
+                        // TODO
+                        break;
+                    case 'q':
+                        // quit
+
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Sorry, that was not a valid choice. Try again.");
+                        Console.ResetColor();
+                        break;
+                }
+
+            } while (userChoice != 'q');
         }
 
         static void AddCharacter(List<VideoGameCharacter> characters)
@@ -229,8 +295,8 @@
             // print out a header
             Console.WriteLine("#   " + "NAME".PadRight(11) + "HP  " + "ARMOR".PadRight(21) + "WEAPON");
             // loop through the list & print each character's details
-            for(int i = 0; i < characters.Count; i++)
-            { 
+            for (int i = 0; i < characters.Count; i++)
+            {
                 Console.WriteLine($"{i:000} " + characters[i].GetCharacterDetails());
             } // this would also work well as a for loop
         }
