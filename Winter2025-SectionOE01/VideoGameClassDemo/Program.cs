@@ -71,7 +71,7 @@
                 Console.WriteLine($"{characters.Count} characters were loaded from file.");
             else
                 Console.WriteLine("Something went wrong reading the file.");
-            
+
             do
             {
                 // show the main menu
@@ -86,7 +86,7 @@
                         AddCharacter(characters);
                         break;
                     case "e":
-                        // TODO: edit a character
+                        RunEditProgram(characters);
                         break;
                     case "r":
                         RemoveCharacter(characters);
@@ -127,6 +127,87 @@
                 "Q: Quit\n");
         }
 
+        static void RunEditProgram(List<VideoGameCharacter> characters)
+        {
+            string userAnswer;
+            int characterNum;
+            VideoGameCharacter character;
+
+            // ask them which character
+            ViewCharacters(characters);
+            // ask the user to pick one
+            characterNum = ReadUserInt("Enter the # of the character you wish to remove: ");
+
+            while (characterNum < 1 || characterNum > characters.Count)
+                characterNum = ReadUserInt("INVALID. Please enter a valid #: ");
+
+            character = characters[characterNum - 1];
+
+            do
+            {
+                // show the main menu
+                Console.WriteLine("Would you like to edit:\n" +
+                    "N: Character Name\n" +
+                    "L: Level Up\n" +
+                    "H: Change HP\n" +
+                    "B: Back to Main Menu");
+
+                // get the user's choice, and use that to branch 
+                userAnswer = ReadUserString("Please enter choice: ").ToLower();
+
+                // TODO: this method is getting quite long: we should probably modularize it more
+                switch (userAnswer)
+                {
+                    case "n":
+                        // get the new name
+                        string name = ReadUserString("Please enter the new name: ");
+                        // check for duplicates
+                        bool isDuplicate = CheckForDuplicates(characters, name);
+                        // set the name if not a duplicate
+                        // otherwise show an error message
+                        if (isDuplicate)
+                            Console.WriteLine("Sorry, we already have a character with that name.");
+                        else
+                        {
+                            try
+                            {
+                                character.SetName(name);
+                                Console.WriteLine("Name has been changed.");
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
+                            }
+                        }
+                        break;
+                    case "l":
+                        // level up their character
+                        character.LevelUp();
+                        break;
+                    case "h":
+                        // ask them how much hp to add
+                        int hp = ReadUserInt("How much HP would you like to add? ");
+                        // update the hp
+                        character.Heal(hp);
+                        break;
+                    case "b":
+                        // quit
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Sorry, that's not an option. Try again.");
+                        Console.ResetColor();
+                        break;
+                }
+
+                // print out the current character details         
+                Console.WriteLine("NAME".PadRight(21) + "LVL RANK   HP");
+                Console.WriteLine(character.ShowDetails());
+
+            }
+            while (userAnswer != "b");
+        }
+
         static void AddCharacter(List<VideoGameCharacter> characters)
         {
             // option 1: we get all 3 fields from the user, and use those to create a new character
@@ -139,7 +220,21 @@
             {
                 try
                 {
-                    string userAnswer = ReadUserString("What is the character's name? ");
+                    bool isDuplicate;
+                    string userAnswer;
+
+                    do // validation loop
+                    {
+                        userAnswer = ReadUserString("What is the character's name? ");
+                        isDuplicate = false;
+
+                        // let's check for duplicates
+                        isDuplicate = CheckForDuplicates(characters, userAnswer);
+
+                        if (isDuplicate)
+                            Console.WriteLine("Sorry, we already have a character with that name.");
+                    } while (isDuplicate);
+
                     newGuy.SetName(userAnswer);
                     isValidInput = true;
                 }
@@ -153,7 +248,22 @@
 
             // add Character to the List
             characters.Add(newGuy); // Add() is a C# method from the List class
+            Console.WriteLine(newGuy.GetName() + " has been added.");
+        }
 
+        static bool CheckForDuplicates(List<VideoGameCharacter> characters, string newName)
+        {
+            bool isDuplicate = false;
+
+            for (int i = 0; i < characters.Count && !isDuplicate; i++)
+            {
+                if (characters[i].GetName().Trim().ToUpper() == newName.Trim().ToUpper())
+                {
+                    isDuplicate = true;
+                }
+            }
+
+            return isDuplicate;
         }
 
         static void ViewCharacters(List<VideoGameCharacter> characters)
@@ -177,7 +287,7 @@
             // ask the user to pick one
             characterNum = ReadUserInt("Enter the # of the character you wish to remove: ");
 
-            while(characterNum < 1 || characterNum > characters.Count)
+            while (characterNum < 1 || characterNum > characters.Count)
                 characterNum = ReadUserInt("INVALID. Please enter a valid #: ");
 
             character = characters[characterNum - 1];
@@ -187,7 +297,7 @@
                 $"Enter Y to confirm, or any other key to cancel: ").ToUpper();
 
             // if so, remove them
-            if(userAnswer == "Y")
+            if (userAnswer == "Y")
             {
                 characters.RemoveAt(characterNum - 1);
                 Console.WriteLine($"{character.GetName()} has been deleted.");

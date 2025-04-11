@@ -98,10 +98,10 @@
         /**** MUTATOR METHODS ****/
         public void SetName(string name)
         {
-            if (name.Length < 2 || name.Length > 20)
+            if (name.Trim().Length < 2 || name.Trim().Length > 20)
                 throw new Exception("Names must be 2-20 characters long.");
             else
-                _name = name;
+                _name = name.Trim();
         }
 
         public void SetLevel(float level)
