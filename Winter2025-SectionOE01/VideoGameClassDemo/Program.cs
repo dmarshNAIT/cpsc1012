@@ -66,7 +66,7 @@
             List<VideoGameCharacter> characters = new List<VideoGameCharacter>();
             string userAnswer;
             //VideoGameCharacter.LoadFromFile(); // TODO
-
+            // WELCOME?
             do
             {
                 // show the main menu
@@ -130,20 +130,20 @@
             {
                 try
                 {
-                    string userAnswer = ReadUserString("What is the character's name?");
+                    string userAnswer = ReadUserString("What is the character's name? ");
                     newGuy.SetName(userAnswer);
                     isValidInput = true;
                 }
                 catch (Exception ex)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(ex.Message);
+                    Console.ResetColor();
                 }
             }
 
-            // don't forget the other fields!
-
             // add Character to the List
-            characters.Add(newGuy);
+            characters.Add(newGuy); // Add() is a C# method from the List class
 
         }
 
