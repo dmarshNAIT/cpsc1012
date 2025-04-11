@@ -184,11 +184,14 @@
 
             // ask the user to confirm
             userAnswer = ReadUserString($"You have selected to delete {character.GetName()}.\n" +
-                $"Enter Y to confirm, or any other key to cancel.").ToUpper();
+                $"Enter Y to confirm, or any other key to cancel: ").ToUpper();
 
             // if so, remove them
             if(userAnswer == "Y")
+            {
                 characters.RemoveAt(characterNum - 1);
+                Console.WriteLine($"{character.GetName()} has been deleted.");
+            }
             else
                 Console.WriteLine("Exiting back to Main Menu...");
         }
