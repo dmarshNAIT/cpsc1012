@@ -138,6 +138,10 @@ namespace VideoGameCharacterClassDemo
             _armorInventory.Add(newArmorName);
         }
 
+        public string GetCharacterDetails()
+        {
+            return $"{_name}".PadRight(11) + $"{_hp:000} " + $"{_armor}".PadRight(21) + $"{_weapon}";
+        }
         
 
     }

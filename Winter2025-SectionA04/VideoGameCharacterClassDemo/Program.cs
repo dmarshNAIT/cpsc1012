@@ -86,7 +86,7 @@
                         AddCharacter(characters);
                         break;
                     case 'v':
-                        // TODO:
+                        ViewCharacters(characters);
                         break;
                     case 'e':
                         // TODO:
@@ -150,7 +150,7 @@
             characters.Add(character);
         }
 
-        static void SaveToFile(List<VideoGameCharacter> list )
+        static void SaveToFile(List<VideoGameCharacter> list)
         {
             const string FILENAME = "characters.csv";
 
@@ -166,9 +166,9 @@
                 for (int i = 0; i < list.Count; i++)
                 {
                     VideoGameCharacter character = list[i];
-                    writer.WriteLine(character.Name + ',' + 
-                        character.GetHP() + ',' + 
-                        character.Armor + ',' + 
+                    writer.WriteLine(character.Name + ',' +
+                        character.GetHP() + ',' +
+                        character.Armor + ',' +
                         character.GetWeapon());
                 }
 
@@ -222,6 +222,17 @@
             {
                 Console.WriteLine("Something went wrong loading this file.");
             }
+        }
+
+        static void ViewCharacters(List<VideoGameCharacter> characters)
+        {
+            // print out a header
+            Console.WriteLine("#   " + "NAME".PadRight(11) + "HP  " + "ARMOR".PadRight(21) + "WEAPON");
+            // loop through the list & print each character's details
+            for(int i = 0; i < characters.Count; i++)
+            { 
+                Console.WriteLine($"{i:000} " + characters[i].GetCharacterDetails());
+            } // this would also work well as a for loop
         }
 
         /// <summary>
