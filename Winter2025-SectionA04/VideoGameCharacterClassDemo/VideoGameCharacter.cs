@@ -25,7 +25,7 @@ namespace VideoGameCharacterClassDemo
         // instead of creating GetName() and SetName(), another approach is to create a single property called Name
         public string Name
         {
-            get { return _name; }
+            get { return _name; } 
             set
             {
                 if (value.Trim().Length >= 2 && value.Trim().Length <= 10)

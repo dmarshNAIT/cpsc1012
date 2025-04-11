@@ -24,7 +24,7 @@
             set
             {
                 if (value < 0 || value > MAX_HP)
-                { throw new Exception($"HP must be between 0 and {MAX_HP}."); }
+                { throw new ArgumentException($"HP must be between 0 and {MAX_HP}."); }
                 else
                 { _hp = value; }
             }
@@ -164,6 +164,67 @@
             {
                 HP = MAX_HP;
             }
+        }
+
+        static void SaveToFile(string[] names, int[] numberOfGuests, int logicalSize)
+        {
+            try
+            {
+                // create the StreamWriter object
+                StreamWriter writer = new StreamWriter("../../../reservations.csv");
+                // add the header
+                writer.WriteLine("Reservation Name,Number Of Guests");
+
+                // go through our arrays, and print the data line by line
+                for (int i = 0; i < logicalSize; i++)
+                {
+                    writer.WriteLine(names[i] + "," + numberOfGuests[i]);
+                }
+
+                // close the connection
+                writer.Close();
+                Console.WriteLine("Successfully saved to file.");
+            }
+            catch
+            {
+                Console.WriteLine("Something went wrong saving the file.");
+            }
+        }
+
+        static int LoadFromFile(string[] names, int[] numberOfGuests)
+        {
+            int index = 0;
+            try
+            {
+                // create our StreamReader object
+                using (StreamReader reader = new StreamReader("../../../reservations.csv"))
+                {
+                    reader.ReadLine(); // read in the header, and do nothing with it
+
+                    // read the file line by line
+                    while (reader.EndOfStream == false)
+                    {
+                        string line = reader.ReadLine();
+
+                        // for each line, we need to split apart the name & # of guests
+                        string[] parts = line.Split(',');
+                        string name = parts[0];
+                        int number = int.Parse(parts[1]);
+
+                        // then we will save each into the relevant array
+                        names[index] = name;
+                        numberOfGuests[index] = number;
+
+                        index++;
+                    }
+                }
+                Console.WriteLine($"Successfully loaded {index} records.");
+            }
+            catch
+            {
+                Console.WriteLine("Something went wrong reading from the file.");
+            }
+            return index; // return the # of guests successfully read from the file
         }
 
 
