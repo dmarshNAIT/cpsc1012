@@ -164,30 +164,38 @@
             }
         }
 
-        static void SaveToFile(string[] names, int[] numberOfGuests, int logicalSize)
+        static bool SaveToFile(List<VideoGameCharacter> list)
         {
-            // TODO: modify to work for VideoGameCharacter
+            bool isSaved;
+            const string FILENAME = "characters.csv";
+
             try
             {
                 // create the StreamWriter object
-                StreamWriter writer = new StreamWriter("../../../reservations.csv");
+                StreamWriter writer = new StreamWriter($"../../../{FILENAME}");
                 // add the header
-                writer.WriteLine("Reservation Name,Number Of Guests");
+                writer.WriteLine("Name,Level,HP");
 
-                // go through our arrays, and print the data line by line
-                for (int i = 0; i < logicalSize; i++)
+                // go through our list, and print the data line by line
+                for (int i = 0; i < list.Count; i++)
                 {
-                    writer.WriteLine(names[i] + "," + numberOfGuests[i]);
+                    string name = list[i].GetName();
+                    float level = list[i].GetLevel();
+                    double hp = list[i].GetHP();
+
+                    writer.WriteLine(name + ',' + level + ',' + hp);
                 }
 
                 // close the connection
                 writer.Close();
-                Console.WriteLine("Successfully saved to file.");
+                isSaved = true;
             }
             catch
             {
-                Console.WriteLine("Something went wrong saving the file.");
+                isSaved = false;
             }
+
+            return isSaved;
         }
 
         static int LoadFromFile(string[] names, int[] numberOfGuests)
