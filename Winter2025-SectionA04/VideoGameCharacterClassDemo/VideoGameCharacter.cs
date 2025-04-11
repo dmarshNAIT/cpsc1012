@@ -45,7 +45,7 @@ namespace VideoGameCharacterClassDemo
             set
             {
                 // we are only allowed to set Armor to a value that is ALREADY in the _armorInventory list
-                if (_armorInventory.Contains(value))
+                if (_armorInventory.Contains(value) || value == "None")
                 {
                     _armor = value;
                 } else // not a valid option
@@ -119,7 +119,7 @@ namespace VideoGameCharacterClassDemo
                     isFound = true;
             }
 
-            if (isFound)
+            if (isFound || weaponName == "Fist")
                 _weapon = weaponName;
             else
                 throw new Exception("Sorry, you don't have that weapon.");

@@ -67,8 +67,9 @@
             List<VideoGameCharacter> characters = new List<VideoGameCharacter>();
             char userChoice;
 
-            // TODO: when the program starts, load in our characters from a file
-            // optional TODO: sort
+            // when the program starts, load in our characters from a file
+            LoadFromFile(characters);
+            // optional TODO: sort characters
 
             do
             {
@@ -106,6 +107,7 @@
 
             } while (userChoice != 'q');
 
+            SaveToFile(characters);
             Console.WriteLine("Thanks, goodbye!");
         }
 
@@ -156,7 +158,6 @@
             {
                 // create a stream to the file
                 StreamWriter writer = new StreamWriter("../../../" + FILENAME);
-                // as written, if we use the name of an existing file, we will replace that file's contents.
 
                 // save the header line:
                 writer.WriteLine("NAME,HP,ARMOR,WEAPON");
@@ -173,36 +174,22 @@
 
                 // close the stream
                 writer.Close();
-                // if we don't, it's possible that other processes won't be able to access this file.
-
                 Console.WriteLine("Successfully saved file.");
             }
             catch (Exception)
             {
                 Console.WriteLine("Something went wrong while saving to the file.");
             }
-
-            /* file format: 
-
-                DAY,HOURS 
-                SUNDAY,7.0
-                MONDAY,8.5
-                TUESDAY,7.2
-             */
-
         }
 
-        static int LoadFromFile(string[] dayNames, double[] values)
+        static void LoadFromFile(List<VideoGameCharacter> list)
         {
-            int i = 0;
-            // get the filename from the user
-            string filename = GetUserString("Please enter a file name: ");
-            // KNOWN GAP: the user could enter nonsense. We'll ignore this possibility for now.
+            const string FILENAME = "characters.csv";
 
             try
             {
                 // create a stream Reader
-                StreamReader reader = new StreamReader("../../../" + filename);
+                StreamReader reader = new StreamReader("../../../" + FILENAME);
                 reader.ReadLine(); // reading in the header
 
                 while (reader.EndOfStream == false) // keep looping until the end of the file
@@ -211,30 +198,30 @@
                     string line = reader.ReadLine();
 
                     // split up the parts
-                    string[] parts = line.Split(','); // break up that line, using the comma to separate the values
-                    string dayName = parts[0]; // the day name was the first "part" of the string we read
-                    double hours = double.Parse(parts[1]); // the hours were the next "part" of the string we read
+                    string[] parts = line.Split(',');
 
-                    // save the day into the day array
-                    dayNames[i] = dayName;
+                    // get each column value
+                    string name = parts[0];
+                    int hp = int.Parse(parts[1]);
+                    string armor = parts[2];
+                    string weapon = parts[3];
 
-                    // save the hours value into the values array 
-                    values[i] = hours;
+                    // create a new Character
+                    VideoGameCharacter character = new VideoGameCharacter(name, hp, armor, weapon);
 
-                    i++; // increase the # of elements loaded
+                    // add the Character to the List
+                    list.Add(character);
                 }
 
                 // close the stream
                 reader.Close();
 
-                Console.WriteLine($"Successfully loaded {i} records.");
+                Console.WriteLine($"Successfully loaded records.");
             }
             catch (Exception)
             {
                 Console.WriteLine("Something went wrong loading this file.");
             }
-
-            return i; // the # of elements
         }
 
         /// <summary>
