@@ -63,8 +63,9 @@
 
         static void RunProgram()
         {
+            List<VideoGameCharacter> characters = new List<VideoGameCharacter>();
             string userAnswer;
-            VideoGameCharacter.LoadFromFile();
+            //VideoGameCharacter.LoadFromFile(); // TODO
 
             do
             {
@@ -77,11 +78,17 @@
                 switch (userAnswer)
                 {
                     case "a":
-                        // TODO: Add a new character
+                        AddCharacter(characters);
+                        break;
+                    case "e":
+                        // TODO: edit a character
+                        break;
+                    case "r":
+                        // TODO: remove a character
                         break;
                     case "v":
                         // TODO: view all characters
-                        break;          
+                        break;
                     case "q":
                         // quit
                         break;
@@ -95,9 +102,48 @@
             while (userAnswer != "q");
             // end loop
 
-            VideoGameCharacter.SaveToFile();
+            //VideoGameCharacter.SaveToFile(); // TODO
             Console.WriteLine("Thanks! Goodbye.");
 
+
+        }
+
+        static void DisplayMenu()
+        {
+            Console.WriteLine("\n*** MENU OPTIONS ***\n" +
+                "V: View all Characters\n" +
+                "A: Add new Character\n" +
+                "E: Edit a Character\n" +
+                "R: Remove a Character\n" +
+                "Q: Quit\n");
+        }
+
+        static void AddCharacter(List<VideoGameCharacter> characters)
+        {
+            // option 1: we get all 3 fields from the user, and use those to create a new character
+
+            // option 2: we create a default character, then use setters/properties to modify each field
+            VideoGameCharacter newGuy = new VideoGameCharacter();
+            bool isValidInput = false;
+
+            while (isValidInput == false)
+            {
+                try
+                {
+                    string userAnswer = ReadUserString("What is the character's name?");
+                    newGuy.SetName(userAnswer);
+                    isValidInput = true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            // don't forget the other fields!
+
+            // add Character to the List
+            characters.Add(newGuy);
 
         }
 

@@ -96,9 +96,7 @@
         public double GetHP() { return _hp; }
 
         /**** MUTATOR METHODS ****/
-        // we decided Names should not change from OUTSIDE the class; we chose to create a private setter so that we could use its validation in our constructor.
-
-        private void SetName(string name)
+        public void SetName(string name)
         {
             if (name.Length < 2 || name.Length > 20)
                 throw new Exception("Names must be 2-20 characters long.");
