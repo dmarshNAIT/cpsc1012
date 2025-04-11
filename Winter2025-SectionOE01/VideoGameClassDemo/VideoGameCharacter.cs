@@ -9,7 +9,7 @@
 
         /**** CHARACTERISTICS ****/
         // referenceID, characterID, special powers, mana/resource, aggression, morality, speed, combat style, attack modifier
-        static private int s_characterCount;
+        private static int s_characterCount;
 
         private string _name = "Unknown"; // names must be 2-20 chars
         private float _level = DEFAULT_LEVEL;  // levels are between 1 & 100, inclusive
@@ -30,7 +30,7 @@
             }
         }
 
-        static public int CharacterCount
+        public static int CharacterCount
         {
             get { return s_characterCount; }
         }
@@ -164,7 +164,9 @@
             }
         }
 
-        static bool SaveToFile(List<VideoGameCharacter> list)
+        // this next method could have been created in the Program class.
+        // the only change is we would remove the modifier public
+        public static bool SaveToFile(List<VideoGameCharacter> list)
         {
             bool isSaved;
             const string FILENAME = "characters.csv";
@@ -198,15 +200,15 @@
             return isSaved;
         }
 
-        static int LoadFromFile(string[] names, int[] numberOfGuests)
+        public static bool LoadFromFile(List<VideoGameCharacter> list)
         {
-            // TODO: modify to work for VideoGameCharacter
+            const string FILENAME = "characters.csv";
+            bool isLoaded;
 
-            int index = 0;
             try
             {
                 // create our StreamReader object
-                using (StreamReader reader = new StreamReader("../../../reservations.csv"))
+                using (StreamReader reader = new StreamReader($"../../../{FILENAME}"))
                 {
                     reader.ReadLine(); // read in the header, and do nothing with it
 
@@ -215,25 +217,23 @@
                     {
                         string line = reader.ReadLine();
 
-                        // for each line, we need to split apart the name & # of guests
+                        // for each line, we need to split apart the columns
                         string[] parts = line.Split(',');
                         string name = parts[0];
-                        int number = int.Parse(parts[1]);
+                        float level = float.Parse(parts[1]);
+                        double hp = double.Parse(parts[2]);
 
-                        // then we will save each into the relevant array
-                        names[index] = name;
-                        numberOfGuests[index] = number;
-
-                        index++;
+                        // then we will use each field to create a new Character, and add them to the list
+                        list.Add(new VideoGameCharacter(name, level, hp));
                     }
                 }
-                Console.WriteLine($"Successfully loaded {index} records.");
+                isLoaded = true;
             }
             catch
             {
-                Console.WriteLine("Something went wrong reading from the file.");
+                isLoaded = false;
             }
-            return index; // return the # of guests successfully read from the file
+            return isLoaded;
         }
 
 

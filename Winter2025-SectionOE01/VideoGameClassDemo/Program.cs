@@ -65,8 +65,13 @@
         {
             List<VideoGameCharacter> characters = new List<VideoGameCharacter>();
             string userAnswer;
-            //VideoGameCharacter.LoadFromFile(); // TODO
-            // WELCOME?
+
+            Console.WriteLine("Welcome!!!");
+            if (VideoGameCharacter.LoadFromFile(characters))
+                Console.WriteLine($"{characters.Count} characters were loaded from file.");
+            else
+                Console.WriteLine("Something went wrong reading the file.");
+            
             do
             {
                 // show the main menu
@@ -102,7 +107,11 @@
             while (userAnswer != "q");
             // end loop
 
-            //VideoGameCharacter.SaveToFile(); // TODO
+            if (VideoGameCharacter.SaveToFile(characters))
+                Console.WriteLine("Successfully saved characters to file.");
+            else
+                Console.WriteLine("Error saving characters. Sorry.");
+
             Console.WriteLine("Thanks! Goodbye.");
 
 
