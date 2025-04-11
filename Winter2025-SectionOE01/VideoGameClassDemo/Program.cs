@@ -92,7 +92,7 @@
                         // TODO: remove a character
                         break;
                     case "v":
-                        // TODO: view all characters
+                        ViewCharacters(characters);
                         break;
                     case "q":
                         // quit
@@ -153,6 +153,15 @@
 
             // add Character to the List
             characters.Add(newGuy); // Add() is a C# method from the List class
+
+        }
+
+        static void ViewCharacters(List<VideoGameCharacter> characters)
+        {
+            for (int i = 0; i < characters.Count; i++)
+            {
+                Console.WriteLine(characters[i].ShowDetails());
+            }
 
         }
 

@@ -164,6 +164,11 @@
             }
         }
 
+        public string ShowDetails()
+        {
+            return _name.PadRight(21) + $"{_level:000}" + CharacterRank.PadRight(7) + $"{_hp:000}"; 
+        }
+
         // this next method could have been created in the Program class.
         // the only change is we would remove the modifier public
         public static bool SaveToFile(List<VideoGameCharacter> list)
