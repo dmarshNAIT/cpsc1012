@@ -136,7 +136,7 @@
             // ask them which character
             ViewCharacters(characters);
             // ask the user to pick one
-            characterNum = ReadUserInt("Enter the # of the character you wish to remove: ");
+            characterNum = ReadUserInt("\nEnter the # of the character you wish to edit: ");
 
             while (characterNum < 1 || characterNum > characters.Count)
                 characterNum = ReadUserInt("INVALID. Please enter a valid #: ");
@@ -202,7 +202,7 @@
 
                 // print out the current character details         
                 Console.WriteLine("NAME".PadRight(21) + "LVL RANK   HP");
-                Console.WriteLine(character.ShowDetails());
+                Console.WriteLine(character.ShowDetails() + "\n");
 
             }
             while (userAnswer != "b");
