@@ -204,7 +204,8 @@
                 }
 
                 // print out the current character details         
-                Console.WriteLine("NAME".PadRight(21) + "LVL RANK   HP");
+                Console.WriteLine("\nUPDATED STATS:\n" +
+                    "NAME".PadRight(21) + "LVL RANK   HP");
                 Console.WriteLine(character.ShowDetails() + "\n");
 
             }

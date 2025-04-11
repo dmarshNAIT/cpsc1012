@@ -79,6 +79,11 @@ namespace VideoGameCharacterClassDemo
 
         /*** MUTATOR METHODS ***/
         // name: name must be 2-10 characters long
+        /// <summary>
+        /// Mutator method for Name property.
+        /// </summary>
+        /// <param name="name">New value for Name property</param>
+        /// <exception cref="Exception">Thrown when name is too short or too long</exception>
         public void SetName(string name)
         {
             if (name.Trim().Length >= 2 && name.Trim().Length <= 10)

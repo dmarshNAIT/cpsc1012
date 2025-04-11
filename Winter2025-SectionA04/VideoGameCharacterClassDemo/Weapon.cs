@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace VideoGameCharacterClassDemo
 {
+    // TODO: DOCUMENTATION
     internal class Weapon
     {
         /************************ FIELDS ************************/

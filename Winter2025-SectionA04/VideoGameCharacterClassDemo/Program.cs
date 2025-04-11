@@ -7,7 +7,6 @@
         {
             // uncomment the next line if you want to run the test code
             //TestClass();
-
             RunProgram();
         }
 
@@ -69,6 +68,7 @@
             char userChoice;
 
             // TODO: when the program starts, load in our characters from a file
+            // optional TODO: sort
 
             do
             {
@@ -140,12 +140,101 @@
                     Console.WriteLine(ex.Message);
                 }
             }
-            while ( !isValidName );
+            while (!isValidName);
 
             // option 2:
             // get all the inputs, then call the greedy constructor
 
             characters.Add(character);
+        }
+
+        static void SaveToFile(List<VideoGameCharacter> list )
+        {
+            const string FILENAME = "characters.csv";
+
+            try
+            {
+                // create a stream to the file
+                StreamWriter writer = new StreamWriter("../../../" + FILENAME);
+                // as written, if we use the name of an existing file, we will replace that file's contents.
+
+                // save the header line:
+                writer.WriteLine("NAME,HP,ARMOR,WEAPON");
+
+                // go through the list, character by character, and add the info to the file
+                for (int i = 0; i < list.Count; i++)
+                {
+                    VideoGameCharacter character = list[i];
+                    writer.WriteLine(character.Name + ',' + 
+                        character.GetHP() + ',' + 
+                        character.Armor + ',' + 
+                        character.GetWeapon());
+                }
+
+                // close the stream
+                writer.Close();
+                // if we don't, it's possible that other processes won't be able to access this file.
+
+                Console.WriteLine("Successfully saved file.");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Something went wrong while saving to the file.");
+            }
+
+            /* file format: 
+
+                DAY,HOURS 
+                SUNDAY,7.0
+                MONDAY,8.5
+                TUESDAY,7.2
+             */
+
+        }
+
+        static int LoadFromFile(string[] dayNames, double[] values)
+        {
+            int i = 0;
+            // get the filename from the user
+            string filename = GetUserString("Please enter a file name: ");
+            // KNOWN GAP: the user could enter nonsense. We'll ignore this possibility for now.
+
+            try
+            {
+                // create a stream Reader
+                StreamReader reader = new StreamReader("../../../" + filename);
+                reader.ReadLine(); // reading in the header
+
+                while (reader.EndOfStream == false) // keep looping until the end of the file
+                {
+                    // read the file line by line
+                    string line = reader.ReadLine();
+
+                    // split up the parts
+                    string[] parts = line.Split(','); // break up that line, using the comma to separate the values
+                    string dayName = parts[0]; // the day name was the first "part" of the string we read
+                    double hours = double.Parse(parts[1]); // the hours were the next "part" of the string we read
+
+                    // save the day into the day array
+                    dayNames[i] = dayName;
+
+                    // save the hours value into the values array 
+                    values[i] = hours;
+
+                    i++; // increase the # of elements loaded
+                }
+
+                // close the stream
+                reader.Close();
+
+                Console.WriteLine($"Successfully loaded {i} records.");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Something went wrong loading this file.");
+            }
+
+            return i; // the # of elements
         }
 
         /// <summary>
