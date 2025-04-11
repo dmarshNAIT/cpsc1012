@@ -2,6 +2,9 @@
 {
     internal class Program
     {
+
+        // TODO: add summary comments to every method
+
         static void Main(string[] args)
         {
             // if I want to test the class, uncomment the following line
