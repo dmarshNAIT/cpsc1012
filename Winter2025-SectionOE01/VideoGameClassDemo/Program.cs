@@ -63,14 +63,8 @@
 
         static void RunProgram()
         {
-            // Load from file
-
-            // looping menu
-            // Add a new Character
-            // View all Characters
-            // Quit
-
-            // save to file
+            string userAnswer;
+            VideoGameCharacter.LoadFromFile();
 
             do
             {
@@ -78,26 +72,16 @@
                 DisplayMenu();
 
                 // get the user's choice, and use that to branch 
-                userAnswer = GetUserString("Please enter choice: ").ToLower();
+                userAnswer = ReadUserString("Please enter choice: ").ToLower();
 
                 switch (userAnswer)
                 {
+                    case "a":
+                        // TODO: Add a new character
+                        break;
                     case "v":
-                        ViewReservations(reservationNames, numberOfGuests, numberOfReservations);
-                        break;
-                    case "e":
-                        EditReservation(reservationNames, numberOfGuests, numberOfReservations);
-                        break;
-                    case "a": // add reservation
-                        numberOfReservations = AddReservation(reservationNames,
-                            numberOfGuests, numberOfReservations);
-                        break;
-                    case "s":
-                        SaveToFile(reservationNames, numberOfGuests, numberOfReservations);
-                        break;
-                    case "l":
-                        numberOfReservations = LoadFromFile(reservationNames, numberOfGuests);
-                        break;
+                        // TODO: view all characters
+                        break;          
                     case "q":
                         // quit
                         break;
@@ -111,12 +95,13 @@
             while (userAnswer != "q");
             // end loop
 
+            VideoGameCharacter.SaveToFile();
             Console.WriteLine("Thanks! Goodbye.");
 
 
         }
 
-                static string GetUserString(string question)
+        static string ReadUserString(string question)
         {
             string userInput;
 
@@ -130,7 +115,7 @@
             return userInput;
         }
 
-        static int GetUserInt(string question)
+        static int ReadUserInt(string question)
         {
             while (true)
             {

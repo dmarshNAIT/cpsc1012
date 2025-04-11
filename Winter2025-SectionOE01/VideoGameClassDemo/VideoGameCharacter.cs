@@ -168,6 +168,7 @@
 
         static void SaveToFile(string[] names, int[] numberOfGuests, int logicalSize)
         {
+            // TODO: modify to work for VideoGameCharacter
             try
             {
                 // create the StreamWriter object
@@ -193,6 +194,8 @@
 
         static int LoadFromFile(string[] names, int[] numberOfGuests)
         {
+            // TODO: modify to work for VideoGameCharacter
+
             int index = 0;
             try
             {
