@@ -89,7 +89,7 @@
                         // TODO: edit a character
                         break;
                     case "r":
-                        // TODO: remove a character
+                        RemoveCharacter(characters);
                         break;
                     case "v":
                         ViewCharacters(characters);
@@ -158,11 +158,39 @@
 
         static void ViewCharacters(List<VideoGameCharacter> characters)
         {
+            Console.WriteLine("#   " + "NAME".PadRight(21) + "LVL RANK   HP");
             for (int i = 0; i < characters.Count; i++)
             {
-                Console.WriteLine(characters[i].ShowDetails());
+                Console.WriteLine($"{i + 1:000} " + characters[i].ShowDetails());
             }
 
+        }
+
+        static void RemoveCharacter(List<VideoGameCharacter> characters)
+        {
+            int characterNum;
+            string userAnswer;
+            VideoGameCharacter character;
+
+            // display the current characters
+            ViewCharacters(characters);
+            // ask the user to pick one
+            characterNum = ReadUserInt("Enter the # of the character you wish to remove: ");
+
+            while(characterNum < 1 || characterNum > characters.Count)
+                characterNum = ReadUserInt("INVALID. Please enter a valid #: ");
+
+            character = characters[characterNum - 1];
+
+            // ask the user to confirm
+            userAnswer = ReadUserString($"You have selected to delete {character.GetName()}.\n" +
+                $"Enter Y to confirm, or any other key to cancel.").ToUpper();
+
+            // if so, remove them
+            if(userAnswer == "Y")
+                characters.RemoveAt(characterNum - 1);
+            else
+                Console.WriteLine("Exiting back to Main Menu...");
         }
 
         static string ReadUserString(string question)
