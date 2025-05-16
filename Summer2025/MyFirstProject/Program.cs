@@ -90,6 +90,11 @@
             int bigNumber = 123456789;
             byte test = (byte)bigNumber;
             Console.WriteLine(test); // test is 21
+
+            // other types of variables:
+            bool wonGame = true;
+            char multipleChoice = '¿'; // can be letters, digits, punctuation, spaces....
+            string message = "Hello!";
         }
     }
 }
