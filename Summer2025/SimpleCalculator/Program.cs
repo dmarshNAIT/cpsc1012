@@ -25,7 +25,7 @@
             sum = inputOne + inputTwo;
             difference = inputOne - inputTwo;
             product = inputOne * inputTwo;
-            quotient = inputOne / inputTwo;
+            quotient = (double) inputOne / inputTwo;
 
             //- display results
             Console.WriteLine($"The sum is {sum}.\n" +
