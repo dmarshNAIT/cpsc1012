@@ -1,4 +1,10 @@
-﻿namespace SimpleCalculator
+﻿/*
+ * Purpose:  To calculate the sum, difference, product, and quotient 
+ *           of two user-inputted numbers.
+ * Author:   Dana Marsh with assistance from OE01
+ * Modified: May 20, 2025
+ */ 
+namespace SimpleCalculator
 {
     internal class Program
     {
