@@ -58,6 +58,9 @@ namespace PokeballVolumeCalculator
             Console.WriteLine($"The volume is approximately {Math.Round(volume, 3)} cubic inches.");
             // make sure they look nice
 
+            // or we can take advantage of built-in number formatting:
+            Console.WriteLine($"The volume is approximately {volume:N3} cubic inches.");
+
         }
     }
 }
