@@ -53,3 +53,16 @@ namespace LoanQualifier
         }
     }
 }
+
+/*
+ * TEST:
+ * good salary: 50000
+ * 
+ * good salary, 2 years: should say "qualified"             PASS
+ * 
+ * good salary, 1 year: should say "not enough years"       PASS
+ * 
+ * low salary, 5 years: should say "not enough salary"      PASS
+ * 
+ * low salary, 1 year: should say "not enough salary"       PASS
+ */
