@@ -56,7 +56,7 @@ namespace DecisionStructureHotSauceCalculator
             }
 
             // do they want a booster?
-            Console.Write("Would you like your sauce to be extra spice (yes/no): ");
+            Console.Write("Would you like your sauce to be extra spicy (yes/no): ");
             // save the first character of their answer:
             userInput = Console.ReadLine().Trim().ToUpper()[0];
             // assign a value to isExtraSpicy
@@ -68,6 +68,8 @@ namespace DecisionStructureHotSauceCalculator
             {
                 isExtraSpicy = false;
             }
+            // OR
+            // isExtraSpicy = (userInput == ('Y'));
 
             // if they request extra spicy, +3 
             if (isExtraSpicy)
