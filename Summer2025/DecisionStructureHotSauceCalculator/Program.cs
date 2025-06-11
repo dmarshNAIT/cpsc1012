@@ -17,9 +17,9 @@ namespace DecisionStructureHotSauceCalculator
             // declare variables
             int spiceTolerance;  //customer's spice tolerance
             string spiceDegree;  //choice of sauce spiciness
-            string userInput;
+            char userInput;
             bool isExtraSpicy;   //whether or not they'd like a spicy booster
-            int heatLevel;       //heat level
+            int heatLevel = 0;       //heat level
 
             // get input from the user
             // v1:  pretend the user enters valid input
@@ -33,18 +33,59 @@ namespace DecisionStructureHotSauceCalculator
             spiceDegree = Console.ReadLine().ToLower().Trim();
             // this forces the user's input to be lowercase, then trims any extra whitespace
 
-            // do they want a booster?
-            Console.Write("Would you like your sauce to be extra spice (yes/no): ");
-            userInput = Console.ReadLine();
-            // assign a value to isExtraSpicy
-
             // calculation
             // mild = 2, medium = 5, hot = 8
+            switch (spiceDegree)
+            {
+                // if spiceDegree is mild:
+                case "mild":
+                    heatLevel = 2;
+                    break;
+                // if spiceDegree is medium:
+                case "medium":
+                    heatLevel = 5;
+                    break;
+                // if spiceDegree is hot:
+                case "hot":
+                    heatLevel = 8;
+                    break;
+                default:
+                    // this only runs if they enter an invalid choice
+                    Console.WriteLine("That was not a valid choice.");
+                    break;
+            }
+
+            // do they want a booster?
+            Console.Write("Would you like your sauce to be extra spice (yes/no): ");
+            // save the first character of their answer:
+            userInput = Console.ReadLine().Trim().ToUpper()[0];
+            // assign a value to isExtraSpicy
+            if (userInput == ('Y'))
+            {
+                isExtraSpicy = true;
+            }
+            else
+            {
+                isExtraSpicy = false;
+            }
+
             // if they request extra spicy, +2 
+            if (isExtraSpicy)
+            {
+                heatLevel = heatLevel + 2;
+            }
+
+            // OR:
+            // heatLevel = isExtraSpicy ? heatLevel + 2 : heatLevel;
 
             // output
             // print the overall heat level
+            Console.WriteLine("Your hot sauce has an overall heat level of " + heatLevel);
             // if they exceed their tolerance, print a warning
+            if (heatLevel > spiceTolerance)
+            {
+                Console.WriteLine("That's too spicy for you.");
+            }
         }
     }
 }
