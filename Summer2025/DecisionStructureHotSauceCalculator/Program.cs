@@ -69,10 +69,10 @@ namespace DecisionStructureHotSauceCalculator
                 isExtraSpicy = false;
             }
 
-            // if they request extra spicy, +2 
+            // if they request extra spicy, +3 
             if (isExtraSpicy)
             {
-                heatLevel = heatLevel + 2;
+                heatLevel = heatLevel + 3;
             }
 
             // OR:
