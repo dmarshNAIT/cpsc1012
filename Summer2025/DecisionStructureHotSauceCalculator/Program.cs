@@ -19,53 +19,91 @@ namespace DecisionStructureHotSauceCalculator
             do
             {
                 // declare variables
-                int spiceTolerance;  //customer's spice tolerance
+                int spiceTolerance = 0;  //customer's spice tolerance
                 string spiceDegree;  //choice of sauce spiciness
+                string rawUserInput;
                 char userInput;
                 bool isExtraSpicy;   //whether or not they'd like a spicy booster
                 int heatLevel = 0;       //heat level
                 string outputMessage;
+                bool isGoodInput = false;
 
                 // get input from the user
-                // v1:  pretend the user enters valid input
+
                 // spice tolerance
-                Console.Write("Please enter your spice tolerance from 1-10: ");
-                spiceTolerance = int.Parse(Console.ReadLine());
-                // future TODO: add input validation
+                do
+                {
+                    Console.Write("Please enter your spice tolerance from 1-10: ");
+                    try
+                    {
+                        spiceTolerance = int.Parse(Console.ReadLine());
+                        if(spiceTolerance < 1 || spiceTolerance > 10)
+                        {
+                            Console.WriteLine("Please enter a valid number. Try again.");
+                        }
+                        else
+                        {
+                            isGoodInput = true;
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Invalid input. Please try again.");
+                    }
+                } while (!isGoodInput);
+                                                           
 
                 // which level of spice
-                Console.Write("Please select your spice level: mild, medium, or hot: ");
-                spiceDegree = Console.ReadLine().ToLower().Trim();
-                // this forces the user's input to be lowercase, then trims any extra whitespace
-
-                // calculation
-                // mild = 2, medium = 5, hot = 8
-                switch (spiceDegree)
+                do
                 {
-                    // if spiceDegree is mild:
-                    case "mild":
-                        heatLevel = 2;
-                        break;
-                    // if spiceDegree is medium:
-                    case "medium":
-                        heatLevel = 5;
-                        break;
-                    // if spiceDegree is hot:
-                    case "hot":
-                        heatLevel = 8;
-                        break;
-                    default:
-                        // this only runs if they enter an invalid choice
-                        Console.WriteLine("That was not a valid choice.");
-                        break;
-                }
+                    Console.Write("Please select your spice level: mild, medium, or hot: ");
+                    spiceDegree = Console.ReadLine().ToLower().Trim();
+                    // this forces the user's input to be lowercase, then trims any extra whitespace
 
-                outputMessage = $"Base heat level:    {heatLevel,15}\n";
+                    // calculation
+                    // mild = 2, medium = 5, hot = 8
+                    switch (spiceDegree)
+                    {
+                        // if spiceDegree is mild:
+                        case "mild":
+                            heatLevel = 2;
+                            isGoodInput = true;
+                            break;
+                        // if spiceDegree is medium:
+                        case "medium":
+                            heatLevel = 5;
+                            isGoodInput = true;
+                            break;
+                        // if spiceDegree is hot:
+                        case "hot":
+                            heatLevel = 8;
+                            isGoodInput = true;
+                            break;
+                        default:
+                                 // this only runs if they enter an invalid choice
+                            Console.WriteLine("That was not a valid choice.");
+                            isGoodInput = false;
+                            break;
+                    } 
+                } while (!isGoodInput);
+
+                outputMessage = $"Your spice tolerance:{spiceTolerance, 5}\n" +
+                    $"Base heat level:     {heatLevel,5}\n";
 
                 // do they want a booster?
                 Console.Write("Would you like your sauce to be extra spicy (yes/no): ");
                 // save the first character of their answer:
-                userInput = Console.ReadLine().Trim().ToUpper()[0];
+                rawUserInput = Console.ReadLine().Trim().ToUpper();
+
+                // make sure they entered at least one character:
+                while (rawUserInput.Length < 1)
+                {
+                    Console.Write("Invalid answer. Please try again: ");
+                    rawUserInput = Console.ReadLine().Trim().ToUpper();
+                }
+
+                userInput = rawUserInput[0]; 
+
                 // assign a value to isExtraSpicy
                 if (userInput == ('Y'))
                 {
@@ -82,7 +120,7 @@ namespace DecisionStructureHotSauceCalculator
                 if (isExtraSpicy)
                 {
                     heatLevel = heatLevel + 3;
-                    outputMessage += $"Extra spice: 3\n";
+                    outputMessage += $"Extra spice:             3\n";
                 }
 
                 // OR:
@@ -90,7 +128,7 @@ namespace DecisionStructureHotSauceCalculator
 
                 // output
                 // print the overall heat level
-                outputMessage += $"Overall heat level: {heatLevel,15}";
+                outputMessage += $"Overall heat level:  {heatLevel,5}";
 
                 Console.WriteLine(outputMessage);
 
