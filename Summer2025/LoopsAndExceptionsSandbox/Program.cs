@@ -9,7 +9,7 @@ namespace LoopsAndExceptionsSandbox
         static void Main(string[] args)
         {
             /******************* LOOPS **********************/
-            // let's imagine we want to print the numbers from 1 to 10.
+            // EXAMPLE 1: let's imagine we want to print the numbers from 1 to 10.
 
             int number = 1;
 
@@ -19,19 +19,22 @@ namespace LoopsAndExceptionsSandbox
                 Console.WriteLine("The value is " + number);
 
                 number = number + 1;
+                // we can write that 3 other ways, with the same net result:
                 //number += 1;
                 // number++; // this gives the value, then adds 1
                 //++number;  // this adds 1, then gives the value
             }
 
-            // here is the same logic, using a for loop
+            // here is the same kind of logic, using a for loop instead
             for (int lessBoringNumber = 1; lessBoringNumber <= 12; lessBoringNumber++)
             {
                 Console.WriteLine($"The value is {lessBoringNumber}");
             }
             // for loops are GREAT when we know exactly how many times the loop will repeat
 
-            // we could loop until the user says the magic word
+            /*****************************************/
+
+            // EXAMPLE 2: we could loop until the user says the magic word
             string userInput,
                 magicWord = "stop";
 
@@ -47,7 +50,9 @@ namespace LoopsAndExceptionsSandbox
             Console.WriteLine("Hooray! You escaped the loop!");
             // while loops are perfect when we need to loop zero, 1, or many times.
 
-            // we stay in the loop until the user guesses the secret number
+            /*****************************************/
+
+            // EXAMPLE 3: we stay in the loop until the user guesses the secret number
             int userGuess,
                 secretNumber = 42;
 
@@ -73,6 +78,56 @@ namespace LoopsAndExceptionsSandbox
 
             Console.WriteLine("Yay, you escaped again!");
             // do-while loops are perfect for code that MUST EXECUTE AT LEAST ONCE, possibly many times.
+
+            /******************** EXCEPTIONS *********************/
+
+            int numerator = 42,     // the top # when we do division
+                denominator = 0,   // the bottom # when we do division
+                result;
+
+            if (denominator != 0)
+            {
+                result = numerator / denominator;
+                Console.WriteLine($"The result of dividing {numerator} / {denominator} is {result}.");
+            }
+
+            /******************************************/
+
+            int numberGoals;
+
+            Console.Write("Enter the current score: ");
+            try // we will try to run the code in this block
+            {
+                numberGoals = int.Parse(Console.ReadLine());
+                Console.WriteLine($"The score is {numberGoals}.");
+            }
+            catch // if anything in the try block fails, this code will run
+            {
+                Console.WriteLine("That is not what I asked for.");
+            }
+
+
+            /************** and now we combine those ideas ***********/
+            int numberPoints = 0;
+            bool isGoodInput;
+
+            Console.Write("Enter the current score: ");
+            do
+            {
+                try // we will try to run the code in this block
+                {
+                    numberPoints = int.Parse(Console.ReadLine());
+                    isGoodInput = true;
+                }
+                catch // if anything in the try block fails, this code will run
+                {
+                    Console.Write("Invalid input. Try again: ");
+                    isGoodInput = false;
+                } 
+            } while (!isGoodInput);
+
+            Console.WriteLine($"The score is {numberPoints}.");
+
         }
     }
 }
