@@ -52,7 +52,8 @@ namespace ArraySandbox
             // let's iterate over a PARTIALLY filled array
             toppings[0] = "pineapple";
             toppings[1] = "feta";
-            int logicalSize = 2;
+            int logicalSize = 2; // for C# arrays, this must be tracked manually.
+
             for (int i = 0; i < logicalSize; i++)
             {
                 Console.WriteLine(toppings[i]);
