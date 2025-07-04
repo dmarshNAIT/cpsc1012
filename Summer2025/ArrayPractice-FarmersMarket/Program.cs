@@ -16,21 +16,27 @@ namespace ArrayPractice_FarmersMarket
         {
             //One array contains the names of the produce e.g.zucchini
             //Another array contains the price per item in CAD
+            string userChoice;
 
             // welcome
+            Console.WriteLine("Hello! Welcome to Method Mart!");
 
-            // display menu
-            // handle user's choice
-            // if they didn't choose to quit, keep looping
+            do
+            {
+                // TODO: call the method to display menu
+                // TODO: get user's input & TRANSLATE TO LOWERCASE
+                // TODO: call teh method to handle their choice
+                // if they didn't choose to quit, keep looping
+            } while ( userChoice != 'q'); // user choice isn't "q"
 
             // goodbye message
 
         }
 
-        // TODO: method to Display Menu
-        // TODO: method to handle user's choice
+        // TODO: method to Display Menu ***********
+        // TODO: method to handle user's choice ***********
         // TODO: method to View Items
-        // TODO: method to Add Items
+        // TODO: method to Add Items ***********
         // TODO: method to Edit Items
         // TODO: method to Delete Items
         // TODO: (FUTURE) ability to read and write from a file
