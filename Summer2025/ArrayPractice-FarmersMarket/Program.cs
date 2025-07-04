@@ -14,8 +14,12 @@ namespace ArrayPractice_FarmersMarket
     {
         static void Main(string[] args)
         {
-            //One array contains the names of the produce e.g.zucchini
-            //Another array contains the price per item in CAD
+            const int MAX_SIZE = 70;                    // why? because Daniel said so.
+
+            string[] produce = new string[MAX_SIZE];    // names of produce items
+            double[] prices = new double[MAX_SIZE];     // prices of produce items
+            int logicalSize = 0;                        // length or physical size of arrays
+
             string userChoice;
 
             // welcome
@@ -36,7 +40,7 @@ namespace ArrayPractice_FarmersMarket
                         Console.WriteLine("TODO: VIEW ITEMS");
                         break;
                     case "a":
-                        Console.WriteLine("TODO: ADD ITEMS");
+                        AddProduce(logicalSize++, produce, prices);
                         break;
                     case "e":
                         Console.WriteLine("TODO: EDIT ITEMS");
@@ -83,6 +87,34 @@ namespace ArrayPractice_FarmersMarket
         }
 
         /// <summary>
+        /// Gets a double value from the user.
+        /// </summary>
+        /// <param name="question">The user prompt</param>
+        /// <returns>user-inputted double</returns>
+        static double GetUserDouble(string question)
+        {
+            double answer = 0;
+            bool isValid = false;
+
+            do
+            {
+                Console.Write(question);
+                try
+                {
+                    answer = double.Parse(Console.ReadLine());
+                    isValid = true;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Sorry, that's not a valid number.");
+                }
+
+            } while (isValid == false);
+
+            return answer;
+        }
+
+        /// <summary>
         /// Displays the menu options.
         /// </summary>
         static void DisplayMenu()
@@ -97,27 +129,31 @@ namespace ArrayPractice_FarmersMarket
 
         // TODO: method to View Items
 
-        // TODO: method to Add Items
+        /// <summary>
+        /// Prompts the user to enter the name and price of a produce item.
+        /// </summary>
+        /// <param name="index">The logical size of the arrays</param>
+        /// <param name="produce">An array containing the names of produce items</param>
+        /// <param name="prices">An array containign the prices of produce items</param>
         static void AddProduce(int index, string[] produce, double[] prices)
         {
             string produceName;
             double producePrice;
 
             produceName = GetUserString("Please enter the type of produce: ");
-
             while (produceName.Trim().Length == 0)
             {
                 produceName = GetUserString("Produce name cannot be blank: ");
                 // FUTURE IMPROVEMENT: can't be duplicate
             }
-
             produce[index] = produceName;
 
-
-
-            // the user will provide the price of that item
-            // we add it to the array if it's valid (must be > 0)
-
+            producePrice = GetUserDouble("Please enter the price in $: ");
+            while(producePrice <= 0)
+            {
+                producePrice = GetUserDouble("Price must be more than zero. Try again: ");
+            }
+            prices[index] = producePrice;
         }
 
 
