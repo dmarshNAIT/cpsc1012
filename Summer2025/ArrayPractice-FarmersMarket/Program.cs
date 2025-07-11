@@ -42,13 +42,13 @@ namespace ArrayPractice_FarmersMarket
                         AddProduce(logicalSize++, produce, prices);
                         break;
                     case "e":
-                        Console.WriteLine("TODO: EDIT ITEMS");
+                        EditItems(produce, prices, logicalSize);
                         break;
                     case "d":
                         Console.WriteLine("TODO: DELETE ITEMS");
                         break;
                     case "l":
-                        Console.WriteLine("TODO: LOAD");
+                        logicalSize = ReadFromFile(produce, prices);
                         break;
                     case "s":
                         SaveToFile(produce, prices, logicalSize);
@@ -119,6 +119,29 @@ namespace ArrayPractice_FarmersMarket
             return answer;
         }
 
+        static int GetUserInt(string question)
+        {
+            int answer = 0;
+            bool isValid = false;
+
+            do
+            {
+                Console.Write(question);
+                try
+                {
+                    answer = int.Parse(Console.ReadLine());
+                    isValid = true;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Sorry, that's not a valid number.");
+                }
+
+            } while (isValid == false);
+
+            return answer;
+        }
+
         /// <summary>
         /// Displays the menu options.
         /// </summary>
@@ -158,11 +181,11 @@ namespace ArrayPractice_FarmersMarket
                 // make sure it looks nice
 
                 // have a heading row
-                Console.WriteLine("\nITEM              PRICE");
+                Console.WriteLine("\n   ITEM              PRICE");
 
                 for (int i = 0; i < logicalSize; i++)
                 {
-                    Console.WriteLine($"{produce[i],-15} {prices[i],7:c}");
+                    Console.WriteLine($"{i + 1:00} {produce[i],-15} {prices[i],7:c}");
                 }
             }
         }
@@ -196,6 +219,33 @@ namespace ArrayPractice_FarmersMarket
 
 
         // TODO: method to Edit Items
+        static void EditItems(string[] produce, double[] prices, int logicalSize)
+        {
+            int index;
+            double newPrice;
+            
+            // display the elements
+            ViewItems(produce, prices, logicalSize);
+
+            // ask the user which one they want to change
+            index = GetUserInt("Please enter the # of the item you wish to edit: ") - 1;
+            while (index < 0 || index >= logicalSize)
+            {
+                index = GetUserInt("Please enter a valid #: ") - 1;
+            }
+
+            // ask them for the new price
+            newPrice = GetUserDouble("Please enter the new price in $: ");
+            while(newPrice <= 0)
+            {
+                newPrice = GetUserDouble("Not a valid price. Try again: ");
+            }
+            prices[index] = newPrice;
+
+            Console.WriteLine("Successfully updated.");
+        }
+
+
         // TODO: method to Delete Items
         // TODO: (FUTURE) ability to read and write from a file
 
@@ -207,7 +257,6 @@ namespace ArrayPractice_FarmersMarket
         /// <param name="logicalSize">logical size of each array</param>
         static void SaveToFile(string[] produce, double[] prices, int logicalSize)
         {
-
             try
             {
                 // create a stream
@@ -233,9 +282,54 @@ namespace ArrayPractice_FarmersMarket
                 Console.ResetColor();
             }
         }
+
+        static int ReadFromFile(string[] produce, double[] prices)
+        {
+            int index = 0;
+            try
+            {
+                // create the stream
+                StreamReader reader = new StreamReader("../../../market.csv");
+
+                // read and discard the header (line 1)
+                reader.ReadLine();
+
+                // read from file, line by line
+                // add the name of the produce to the produce array
+                // add the price of the produce to the prices array
+                while (reader.EndOfStream == false)
+                {
+                    string line = reader.ReadLine();
+                    string[] parts = line.Split(',');
+                    // we now have a 2-element array containing the name & price
+                    string produceName = parts[0];
+                    double producePrice = double.Parse(parts[1]);
+                    // let's move the name into the name array
+                    produce[index] = produceName;
+                    // let's move the price into the price array
+                    prices[index] = producePrice;
+                    index++;
+                }
+
+                // close the stream
+                reader.Close();
+                Console.WriteLine("Successfully read from file.");
+            }
+            catch (Exception)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Sorry, something went wrong reading the file.");
+                Console.ResetColor();
+            }
+            return index;
+        }
     }
 }
 
 //Future extensions:
 //Quantity in stock?
 //Weight / diameter ?
+
+
+
+// TODO: ADD XML
