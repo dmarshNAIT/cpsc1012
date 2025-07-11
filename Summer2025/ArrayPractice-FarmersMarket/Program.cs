@@ -2,7 +2,7 @@
  * This program stores the prices of produce items sold at a market.
  * 
  * 0
- */ 
+ */
 using static System.Formats.Asn1.AsnWriter;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,22 +22,21 @@ namespace ArrayPractice_FarmersMarket
 
             string userChoice;
 
-            // welcome
             Console.WriteLine("Hello! Welcome to Method Mart!");
 
             do
             {
-                // TODO: call the method to display menu
+                // call the method to display menu
                 DisplayMenu();
 
                 // get user's input & TRANSLATE TO LOWERCASE
                 userChoice = GetUserString("Please enter your choice: ").ToLower();
                 // STRETCH CHALLENGE: Create a method that extracts just the first character from their answer (e.g. Quit would be treated like Q)
 
-                switch(userChoice)
+                switch (userChoice)
                 {
                     case "v":
-                        Console.WriteLine("TODO: VIEW ITEMS");
+                        ViewItems(produce, prices, logicalSize);
                         break;
                     case "a":
                         AddProduce(logicalSize++, produce, prices);
@@ -56,7 +55,7 @@ namespace ArrayPractice_FarmersMarket
                 }
 
                 // if they didn't choose to quit, keep looping
-            } while ( userChoice != "q"); // user choice isn't "q"
+            } while (userChoice != "q"); // user choice isn't "q"
 
             Console.WriteLine("Thanks for shopping! Goodbye.");
 
@@ -128,6 +127,32 @@ namespace ArrayPractice_FarmersMarket
         }
 
         // TODO: method to View Items
+        static void ViewItems(string[] produce, double[] prices, int logicalSize)
+        {
+            // have a warning message if the arrays are empty
+            if (logicalSize <= 0)
+            {
+                //Console.BackgroundColor = ConsoleColor.Cyan;
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("Sorry, no items to display.");
+                Console.ResetColor();
+            }
+            else
+            {
+                // iterate through every element 
+                // display the name of the produce
+                // display the price of that produce item
+                // TODO: make sure it looks nice
+
+                // have a heading row
+                Console.WriteLine("ITEM PRICE");
+
+                for (int i = 0; i < logicalSize; i++)
+                {
+                    Console.WriteLine($"{produce[i]} {prices[i]}");
+                }
+            }
+        }
 
         /// <summary>
         /// Prompts the user to enter the name and price of a produce item.
@@ -149,7 +174,7 @@ namespace ArrayPractice_FarmersMarket
             produce[index] = produceName;
 
             producePrice = GetUserDouble("Please enter the price in $: ");
-            while(producePrice <= 0)
+            while (producePrice <= 0)
             {
                 producePrice = GetUserDouble("Price must be more than zero. Try again: ");
             }
@@ -163,6 +188,6 @@ namespace ArrayPractice_FarmersMarket
     }
 }
 
-            //Future extensions:
-            //Quantity in stock?
-            //Weight / diameter ?
+//Future extensions:
+//Quantity in stock?
+//Weight / diameter ?
