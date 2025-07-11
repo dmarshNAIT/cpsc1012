@@ -145,11 +145,11 @@ namespace ArrayPractice_FarmersMarket
                 // TODO: make sure it looks nice
 
                 // have a heading row
-                Console.WriteLine("ITEM PRICE");
+                Console.WriteLine("\nITEM              PRICE");
 
                 for (int i = 0; i < logicalSize; i++)
                 {
-                    Console.WriteLine($"{produce[i]} {prices[i]}");
+                    Console.WriteLine($"{produce[i],-15} {prices[i],7:c}");
                 }
             }
         }
