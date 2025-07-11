@@ -45,7 +45,7 @@ namespace ArrayPractice_FarmersMarket
                         EditItems(produce, prices, logicalSize);
                         break;
                     case "d":
-                        Console.WriteLine("TODO: DELETE ITEMS");
+                        Console.WriteLine("Sorry, can't do that yet.");
                         break;
                     case "l":
                         logicalSize = ReadFromFile(produce, prices);
@@ -67,6 +67,7 @@ namespace ArrayPractice_FarmersMarket
 
         }
 
+        // original version:
         //static string GetUserString( string question)
         //{
         //    string answer;
@@ -119,6 +120,11 @@ namespace ArrayPractice_FarmersMarket
             return answer;
         }
 
+        /// <summary>
+        /// Gets an int value from the user.
+        /// </summary>
+        /// <param name="question">The user prompt</param>
+        /// <returns>user-inputted int</returns>
         static int GetUserInt(string question)
         {
             int answer = 0;
@@ -218,7 +224,12 @@ namespace ArrayPractice_FarmersMarket
         }
 
 
-        // TODO: method to Edit Items
+        /// <summary>
+        /// Allows the user to view all items then modify the price of one item.
+        /// </summary>
+        /// <param name="produce">An array containing the names of produce items</param>
+        /// <param name="prices">An array containign the prices of produce items</param>
+        /// <param name="logicalSize">logical size of each array</param>
         static void EditItems(string[] produce, double[] prices, int logicalSize)
         {
             int index;
@@ -247,7 +258,9 @@ namespace ArrayPractice_FarmersMarket
 
 
         // TODO: method to Delete Items
-        // TODO: (FUTURE) ability to read and write from a file
+        // we chose to leave this out as this is a bit of a process for arrays.
+        // will revisit when we get to Lists
+
 
         /// <summary>
         /// Saves contents of parallel arrays to a CSV file.
@@ -283,6 +296,12 @@ namespace ArrayPractice_FarmersMarket
             }
         }
 
+        /// <summary>
+        /// Reads from a provided CSV file and populates the two parallel arrays.
+        /// </summary>
+        /// <param name="produce">An array containing the names of produce items</param>
+        /// <param name="prices">An array containign the prices of produce items</param>
+        /// <returns>the # of elements read from the file</returns>
         static int ReadFromFile(string[] produce, double[] prices)
         {
             int index = 0;
@@ -330,6 +349,3 @@ namespace ArrayPractice_FarmersMarket
 //Quantity in stock?
 //Weight / diameter ?
 
-
-
-// TODO: ADD XML
