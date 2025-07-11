@@ -47,6 +47,12 @@ namespace ArrayPractice_FarmersMarket
                     case "d":
                         Console.WriteLine("TODO: DELETE ITEMS");
                         break;
+                    case "l":
+                        Console.WriteLine("TODO: LOAD");
+                        break;
+                    case "s":
+                        SaveToFile(produce, prices, logicalSize);
+                        break;
                     case "q":
                         break;
                     default:
@@ -123,10 +129,17 @@ namespace ArrayPractice_FarmersMarket
                 "A: Add Items\n" +
                 "E: Edit Items\n" +
                 "D: Delete Item\n" +
+                "L: Load Items from File\n" +
+                "S: Save Items to File\n" +
                 "Q: Quit\n");
         }
 
-        // TODO: method to View Items
+        /// <summary>
+        /// Prints the contents of the two parallel arrays.
+        /// </summary>
+        /// <param name="produce">An array of produce item names</param>
+        /// <param name="prices">An array containing the corresponding prices</param>
+        /// <param name="logicalSize">logical size of each array</param>
         static void ViewItems(string[] produce, double[] prices, int logicalSize)
         {
             // have a warning message if the arrays are empty
@@ -142,7 +155,7 @@ namespace ArrayPractice_FarmersMarket
                 // iterate through every element 
                 // display the name of the produce
                 // display the price of that produce item
-                // TODO: make sure it looks nice
+                // make sure it looks nice
 
                 // have a heading row
                 Console.WriteLine("\nITEM              PRICE");
@@ -185,6 +198,41 @@ namespace ArrayPractice_FarmersMarket
         // TODO: method to Edit Items
         // TODO: method to Delete Items
         // TODO: (FUTURE) ability to read and write from a file
+
+        /// <summary>
+        /// Saves contents of parallel arrays to a CSV file.
+        /// </summary>
+        /// <param name="produce">An array containing the names of produce items</param>
+        /// <param name="prices">An array containign the prices of produce items</param>
+        /// <param name="logicalSize">logical size of each array</param>
+        static void SaveToFile(string[] produce, double[] prices, int logicalSize)
+        {
+
+            try
+            {
+                // create a stream
+                StreamWriter writer = new StreamWriter("../../../market.csv");
+
+                // give file a header row
+                writer.WriteLine("produce,price");
+
+                // iterate through the arrays, printing each line to the file in CSV format
+                for (int i = 0; i < logicalSize; i++)
+                {
+                    writer.WriteLine($"{produce[i]},{prices[i]:N2}");
+                }
+
+                // close the stream
+                writer.Close();
+                Console.WriteLine("Successfully saved to file.");
+            }
+            catch (Exception)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Sorry, something went wrong saving to file.");
+                Console.ResetColor();
+            }
+        }
     }
 }
 
