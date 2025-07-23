@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ClassDemo_Dog
 {
@@ -72,6 +73,18 @@ namespace ClassDemo_Dog
         public string Name
         {
             get { return _name; }
+            set {
+                if (value.Trim().Length <= 0 || value.Trim().Length > 21)
+                {
+                    throw new Exception("Dog name must be between 1 & 21 characters in length.");
+                    // alternatively, we could have created an ArgumentException
+                }
+                else
+                {
+                    _name = value.Trim();
+                }
+            }
+
         }
 
     }
