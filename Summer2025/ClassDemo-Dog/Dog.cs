@@ -43,6 +43,36 @@ namespace ClassDemo_Dog
             _size = size;
         }
 
+        /*** ACCESSOR ***/
+        public string GetName()
+        {
+            return _name;
+        }
+
+        /*** MUTATOR ***/
+        public void SetName(string name)
+        {
+            // if the name is too short or too long, throw an Exception
+            // otherwise, set the name to the provided value
+            name = name.Trim(); // gets rid of leading or trailing whitespace
+
+            if (name.Length <= 0 || name.Length > 21)
+            {
+                throw new Exception("Dog name must be between 1 & 21 characters in length.");
+                // alternatively, we could have created an ArgumentException
+            }
+            else
+            {
+                _name = name;
+            }
+        }
+
+        /*** PROPERTIES ***/
+        // normally we don't do BOTH accessor/mutator AND a property, but here we will in order to see the difference in syntax
+        public string Name
+        {
+            get { return _name; }
+        }
 
     }
 }
