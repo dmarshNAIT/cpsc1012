@@ -12,6 +12,7 @@ namespace ClassAndListPractice_DogStore
         private string _name;
         private double _price;
         private int _quantity;
+        private int _discount;
 
         public string Name
         {
@@ -44,11 +45,24 @@ namespace ClassAndListPractice_DogStore
             get { return _quantity; }
             set
             {
-                // if quantityice > 0, use it. otherwise, throw Exception.
+                // if quantity > 0, use it. otherwise, throw Exception.
                 if (value > 0)
                     _quantity = value;
                 else
                     throw new Exception("Quantity must be greater than 0.");
+            }
+        }
+        public int Discount
+        {
+            get { return _discount; }
+            set
+            {
+                if (value < 0)
+                    throw new Exception("Discount cannot be negative.");
+                else if (value > 100)
+                    throw new Exception("Discount cannot be more than 100%.");
+                else
+                    _discount = value;
             }
         }
 
@@ -62,12 +76,8 @@ namespace ClassAndListPractice_DogStore
 
 
 
-        /**
-            fields:
+        /*
 
-
-            Quantity (must be >0)
-            Discount (0-100)
             Constructors
             Read-only properties: 
             E.g. Dog treats, $2 each, quantity = 5, discount = 25%
