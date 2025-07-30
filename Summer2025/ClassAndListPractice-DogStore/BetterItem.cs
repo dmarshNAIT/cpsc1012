@@ -83,7 +83,8 @@ namespace ClassAndListPractice_DogStore
         {
             get
             {
-                return 0; //TODO
+                double subtotal = Quantity * Price;
+                return subtotal - Discount/100.0 * subtotal;
                           // E.g. Dog treats, $2 each, quantity = 5, discount = 25%
                           //TotalCostPerItem = 2 * 5 - discount = 7.50
             }
@@ -93,11 +94,18 @@ namespace ClassAndListPractice_DogStore
         {
             get
             {
-                return 0;
-                // TODO
                 // if discount is zero, "none"
                 // if discount is 50+, "clearance"
                 // otherwise "sale"
+                switch(Discount)
+                {
+                    case int discount when discount == 0:
+                        return "none";
+                    case int discount when discount >= 50:
+                        return "clearance";
+                    default:
+                        return "sale";
+                }
             }
         }
     }
