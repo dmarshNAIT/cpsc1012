@@ -67,22 +67,38 @@ namespace ClassAndListPractice_DogStore
         }
 
         // constructors
+        // no-argument constructor:
+        public BetterItem() { }
+        // greedy constructor:
+        public BetterItem(string name, double price, int quantity, int discount)
+        {
+            // we are using the properties, as they already have validation built-in
+            Name = name;
+            Price = price;
+            Quantity = quantity;
+            Discount = discount;
+        }
 
+        public double TotalCostPerItem
+        {
+            get
+            {
+                return 0; //TODO
+                          // E.g. Dog treats, $2 each, quantity = 5, discount = 25%
+                          //TotalCostPerItem = 2 * 5 - discount = 7.50
+            }
+        }
 
-        // public methods
-
-
-        // private methods
-
-
-
-        /*
-
-            Constructors
-            Read-only properties: 
-            E.g. Dog treats, $2 each, quantity = 5, discount = 25%
-            TotalCostPerItem = 2 * 5 - discount = 7.50
-            DiscountLevel (none, Sale, Clearance)
-         */
+        public string DiscountLevel
+        {
+            get
+            {
+                return 0;
+                // TODO
+                // if discount is zero, "none"
+                // if discount is 50+, "clearance"
+                // otherwise "sale"
+            }
+        }
     }
 }
