@@ -38,15 +38,15 @@ namespace ClassDemo_Dog
         // parameterized constructor
         public Dog(string name, string size, int age)
         {
-            _name = name;
-            _size = size;
-            _age = age;
+            Name = name;
+            Size = size;
+            Age = age;
         }
 
         public Dog(string name, string size)
         {
-            _name = name;
-            _size = size;
+            Name = name;
+            Size = size;
         }
 
         /*** ACCESSOR ***/
@@ -78,7 +78,8 @@ namespace ClassDemo_Dog
         public string Name
         {
             get { return _name; }
-            set {
+            set
+            {
                 if (value.Trim().Length <= 0 || value.Trim().Length > 21)
                 {
                     throw new Exception("Dog name must be between 1 & 21 characters in length.");
@@ -92,7 +93,8 @@ namespace ClassDemo_Dog
 
         }
 
-        public string Size { 
+        public string Size
+        {
             get { return _size; }
             set
             {
@@ -100,7 +102,7 @@ namespace ClassDemo_Dog
                 // if so, we use it
                 // if not, we throw an exception
 
-                switch(value.Trim().ToLower())
+                switch (value.Trim().ToLower())
                 {
                     case "small":
                     case "medium":
@@ -129,5 +131,6 @@ namespace ClassDemo_Dog
                     _age = value;
             }
 
+        }
     }
 }
