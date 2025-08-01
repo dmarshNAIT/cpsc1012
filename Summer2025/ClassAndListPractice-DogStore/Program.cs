@@ -1,13 +1,17 @@
-﻿using System.Diagnostics;
-
+﻿/*
+ * A program to test our 
+ */
 namespace ClassAndListPractice_DogStore
 {
     internal class Program
     {
-        // TODO: Add missing documentation
+        /// <summary>
+        /// Entry point to the program: displays options and branches based on user choice.
+        /// </summary>
+        /// <param name="args">n/a</param>
         static void Main(string[] args)
         {
-        
+
             List<BetterItem> items = new List<BetterItem>();
             string userChoice;
 
@@ -25,7 +29,7 @@ namespace ClassAndListPractice_DogStore
                 // STRETCH CHALLENGE: Create a method that extracts just the first character from their answer (e.g. Quit would be treated like Q)
 
                 switch (userChoice)
-                { 
+                {
                     case "v":
                         DisplayReceipt(items);
                         break;
@@ -42,7 +46,7 @@ namespace ClassAndListPractice_DogStore
                         SaveToFile(items);
                         break;
                     default:
-                        Console.WriteLine("INVALID CHOICE.");
+                        PrintInColour("INVALID CHOICE.", "red");
                         break;
                 }
 
@@ -53,6 +57,9 @@ namespace ClassAndListPractice_DogStore
 
         }
 
+        /// <summary>
+        /// Original Part A testing
+        /// </summary>
         static void RunPartATest()
         {
             BetterItem item1 = new BetterItem();
@@ -98,7 +105,7 @@ namespace ClassAndListPractice_DogStore
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Sorry, that's not a valid number.");
+                    PrintInColour("Sorry, that's not a valid number.", "red");
                 }
 
             } while (isValid == false);
@@ -126,7 +133,7 @@ namespace ClassAndListPractice_DogStore
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Sorry, that's not a valid number.");
+                    PrintInColour("Sorry, that's not a valid number.", "red");
                 }
 
             } while (isValid == false);
@@ -147,11 +154,10 @@ namespace ClassAndListPractice_DogStore
                 "Q: Quit\n");
         }
 
-
-
-
-
-
+        /// <summary>
+        /// Add an item to the List based on user input.
+        /// </summary>
+        /// <param name="items">A list containing items</param>
         static void AddItem(List<BetterItem> items)
         {
             // create a "default" object
@@ -168,10 +174,10 @@ namespace ClassAndListPractice_DogStore
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    PrintInColour(ex.Message, "red");
                 }
 
-            } while ( !isValidInput);
+            } while (!isValidInput);
 
             isValidInput = false;
             do
@@ -183,7 +189,7 @@ namespace ClassAndListPractice_DogStore
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    PrintInColour(ex.Message, "red");
                 }
 
             } while (!isValidInput);
@@ -198,7 +204,7 @@ namespace ClassAndListPractice_DogStore
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    PrintInColour(ex.Message, "red");
                 }
 
             } while (!isValidInput);
@@ -213,115 +219,140 @@ namespace ClassAndListPractice_DogStore
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    PrintInColour(ex.Message, "red");
                 }
 
             } while (!isValidInput);
 
             // add the object to the List
             items.Add(item);
-            Console.WriteLine("Your item has been added.");
+            PrintInColour("Your item has been added.", "yellow");
         }
 
+        /// <summary>
+        /// Allow the user to choose one item from the list to be removed.
+        /// </summary>
+        /// <param name="items">A list containing BetterItem objects</param>
         static void RemoveItem(List<BetterItem> items)
         {
-            if ( items.Count < 1)
-                Console.WriteLine("There are no items to remove.");
+            if (items.Count < 1)
+            {
+                PrintInColour("There are no items to remove.", "red");
+            }
             else
             {
                 int indexToRemove;
-                
+
                 DisplayReceipt(items);
-                indexToRemove = GetUserInt("Please enter the ID you want to remove: ") - 1;
-                while (indexToRemove < 0 || indexToRemove >= items.Count)
-                {
-                    Console.WriteLine("That was not a valid number. Try again.");
-                    indexToRemove = GetUserInt("Please enter the ID you want to remove: ") - 1;
-                }
+                indexToRemove = GetValidIndex(items, "Please enter the # of the item you want to remove: ");
 
                 items.RemoveAt(indexToRemove);
-                Console.WriteLine($"Item #{indexToRemove + 1} has been deleted.");
+                PrintInColour($"Item #{indexToRemove + 1} has been deleted.", "yellow");
             }
         }
 
-        // TODO: create a method to edit items in list (can change price, quantity, discount)
+        /// <summary>
+        /// Allows the user to edit the price, quantity, or discount for an existing item.
+        /// </summary>
+        /// <param name="items">A list containing BetterItem objects</param>
         static void EditItems(List<BetterItem> items)
         {
-            string userChoice;
-            int indexToEdit;
-
             DisplayReceipt(items);
 
-            indexToEdit = GetUserInt("Please enter the ID you want to edit: ") - 1;
-            while (indexToEdit < 0 || indexToEdit >= items.Count)
+            if (items.Count > 0)
             {
-                Console.WriteLine("That was not a valid number. Try again.");
-                indexToEdit = GetUserInt("Please enter the ID you want to edit: ") - 1;
-            } // TODO: make this a helper method since the same code is used in 2 places
+                int indexToEdit = GetValidIndex(items, "Please enter the ID you want to edit: ");
 
-            // ask the user which property they want to edit
-            userChoice = GetUserString("You can edit the\n" +
-                "\t[P]rice\n" +
-                "\t[Q]uantity\n" +
-                "\t[D]iscount rate\n" +
-                "Enter your choice: ").ToLower();
+                // ask the user which property they want to edit
+                string userChoice = GetUserString("You can edit the\n" +
+                    "\t[P]rice\n" +
+                    "\t[Q]uantity\n" +
+                    "\t[D]iscount rate\n" +
+                    "Enter your choice: ").ToLower();
 
-            // branch accordingly
-            switch (userChoice)
-            {
-                case "p":
-                    // update the price
-                    try
-                    {
-                        items[indexToEdit].Price = GetUserDouble("Please enter the new price: ");
-                        Console.WriteLine("Successfully updated.");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                    break;
-                case "q":
-                    // update the quantity
-                    try
-                    {
-                        items[indexToEdit].Quantity = GetUserInt("Please enter the new quantity: ");
-                        Console.WriteLine("Successfully updated.");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                    break;
-                case "d":
-                    // update the discount amount
-                    try
-                    {
-                        items[indexToEdit].Discount = GetUserInt("Please enter the new price: ");
-                        Console.WriteLine("Successfully updated.");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                    break;
-                default:
-                    Console.WriteLine("That wasn't an option. Returning to main menu.");
-                    break;
+                // branch accordingly
+                switch (userChoice)
+                {
+                    case "p":
+                        // update the price
+                        try
+                        {
+                            items[indexToEdit].Price = GetUserDouble("Please enter the new price: ");
+                            PrintInColour("Successfully updated.", "yellow");
+                        }
+                        catch (Exception ex)
+                        {
+                            PrintInColour(ex.Message, "red");
+                        }
+                        break;
+                    case "q":
+                        // update the quantity
+                        try
+                        {
+                            items[indexToEdit].Quantity = GetUserInt("Please enter the new quantity: ");
+                            PrintInColour("Successfully updated.", "yellow");
+                        }
+                        catch (Exception ex)
+                        {
+                            PrintInColour(ex.Message, "red");
+                        }
+                        break;
+                    case "d":
+                        // update the discount amount
+                        try
+                        {
+                            items[indexToEdit].Discount = GetUserInt("Please enter the new price: ");
+                            PrintInColour("Successfully updated.", "yellow");
+                        }
+                        catch (Exception ex)
+                        {
+                            PrintInColour(ex.Message, "red");
+                        }
+                        break;
+                    default:
+                        PrintInColour("That wasn't an option. Returning to main menu.", "red");
+                        break;
+                }
             }
         }
 
+        /// <summary>
+        /// A helper method to validate that an index is within the bounds of the collection.
+        /// </summary>
+        /// <param name="items">A List of objects</param>
+        static int GetValidIndex(List<BetterItem> items, string message)
+        {
+            // user will enter "real" number, we will subtract 1 to find the index
+            // e.g. the first item is item #1, which has the index of 0
+            int index = GetUserInt(message) - 1;
+            while (index < 0 || index >= items.Count)
+            {
+                PrintInColour("That was not a valid number. Try again.", "red");
+                index = GetUserInt(message) - 1;
+            }
+            return index;
+        }
+
+        /// <summary>
+        /// Displays contents of the List formatted as a receipt.
+        /// </summary>
+        /// <param name="items">A collection of BetterItem objects</param>
         static void DisplayReceipt(List<BetterItem> items)
         {
             if (items.Count == 0)
-                Console.WriteLine("There are no items to display.");
+                PrintInColour("There are no items to display.", "red");
             else
             {
                 // loop through the elements in the list
                 // display the properties for each
 
-                Console.WriteLine("ID Name               Price    # Discount           " +
-                    "Total");
+                Console.WriteLine("ID " +
+                    "Name".PadRight(15) +
+                    "Price ".PadLeft(10) +
+                    "  # " +
+                    "Discount".PadRight(15) +
+                    "Total".PadLeft(10) +
+                    "\n" + new string('-', 57));
 
                 for (int i = 0; i < items.Count; i++)
                 {
@@ -332,16 +363,23 @@ namespace ClassAndListPractice_DogStore
                     double totalCost = items[i].TotalCostPerItem;
                     string discountLevel = items[i].DiscountLevel;
 
-                    Console.WriteLine($"{i + 1:00} {name,-15}{price,9:c} {quantity,4}{discount,4}%" +
-                        $"{discountLevel,10}{totalCost,10:c}");
+                    Console.WriteLine($"{i + 1:00} " +
+                        $"{name,-15}" +
+                        $"{price,9:c}" +
+                        $"{quantity,4} " +
+                        $"{discount}% ({discountLevel})".PadRight(15) +
+                        $"{totalCost,10:c}");
                 }
             }
         }
 
-
+        /// <summary>
+        /// Saves the contents of the List to a CSV file.
+        /// </summary>
+        /// <param name="list">A List of BetterItem objects</param>
         static void SaveToFile(List<BetterItem> list)
         {
-            try 
+            try
             {
                 // create a stream
                 StreamWriter writer = new StreamWriter("../../../receipt.csv");
@@ -361,17 +399,18 @@ namespace ClassAndListPractice_DogStore
 
                 // close the stream
                 writer.Close();
-                Console.WriteLine("Successfully saved to file.");
+                PrintInColour("Successfully saved to file.", "yellow");
             }
             catch (Exception)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Sorry, something went wrong saving to file.");
-                Console.ResetColor();
+                PrintInColour("Sorry, something went wrong saving to file.", "red");
             }
         }
 
-
+        /// <summary>
+        /// Reads the CSV, creates BetterItem objects, and adds them to the List.
+        /// </summary>
+        /// <param name="list">A collection of BetterItem objects</param>
         static void ReadFromFile(List<BetterItem> list)
         {
             try
@@ -402,16 +441,35 @@ namespace ClassAndListPractice_DogStore
 
                 // close the stream
                 reader.Close();
-                Console.WriteLine("Successfully read from file.");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                PrintInColour($"Successfully read {list.Count} records from file.", "yellow");
+                Console.ResetColor();
             }
             catch (Exception)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Sorry, something went wrong reading the file.");
-                Console.ResetColor();
+                PrintInColour("Sorry, something went wrong reading the file.", "red");
             }
 
         }
+
+        /// <summary>
+        /// Because messages are more fun in colour.
+        /// </summary>
+        /// <param name="message">Message to print</param>
+        /// <param name="colour">string representation of colour</param>
+        static void PrintInColour(string message, string colour)
+        {
+            switch(colour.ToLower())
+            {
+                case "red":
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    break;
+                case "yellow":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    break;
+            }
+            Console.WriteLine(message);
+            Console.ResetColor();
+        }
     }
 }
- 

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * Custom class to represent an item on a receipt for a pet store.
+ */
 
 namespace ClassAndListPractice_DogStore
 {
@@ -14,6 +12,9 @@ namespace ClassAndListPractice_DogStore
         private int _quantity;
         private int _discount;
 
+        /// <summary>
+        /// Name of the order item.
+        /// </summary>
         public string Name
         {
             get { return _name; }
@@ -28,6 +29,9 @@ namespace ClassAndListPractice_DogStore
 
             }
         }
+        /// <summary>
+        /// Price per item, in CAD.
+        /// </summary>
         public double Price
         {
             get { return _price; }
@@ -40,6 +44,9 @@ namespace ClassAndListPractice_DogStore
                     throw new Exception("Price must be greater than 0.");
             }
         }
+        /// <summary>
+        /// Quantity of the item.
+        /// </summary>
         public int Quantity
         {
             get { return _quantity; }
@@ -52,6 +59,10 @@ namespace ClassAndListPractice_DogStore
                     throw new Exception("Quantity must be greater than 0.");
             }
         }
+        /// <summary>
+        /// Discount as a numeric value representing the percent of 100.
+        /// e.g. a value of 25 represents 25% discount.
+        /// </summary>
         public int Discount
         {
             get { return _discount; }
@@ -68,8 +79,18 @@ namespace ClassAndListPractice_DogStore
 
         // constructors
         // no-argument constructor:
+        /// <summary>
+        /// No-argument constructor.
+        /// </summary>
         public BetterItem() { }
         // greedy constructor:
+        /// <summary>
+        /// Greedy constructor.
+        /// </summary>
+        /// <param name="name">Name of the item</param>
+        /// <param name="price">Price per item in dollars</param>
+        /// <param name="quantity">Quantity of the item</param>
+        /// <param name="discount">Discount as a numeric value out of 100</param>
         public BetterItem(string name, double price, int quantity, int discount)
         {
             // we are using the properties, as they already have validation built-in
@@ -79,6 +100,9 @@ namespace ClassAndListPractice_DogStore
             Discount = discount;
         }
 
+        /// <summary>
+        /// Calculated property of the total cost for all units of that item, including discount.
+        /// </summary>
         public double TotalCostPerItem
         {
             get
@@ -90,6 +114,9 @@ namespace ClassAndListPractice_DogStore
             }
         }
 
+        /// <summary>
+        /// Category of discount.
+        /// </summary>
         public string DiscountLevel
         {
             get
@@ -110,4 +137,3 @@ namespace ClassAndListPractice_DogStore
         }
     }
 }
-// TODO: Dana to add documentation
