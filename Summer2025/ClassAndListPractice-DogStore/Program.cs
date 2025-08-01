@@ -4,13 +4,16 @@ namespace ClassAndListPractice_DogStore
 {
     internal class Program
     {
+        // TODO: Add missing documentation
         static void Main(string[] args)
         {
-            // TODO: create our main method loop & branching
+        
+            List<BetterItem> items = new List<BetterItem>();
             string userChoice;
 
             Console.WriteLine("Hello! Welcome to Dogma.rt!\n" +
                 "Where you get more Bark for your Bite.");
+            ReadFromFile(items);
 
             do
             {
@@ -24,18 +27,19 @@ namespace ClassAndListPractice_DogStore
                 switch (userChoice)
                 { 
                     case "v":
-                        // TODO: view receipt
+                        DisplayReceipt(items);
                         break;
                     case "a":
-                        // TODO: add item
+                        AddItem(items);
                         break;
                     case "e":
-                        // TODO: edit item
+                        EditItems(items);
                         break;
                     case "d":
-                         // TODO: delete an item
+                        RemoveItem(items);
                         break;
                     case "q":
+                        SaveToFile(items);
                         break;
                     default:
                         Console.WriteLine("INVALID CHOICE.");
@@ -46,21 +50,6 @@ namespace ClassAndListPractice_DogStore
             } while (userChoice != "q"); // user choice isn't "q"
 
             Console.WriteLine("Thanks for shopping! Goodbye.");
-
-
-            // start the program
-            // create the list
-            // read from file
-
-            // show menu
-            // get user input
-
-            // branch:
-            // add
-            // remove
-            // edit
-            // view
-            // quit
 
         }
 
@@ -158,17 +147,196 @@ namespace ClassAndListPractice_DogStore
                 "Q: Quit\n");
         }
 
-        // TODO: create a method to read from file
 
-        // TODO: create a method to write to a file
 
-        // TODO: create a method to add to the receipt
 
-        // TODO: create a method to remove an item
+
+
+        static void AddItem(List<BetterItem> items)
+        {
+            // create a "default" object
+            BetterItem item = new BetterItem();
+            bool isValidInput = false;
+
+            // ask the user for the name, price, quantity, discount
+            do
+            {
+                try
+                {
+                    item.Name = GetUserString("Please enter the item name: ");
+                    isValidInput = true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+            } while ( !isValidInput);
+
+            isValidInput = false;
+            do
+            {
+                try
+                {
+                    item.Price = GetUserDouble("Please enter the item price in $: ");
+                    isValidInput = true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+            } while (!isValidInput);
+
+            isValidInput = false;
+            do
+            {
+                try
+                {
+                    item.Quantity = GetUserInt("Please enter the quantity: ");
+                    isValidInput = true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+            } while (!isValidInput);
+
+            isValidInput = false;
+            do
+            {
+                try
+                {
+                    item.Discount = GetUserInt("Please enter the discount as a number: ");
+                    isValidInput = true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+            } while (!isValidInput);
+
+            // add the object to the List
+            items.Add(item);
+            Console.WriteLine("Your item has been added.");
+        }
+
+        static void RemoveItem(List<BetterItem> items)
+        {
+            if ( items.Count < 1)
+                Console.WriteLine("There are no items to remove.");
+            else
+            {
+                int indexToRemove;
+                
+                DisplayReceipt(items);
+                indexToRemove = GetUserInt("Please enter the ID you want to remove: ") - 1;
+                while (indexToRemove < 0 || indexToRemove >= items.Count)
+                {
+                    Console.WriteLine("That was not a valid number. Try again.");
+                    indexToRemove = GetUserInt("Please enter the ID you want to remove: ") - 1;
+                }
+
+                items.RemoveAt(indexToRemove);
+                Console.WriteLine($"Item #{indexToRemove + 1} has been deleted.");
+            }
+        }
 
         // TODO: create a method to edit items in list (can change price, quantity, discount)
+        static void EditItems(List<BetterItem> items)
+        {
+            string userChoice;
+            int indexToEdit;
 
-        // TODO: create a method to view the receipt
+            DisplayReceipt(items);
+
+            indexToEdit = GetUserInt("Please enter the ID you want to edit: ") - 1;
+            while (indexToEdit < 0 || indexToEdit >= items.Count)
+            {
+                Console.WriteLine("That was not a valid number. Try again.");
+                indexToEdit = GetUserInt("Please enter the ID you want to edit: ") - 1;
+            } // TODO: make this a helper method since the same code is used in 2 places
+
+            // ask the user which property they want to edit
+            userChoice = GetUserString("You can edit the\n" +
+                "\t[P]rice\n" +
+                "\t[Q]uantity\n" +
+                "\t[D]iscount rate\n" +
+                "Enter your choice: ").ToLower();
+
+            // branch accordingly
+            switch (userChoice)
+            {
+                case "p":
+                    // update the price
+                    try
+                    {
+                        items[indexToEdit].Price = GetUserDouble("Please enter the new price: ");
+                        Console.WriteLine("Successfully updated.");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    break;
+                case "q":
+                    // update the quantity
+                    try
+                    {
+                        items[indexToEdit].Quantity = GetUserInt("Please enter the new quantity: ");
+                        Console.WriteLine("Successfully updated.");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    break;
+                case "d":
+                    // update the discount amount
+                    try
+                    {
+                        items[indexToEdit].Discount = GetUserInt("Please enter the new price: ");
+                        Console.WriteLine("Successfully updated.");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    break;
+                default:
+                    Console.WriteLine("That wasn't an option. Returning to main menu.");
+                    break;
+            }
+        }
+
+        static void DisplayReceipt(List<BetterItem> items)
+        {
+            if (items.Count == 0)
+                Console.WriteLine("There are no items to display.");
+            else
+            {
+                // loop through the elements in the list
+                // display the properties for each
+
+                Console.WriteLine("ID Name               Price    # Discount           " +
+                    "Total");
+
+                for (int i = 0; i < items.Count; i++)
+                {
+                    string name = items[i].Name;
+                    double price = items[i].Price;
+                    int quantity = items[i].Quantity;
+                    int discount = items[i].Discount;
+                    double totalCost = items[i].TotalCostPerItem;
+                    string discountLevel = items[i].DiscountLevel;
+
+                    Console.WriteLine($"{i + 1:00} {name,-15}{price,9:c} {quantity,4}{discount,4}%" +
+                        $"{discountLevel,10}{totalCost,10:c}");
+                }
+            }
+        }
 
 
         static void SaveToFile(List<BetterItem> list)
@@ -179,12 +347,16 @@ namespace ClassAndListPractice_DogStore
                 StreamWriter writer = new StreamWriter("../../../receipt.csv");
 
                 // give file a header row
-                writer.WriteLine("TODO");
+                writer.WriteLine("name,price,quantity,discount");
 
                 // iterate through the list, printing each line to the file in CSV format
                 for (int i = 0; i < list.Count; i++)
                 {
-                    // TODO
+                    string name = list[i].Name;
+                    double price = list[i].Price;
+                    int quantity = list[i].Quantity;
+                    int discount = list[i].Discount;
+                    writer.WriteLine($"{name},{price},{quantity},{discount}");
                 }
 
                 // close the stream
@@ -200,9 +372,8 @@ namespace ClassAndListPractice_DogStore
         }
 
 
-        static int ReadFromFile(List<BetterItem> list)
+        static void ReadFromFile(List<BetterItem> list)
         {
-            int index = 0;
             try
             {
                 // create the stream
@@ -216,8 +387,17 @@ namespace ClassAndListPractice_DogStore
                 {
                     string line = reader.ReadLine();
                     string[] parts = line.Split(',');
-                  
-                    // TODO
+
+                    string name = parts[0];
+                    double price = double.Parse(parts[1]);
+                    int quantity = int.Parse(parts[2]);
+                    int discount = int.Parse(parts[3]);
+
+                    // use those to create a new object
+                    BetterItem item = new BetterItem(name, price, quantity, discount);
+
+                    // add that object to the list
+                    list.Add(item);
                 }
 
                 // close the stream
@@ -230,7 +410,7 @@ namespace ClassAndListPractice_DogStore
                 Console.WriteLine("Sorry, something went wrong reading the file.");
                 Console.ResetColor();
             }
-            return index;
+
         }
     }
 }
